@@ -55,6 +55,14 @@ button.normal:hover {
   background-color: #088178;
   color: #fff;
 }
+.btn-group {
+  display: flex;
+  gap: 20px; /* espace entre les deux boutons */
+  justify-content: center; /* centre horizontalement */
+  flex-wrap: wrap; /* pour qu'ils passent à la ligne si écran trop petit */
+  margin-top: 20px;
+}
+
 body {
   width: 100%;
 }
@@ -381,7 +389,7 @@ span {
   background-image: url(images/banner/b14.png);
   background-repeat: no-repeat;
   background-position: 180px;
-  background-color: #041e42;
+  background-color: #f0870f;
   height: 160px;
   display: flex;
   align-items: center;
@@ -389,16 +397,16 @@ span {
   padding: 0 75px;
 }
 #newsletter .newsletter-text h3 {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 30px;
   padding: 0 0 15px 0;
 }
 #newsletter .newsletter-text h5 {
-  color: rgb(151, 151, 151);
+  color: rgb(0, 0, 0);
   font-size: 17px;
 }
 #newsletter .newsletter-text h5 span {
-  color: rgb(216, 182, 29);
+  color: rgb(0, 0, 0);
 }
 #newsletter .form input {
   padding: 20px;
@@ -563,5 +571,24 @@ span {
 
 .btn-secondary:hover {
   background-color: #cfcfcf;
+}
+
+
+/* Travaille sur toutes nos categories */
+
+.categories-dropdown-wrap {
+  max-height: 0;
+  opacity: 0;
+  overflow-x: auto;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.categories-dropdown-wrap.open {
+  max-height: 600px; /* ajuste si tu as beaucoup de contenu */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
