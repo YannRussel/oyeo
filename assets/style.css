@@ -592,3 +592,59 @@ span {
   pointer-events: auto;
 }
 
+/* pour le haut de page */
+
+/* CSS à ajouter dans main.css */
+
+/* --- Liens de gauche avec séparateurs --- */
+.header-links {
+  display: inline-flex;
+  gap: 0;               /* on gère l’espacement via padding sur les li */
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.header-links li {
+  flex-shrink: 0;
+  position: relative;
+  padding: 0 10px;
+}
+/* barre “|” entre chaque lien */
+.header-links li + li::before {
+  /* content: "|"; */
+  position: absolute;
+  left: 0;
+  color: #999;
+}
+
+/* --- Colonne droite : alignement sans wrap --- */
+.header-links-right {
+  display: inline-flex;
+  gap: 15px;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.header-links-right li {
+  flex-shrink: 0;
+}
+
+/* Facultatif : style de vos liens */
+.header-links a,
+.header-links-right a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Ajustement du news-flash pour rester centré */
+#news-flash ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#news-flash ul li {
+  display: inline-block;
+}
+
