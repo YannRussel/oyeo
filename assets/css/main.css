@@ -6235,15 +6235,15 @@ h6.post-title {
 }
 .search-style-2 form input {
   width: 100%;
-  max-width: 683px;
+  max-width: 600px;
   font-size: 14px;
   background-image: url(../imgs/theme/icons/search.png);
   background-repeat: no-repeat;
-  background-position: center right;
+  background-position: right;
   padding-left: 0;
   height: 50px;
   line-height: 50px;
-  font-size: 14px;
+  font-size: 20px;
 }
 .search-style-2 form input::-moz-input-placeholder {
   opacity: 1;
@@ -6257,8 +6257,8 @@ h6.post-title {
   border-style: solid;
 }
 .search-style-2 form button {
-  position: absolute;
-  right: 0px;
+  /* position: absolute; */
+  right: 500px;
   top: 50%;
   transform: translateY(-50%);
   background-color: transparent;
@@ -6830,11 +6830,11 @@ h6.post-title {
 .header-style-1 .search-style-2 form {
   border: 2px solid #BCE3C9;
   border-radius: 4px;
-  max-width: 700px;
+  max-width: 800px;
   background-color: #fff;
 }
 .header-style-1 .search-style-2 form input {
-  max-width: 600px;
+  max-width: 700px;
   border-width: 0px;
   border-radius: 0 5px 5px 0;
   margin-left: 20px;
@@ -10605,6 +10605,7 @@ footer .hotline img {
 
 /* Gestion des images comme sur offres du jours */
 /* ====== PRODUCT SECTION ====== */
+/* Section produits */
 .product-section {
   padding: 10px;
   background: #fff;
@@ -10628,13 +10629,14 @@ footer .hotline img {
   background: #fff;
   border: 1px solid #ccc;
   border-radius: 50%;
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   font-size: 18px;
   cursor: pointer;
   flex-shrink: 0;
 }
 
-/* Grille de cards */
+/* Grille de cartes */
 .product-grid {
   display: flex;
   gap: 16px;
@@ -10643,17 +10645,16 @@ footer .hotline img {
   -webkit-overflow-scrolling: touch;  /* momentum sur iOS */
   cursor: grab;
 }
-
 .product-grid:active {
   cursor: grabbing;
 }
 .product-grid::-webkit-scrollbar { display: none; }
 .product-grid { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Carte produit (taille augmentée) */
+/* Carte produit */
 .product-card {
-  position: relative;
-  flex: 0 0 260px;             /* passe de 180px à 220px */
+  position: relative;           /* nécessaire pour les badges absolus */
+  flex: 0 0 260px;              /* largeur fixe */
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.05);
@@ -10664,10 +10665,11 @@ footer .hotline img {
   transform: translateY(-4px);
 }
 
-/* Badge */
+/* Badge sur l’image (gauche) */
 .product-card .badge {
   position: absolute;
-  top: 8px; left: 8px;
+  top: 16px;
+  left: 16px;
   background-color: #e0f7fa;
   color: #00796b;
   font-size: 10px;
@@ -10677,10 +10679,26 @@ footer .hotline img {
   z-index: 2;
 }
 
-/* Image (hauteur augmentée) */
+/* Cœur favoris sur l’image (droite) */
+.product-card .fav-icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  color: #e53935;
+  z-index: 2;
+}
+.product-card .fav-icon:hover {
+  transform: scale(1.2);
+  color: #c62828;
+}
+
+/* Image */
 .img-wrap {
   width: 100%;
-  height: 300px;               /* passe de 140px à 180px */
+  height: 350px;
   overflow: hidden;
   background: #f7f7f7;
 }
@@ -10726,7 +10744,8 @@ footer .hotline img {
   font-weight: 700;
 }
 .btn-cart {
-  width: 28px; height: 28px;
+  width: 28px;
+  height: 28px;
   background: #e0f7fa;
   border: none;
   border-radius: 50%;
@@ -10739,6 +10758,19 @@ footer .hotline img {
 .btn-cart:hover {
   background: #b2ebf2;
 }
+
+.promo-label {
+  display: inline-block;
+  background-color: #d32f2f; /* rouge vif */
+  color: #fff;              /* texte blanc */
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;         /* espace autour du texte */
+  border-radius: 4px;       /* coins légèrement arrondis */
+  text-transform: uppercase;
+}
+
+
 
 /* une autre section sur decouvez nos univers */
  .univers-section {
