@@ -26,6 +26,82 @@
             box-sizing: border-box;
             }
 
+            /* ===================================
+   Search bar “pill” totalement ronde
+   =================================== */
+
+/* 1) Layout du header : on active le flex */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* 2) Le container du champ prend tout l’espace libre */
+.header-right .search-style {
+  flex: 1 1 auto;
+  margin-right: 1rem;  /* ajuste l’espacement avec les autres icônes */
+}
+
+/* 3) Le form occupe 100% du container */
+.header-right .search-style form {
+  width: 95%;
+  display: block;
+}
+
+/* 4) Style de l’input : forme pill, icône, overrides */
+.header-right .search-style form input[type="text"] {
+  /* taille et agencement */
+  width: 100%;
+  height: 48px;                      /* hauteur fixe pour un pill parfait */
+  padding: 0.75rem 3rem 0.75rem 1rem;/* espace à droite pour l’icône */
+
+  /* typo */
+  font-size: 1rem;
+  line-height: 1.2;
+
+  /* bordure & fond */
+  border: 1px solid #dfe1e5;
+  border-radius: 999px;             /* arrondi maximal */
+  background-color: #fff;
+
+  /* icône loupe (adapte le chemin si besoin) */
+  background-image: url('assets/imgs/icons/search.svg');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+
+  /* suppression des styles natifs */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+
+  /* transition pour le focus */
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* 5) Placeholder plus discret */
+.header-right .search-style form input[type="text"]::placeholder {
+  color: #757575;
+  opacity: 1;  /* certains resets baissent l’opacité par défaut */
+}
+
+/* 6) Effet focus “Google-like” */
+.header-right .search-style form input[type="text"]:focus {
+  border-color: #4285f4;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+/* 7) Neutraliser l’autofill Chrome (fond vert/jaune) */
+.header-right .search-style form input[type="text"]:-webkit-autofill,
+.header-right .search-style form input[type="text"]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #333 !important;
+}
+
+            
     </style>
 
     
@@ -139,7 +215,7 @@
       <div class="col-xl-3 col-lg-3">
         <div class="header-info" style="font-size: 17px;">
           <ul class="header-links">
-            <li><a href="page-about.html"><strong>Télécharger notre application</strong></a></li>
+            <li><a href="page-about.html"><strong>Télécharger l'application</strong></a></li>
             <li><a href="page-account.html">Vendez sur Oyeo</a></li>
             <li><a href="shop-wishlist.html">Guide des tailles</a></li> 
           </ul>
@@ -184,9 +260,9 @@
                         <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo" /></a>
                     </div>
                     <div class="header-right">
-                        <div class="search-style-2">
+                        <div class="search-style">
                             <form action="#">
-                                <input type="text" placeholder="Search for items..." />
+                                <input type="text" placeholder="Cherchez vos articles..." />
                             </form>
                         </div>
                         <div class="header-action-right">
@@ -285,7 +361,7 @@
                     </div>
                     <div class="header-nav d-none d-lg-flex">
                         <div class="main-categori-wrap d-none d-lg-block">
-  <!-- Bouton inchangé -->
+                         <!-- Bouton inchangé -->
                         <a class="categories-button-active" href="#" id="categoriesToggle">
                             <span class="fi-rs-apps"></span>
                             <span class="et">Toutes</span> nos Categories
@@ -300,7 +376,6 @@
                                 <li><a href="#">Cheeses</a></li>
                                 <li><a href="#">Yogurts</a></li>
                                 </ul>
-                            
                             </li>
                             <li><a href="shop-grid-right.html">Clothing & beauty</a></li>
                             <li><a href="shop-grid-right.html">Pet Foods & Toy</a></li>
@@ -322,7 +397,7 @@
                             <li><a href="shop-grid-right.html">Vegetables</a></li>
                             <li><a href="shop-grid-right.html">Bread and Juice</a></li>
                         </ul>
-                        </div>
+                    </div>
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                             <nav>
                                 <ul>
@@ -603,50 +678,87 @@
     </div>
     <!--End header-->
     <main class="main">
-        <section class="home-slider position-relative mb-30">
-            <div class="home-slide-cover">
-                <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
-                
-                <!-- Premier slide avec vos deux boutons -->
-                <div class="single-hero-slider rectangle single-animation-wrap"
-                    style="background-image: url(assets/imgs/banner/hero4.png)">
-                    <div class="slider-content">
-                    <h1 class="display-2 mb-20">
-                        Découvrez<br />
-                        Oyéo
-                    </h1>
-                    <p class="mb-40">
-                        La place de marché qui connecte l’Afrique et l’Europe.
-                    </p>
-                    <!-- NOUVEAU : le groupe de boutons -->
-                    <div class="slider-btns">
-                        <a href="#explorer" class="btn btn-lg btn-primary mr-3">Explorer les produits</a>
-                        <a href="#demander" class="btn btn-lg btn-outline-light">Demander un service</a>
-                    </div>
-                    </div>
-                </div>
+<section class="home-slider position-relative mb-30">
+  <div class="home-slide-cover">
+    <!-- Wrapper qui doit contenir *tous* les slides -->
+    <div class="hero-slider-1 style-4 dot-style-1 dot-style-1-position-1">
 
-                <!-- Slide existant (exemple) -->
-                <div class="single-hero-slider rectangle single-animation-wrap"
-                    style="background-image: url(assets/imgs/slider/slider-6.png)">
-                    <div class="slider-content">
-                    <h1 class="display-2 mb-40">
-                        Fresh Vegetables<br />
-                        Big discount
-                    </h1>
-                    <p class="mb-65">Save up to 50% off on your first order</p>
-                                        <div class="slider-btns">
-                        <a href="#explorer" class="btn btn-lg btn-primary mr-3">Explorer les produits</a>
-                        <a href="#demander" class="btn btn-lg btn-outline-light">Demander un service</a>
-                    </div>
-                    </div>
-                    </div>
-                </div>
+      <!-- Slide #1 -->
+      <div class="single-hero-slider rectangle single-animation-wrap"
+           style="background-image: url(assets/imgs/banner/hero4.png)">
+        <div class="slider-content">
+          <h1 class="display-2 mb-20">
+            Découvrez<br />Oyéo
+          </h1>
+          <p class="mb-40">
+            La place de marché qui connecte l’Afrique et l’Europe.
+          </p>
+          <div class="slider-btns">
+            <a href="#explorer" class="btn btn-lg btn-primary mr-3">Explorer les produits</a>
+            <a href="#demander"  class="btn btn-lg btn-outline-light">Demander un service</a>
+          </div>
+        </div>
+      </div>
 
-                </div>
-                <div class="slider-arrow hero-slider-1-arrow"></div>
-            </div>
-            </section>
+      <!-- Slide #2 -->
+      <div class="single-hero-slider rectangle single-animation-wrap"
+           style="background-image: url(assets/imgs/slider/slider-6.png)">
+        <div class="slider-content">
+          <h1 class="display-2 mb-40">
+            Fresh Vegetables<br />Big discount
+          </h1>
+          <p class="mb-65">
+            Save up to 50% off on your first order
+          </p>
+          <div class="slider-btns">
+            <a href="#explorer" class="btn btn-lg btn-primary mr-3">Explorer les produits</a>
+            <a href="#demander"  class="btn btn-lg btn-outline-light">Demander un service</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide #3 -->
+      <div class="single-hero-slider rectangle single-animation-wrap"
+           style="background-image: url(assets/imgs/slider/slider-6.png)">
+        <div class="slider-content">
+          <div class="slider-btns">
+            <a href="#explorer" class="btn btn-lg btn-primary mr-3">Explorer les produits</a>
+            <a href="#demander"  class="btn btn-lg btn-outline-light">Demander un service</a>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- ← fermeture de .hero-slider-1, après le 3e slide -->
+  </div>
+
+  <!-- flèches/navigation du slider -->
+  <div class="slider-arrow hero-slider-1-arrow"></div>
+</section>
+
+<!-- Bande d'infos jaune sous le slider -->
+<div class="slider-info-bar">
+  <div class="info-item">
+    <!-- <i class="fas fa-lock"></i> -->
+    <span>🔒 Paiement sécurisé</span>
+  </div>
+  <div class="info-item">
+    <!-- <i class="fas fa-truck"></i> -->
+    <span>🚚 Livraison garantie</span>
+  </div>
+  <div class="info-item">
+    <!-- <i class="fas fa-headset"></i> -->
+    <span>💬 Service client j/j</span>
+  </div>
+  <div class="info-item">
+    <!-- <i class="fas fa-headset"></i> -->
+    <span>🎁 Livraison offerte dès XXX € d’achat</span>
+  </div>
+  <div class="info-item">
+    
+    <span>❓FAQ – Toutes nos réponses à vos questions</span>
+  </div>
+</div>
+
         <!--End hero slider-->
         <!-- <section class="popular-categories section-padding">
             <div class="container wow animate__animated animate__fadeIn">

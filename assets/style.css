@@ -692,12 +692,11 @@ span {
   padding: 0 10px;
 }
 /* barre “|” entre chaque lien */
-.header-links li + li::before {
-  /* content: "|"; */
+/* .header-links li + li::before {
+
   position: absolute;
-  left: 0;
-  color: #999;
-}
+  color: white;
+} */
 
 /* --- Colonne droite : alignement sans wrap --- */
 .header-links-right {
@@ -729,3 +728,29 @@ span {
   display: inline-block;
 }
 
+/* Travail sur le slider */
+
+/* 1. S’assurer que .slider-content prend toute la largeur disponible */
+.single-hero-slider .slider-content {
+  width: 100%;
+  /* texte aligné à gauche */
+  text-align: left;
+  /* optionnel : limiter la largueur max pour ne pas avoir le texte collé aux bords */
+  max-width: 600px;
+  padding-left: 20px; /* ou la marge gauche que vous souhaitez */
+  margin: 0 auto;     /* centre horizontalement le bloc textuel dans le slide */
+}
+
+/* 2. Transformer .slider-btns en flex container centré */
+.single-hero-slider .slider-btns {
+  display: flex;
+  justify-content: center; /* centre horizontalement les boutons */
+  gap: 1rem;               /* espace constant entre les deux boutons */
+  margin-top: 1.5rem;      /* espace au-dessus des boutons */
+}
+
+/* 3. (Optionnel) si vous voulez que les boutons remontent ou descendent un peu */
+.single-hero-slider .slider-btns a {
+  /* ajustez le padding ou margin si nécessaire */
+  padding: 0.75rem 1.5rem;
+}
