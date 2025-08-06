@@ -232,15 +232,16 @@
 
       <!-- Colonne droite (besoin d'aide + devise) -->
       <div class="col-xl-3 col-lg-3">
-        <div class="header-info header-info-right" style="font-size: 17px;">
+        <div class="header-info header-info-right" style="font-size: 15px;">
           <ul class="header-links-right">
             <li>
               <strong>Service client :</strong> 06 521 57 58
             </li>
             <li>
               <a class="language-dropdown-active" href="#">
-                FCFA
+                FCFA 
               </a>
+              <i class="fi-rs-angle-down" style="font-size: 15px;"> </i>
               <ul class="language-dropdown">
                 <li><a href="#"> EUR</a></li>
               </ul>
@@ -360,44 +361,53 @@
                         <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo" /></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
-                        <div class="main-categori-wrap d-none d-lg-block">
-                         <!-- Bouton inchangé -->
-                        <a class="categories-button-active" href="#" id="categoriesToggle">
-                            <span class="fi-rs-apps"></span>
-                            <span class="et">Toutes</span> nos Categories
-                            <i class="fi-rs-angle-down"></i>
-                        </a>
+  <div class="main-categori-wrap d-none d-lg-block" id="categoriesContainer">
 
-                        <!-- Dropdown simplifié -->
-                        <ul class="categories-simple-dropdown" id="categoriesList">
-                            <li><a href="shop-grid-right.html">Milks and Dairies</a>
-                                <ul class="subcategories">
-                                <li><a href="#">Fresh Milk</a></li>
-                                <li><a href="#">Cheeses</a></li>
-                                <li><a href="#">Yogurts</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="shop-grid-right.html">Clothing & beauty</a></li>
-                            <li><a href="shop-grid-right.html">Pet Foods & Toy</a></li>
-                            <li><a href="shop-grid-right.html">Baking material</a></li>
-                            <li><a href="shop-grid-right.html">Fresh Fruit</a></li>
-                            <li><a href="shop-grid-right.html">Wines & Drinks</a></li>
-                            <li><a href="shop-grid-right.html">Fresh Seafood</a></li>
-                            <li><a href="shop-grid-right.html">Fast food</a></li>
-                            <li><a href="shop-grid-right.html">Vegetables</a></li>
-                            <li><a href="shop-grid-right.html">Bread and Juice</a></li>
-                            <li><a href="shop-grid-right.html">Milks and Dairies</a></li>
-                            <li><a href="shop-grid-right.html">Clothing & beauty</a></li>
-                            <li><a href="shop-grid-right.html">Pet Foods & Toy</a></li>
-                            <li><a href="shop-grid-right.html">Baking material</a></li>
-                            <li><a href="shop-grid-right.html">Fresh Fruit</a></li>
-                            <li><a href="shop-grid-right.html">Wines & Drinks</a></li>
-                            <li><a href="shop-grid-right.html">Fresh Seafood</a></li>
-                            <li><a href="shop-grid-right.html">Fast food</a></li>
-                            <li><a href="shop-grid-right.html">Vegetables</a></li>
-                            <li><a href="shop-grid-right.html">Bread and Juice</a></li>
-                        </ul>
-                    </div>
+    <!-- Bouton principal -->
+    <a class="categories-button-active" href="#" id="categoriesToggle">
+      <span class="fi-rs-apps"></span>
+      <span class="et">Toutes</span> nos catégories
+      <i class="fi-rs-angle-down"></i>
+    </a>
+
+    <!-- Dropdown -->
+    <ul class="categories-simple-dropdown">
+      <li class="has-children">
+        <a href="#">
+          Mode Homme
+          <i class="fi-rs-angle-right sub-icon"></i>
+        </a>
+        <ul class="subcategories">
+          <li><strong>Vêtements</strong></li>
+          <li><a href="#">T-shirts et polos</a></li>
+          <li><a href="#">Chemises</a></li>
+          <li><a href="#">Pantalons et chinos</a></li>
+          <li><a href="#">Jeans</a></li>
+          <li><a href="#">Shorts</a></li>
+          <li><a href="#">Pulls et gilets</a></li>
+          <li><a href="#">Manteaux et vestes</a></li>
+
+          <li><strong>Chaussures</strong></li>
+          <li><a href="#">Paniers</a></li>
+          <li><a href="#">Chaussures de ville</a></li>
+          <li><a href="#">Mocassins</a></li>
+          <li><a href="#">Bottes</a></li>
+          <li><a href="#">Sandales</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Mode Femme</a></li>
+      <li><a href="#">Enfants et bébés</a></li>
+      <li><a href="#">Maison & Déco</a></li>
+      <li><a href="#">Cuisine & Électroménager</a></li>
+      <li><a href="#">Hygiène & Beauté</a></li>
+      <li><a href="#">Alimentation & Supermarché</a></li>
+      <li><a href="#">Bricolage et Jardin</a></li>
+      <li><a href="#">Informatique et Téléphonie</a></li>
+    </ul>
+
+  </div>
+</div>
+
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
                             <nav>
                                 <ul>
@@ -3550,6 +3560,19 @@ document.querySelectorAll('.scroll-btn').forEach(btn => {
     if (!btn.contains(e.target) && !list.contains(e.target)) {
       btn.classList.remove('active');
     }
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('categoriesToggle');
+    const container = document.getElementById('categoriesContainer');
+
+    toggleBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      container.classList.toggle('open');
+      toggleBtn.querySelector('i.fi-rs-angle-down').classList.toggle('rotated');
+    });
   });
 </script>
 

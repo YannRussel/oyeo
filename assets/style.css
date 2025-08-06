@@ -578,37 +578,62 @@ span {
 
 /* Bouton inchangé */
 /* Dropdown simplifié agrandi */
+/* === CONTENEURS === */
+.main-categori-wrap {
+  position: relative;
+}
+.header-nav { /* adapte selon ton layout */ }
+
+/* === BOUTON PRINCIPAL === */
+.categories-button-active {
+  display: inline-flex;
+  align-items: center;
+  font-weight: bold;
+  background: #f5f5f5;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s ease;
+}
+.categories-button-active:hover {
+  background: #e9e9e9;
+}
+.categories-button-active i {
+  margin-left: 10px;
+  transition: transform 0.2s;
+}
+
+/* === DROPDOWN === */
 .categories-simple-dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   margin: 6px 0 0;
-  padding: 12px 0;
+  padding: 0;
   list-style: none;
   background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   display: none;
-  min-width: 360px;      /* largeur minimale */
-  max-width: 480px;      /* largeur maximale */
-  max-height: 520px;     /* ~12 items × ~42px hauteur => 504px, on arrondit à 520px */
-  overflow-y: auto;      /* scroll vertical si >12 items */
-  z-index: 10;
+  min-width: 260px;
+  max-height: 520px;
+  overflow-y: auto;
+  z-index: 100;
 }
 
-/* Affichage du dropdown quand le bouton a la classe .active */
-#categoriesToggle.active + .categories-simple-dropdown {
+/* Affiche le menu quand le parent a .open */
+.main-categori-wrap.open .categories-simple-dropdown {
   display: block;
 }
 
-/* Style de la barre de scroll (WebKit) */
+/* === SCROLLBAR PERSONNALISÉE === */
 .categories-simple-dropdown::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 .categories-simple-dropdown::-webkit-scrollbar-track {
   background: #f1f1f1;
-  border-radius: 6px;
 }
 .categories-simple-dropdown::-webkit-scrollbar-thumb {
   background: #bbb;
@@ -618,58 +643,108 @@ span {
   background: #999;
 }
 
-/* Chaque lien */
-.categories-simple-dropdown li {
-  position: relative;      /* pour le sous-menu */
-  padding: 12px 24px;
-  font-size: 18px;
+/* === ITEMS PRINCIPAUX === */
+.categories-simple-dropdown > li {
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
 }
-
-/* Lien principal */
 .categories-simple-dropdown > li > a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  font-size: 16px;
   color: #333;
   text-decoration: none;
-  font-size: 18px;
+  transition: background 0.2s, color 0.2s;
 }
 .categories-simple-dropdown > li > a:hover {
-  background: #f5f5f5;
+  background-color: #fff5eb;
+  color: #e47911;
 }
 
-/* Sous-liste (sous-liens) */
-.categories-simple-dropdown li .subcategories {
-  list-style: none;
+/* === ICÔNE POUR ITEMS AVEC SOUS-MENU === */
+.sub-icon {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #888;
+  transition: transform 0.2s, color 0.2s;
+}
+.has-children:hover > a .sub-icon {
+  transform: translateX(3px);
+  color: #e47911;
+}
+
+/* === SOUS-CATÉGORIES === */
+.subcategories {
   position: absolute;
   top: 0;
   left: 100%;
-  margin: 0;
-  padding: 8px 0;
+  margin-left: 1px;
+  padding: 16px;
+  list-style: none;
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  min-width: 260px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: none;
+  min-width: 280px;
+  z-index: 101;
 }
-
-/* Chaque sous-lien */
-.categories-simple-dropdown li .subcategories li {
-  padding: 8px 20px;
-  font-size: 16px;
-}
-.categories-simple-dropdown li .subcategories li a {
-  display: block;
-  color: #333;
-  text-decoration: none;
-}
-.categories-simple-dropdown li .subcategories li a:hover {
-  background: #f5f5f5;
-}
-
-/* Afficher le sous-menu au hover */
 .categories-simple-dropdown li:hover > .subcategories {
   display: block;
 }
+
+/* === ITEMS SOUS-CATÉGORIES === */
+.subcategories li {
+  padding: 6px 0;
+  font-size: 15px;
+}
+.subcategories li strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #e47911;
+}
+.subcategories a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s;
+}
+.subcategories a:hover {
+  color: #e47911;
+}
+
+/* Affiche le sous-menu pour les items qui ont des enfants */
+.categories-simple-dropdown li.has-children:hover > .subcategories {
+  display: block !important;
+  /* Assure-toi qu'il soit devant les autres éléments */
+  z-index: 200;
+}
+
+/* === Lorsque la dropdown est ouverte ET qu’on la survole === */
+.main-categori-wrap.open:hover .categories-simple-dropdown {
+  /* plus de limitation de hauteur */
+  max-height: none;
+  /* on laisse voir tout ce qui dépasse */
+  overflow: visible;
+}
+
+/* on désactive le scroll de la dropdown tant qu’on survole */
+.main-categori-wrap.open:hover .categories-simple-dropdown::-webkit-scrollbar {
+  display: none;
+}
+
+/* pour tous les navigateurs */
+.main-categori-wrap.open:hover .categories-simple-dropdown {
+  scrollbar-width: none; /* Firefox */
+}
+
+/* on repositionne légèrement le conteneur au besoin */
+.main-categori-wrap.open:hover .categories-simple-dropdown {
+  margin-bottom: 200px; /* ajuste si le sous-menu est très bas */
+}
+
 
 
 
