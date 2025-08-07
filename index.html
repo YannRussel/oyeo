@@ -1979,791 +1979,510 @@
   </div>
 </section>
 
-<section class="product-tabs section-padding position-relative">
-    <div class="container">
-        <div class="section-title style-2 wow animate__animated animate__fadeIn">
-            <h3>Modes & Bien-être</h3>
-            <ul class="nav nav-tabs links" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">Tout voir</button>
-                </li>
-                
-            </ul>
+<section class="product-section">
+  <h2 class="section-title">Mode & Bien-être</h2>
+
+  <div class="product-carousel-wrapper">
+    <!-- Flèche gauche -->
+    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+
+    <!-- Conteneur scrollable des cartes -->
+    <div class="product-grid scroll-container" id="productGrid">
+      <!-- Carte produit 1 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/m1 (1).jpg" alt="Floral Summer Shirt">
         </div>
-        <!--End nav-tabs-->
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
-                <div class="row product-grid-4">
-                    <!-- Product 1 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Mode chic femme" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" alt="Mode chic femme hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Mode</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Veste élégante en tweed</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 90%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.5)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">FashionCo</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$120.00</span>
-                                        <span class="old-price">$150.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+        <div class="card-body">
+          <span class="brand">Adidas</span>
+          <h3 class="product-title">Floral Summer Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$78</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 2 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Bien-être yoga" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Bien-être yoga hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="sale">Sale</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Bien-être</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Séance de Yoga en plein air</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 85%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.2)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">ZenLife</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$40.00</span>
-                                        <span class="old-price">$50.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      <!-- Carte produit 2 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/m1 (2).jpg" alt="Tropical Print Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Nike</span>
+          <h3 class="product-title">Tropical Print Shirt</h3>
+          <div class="rating">★★★★☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">$65</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 3 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=400&q=80" alt="Mode décontractée" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" alt="Mode décontractée hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="new">New</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Mode</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Look décontracté avec jean</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 80%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.1)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">UrbanStyle</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$60.00</span>
-                                        <span class="old-price">$70.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      <!-- Carte produit 3 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/m1 (3).jpg" alt="Abstract Pattern Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Puma</span>
+          <h3 class="product-title">Abstract Pattern Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$72</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 4 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".4s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80" alt="Bien-être méditation" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Bien-être méditation hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Bien-être</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Session de méditation relaxante</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 90%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.6)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">CalmMind</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$45.00</span>
-                                        <span class="old-price">$55.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      <!-- Carte produit 4 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/m1 (4).jpg" alt="Stripe Beach Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Reebok</span>
+          <h3 class="product-title">Stripe Beach Shirt</h3>
+          <div class="rating">★★★☆☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">à partir de $59</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 5 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".5s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Mode accessoires" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1504386106331-3e4e71712b38?auto=format&fit=crop&w=400&q=80" alt="Mode accessoires hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="best">-14%</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Mode</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Collier et accessoires tendances</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 88%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.4)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">StyleHub</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$75.00</span>
-                                        <span class="old-price">$88.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-                </div> <!-- /.row -->
-            </div> <!-- /.tab-pane -->
-        </div> <!-- /.tab-content -->
-    </div> <!-- /.container -->
+      <!-- Carte produit 5 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Levi’s</span>
+          <h3 class="product-title">Vintage Floral Shirt</h3>
+          <div class="rating">★★★★☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">$85</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 6 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 7 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f7.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 8 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f8.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flèche droite -->
+    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+  </div>
 </section>
 
-<section class="product-tabs section-padding position-relative">
-    <div class="container">
-        <div class="section-title style-2 wow animate__animated animate__fadeIn">
-            <h3>Maison & deco Pratique</h3>
-            <ul class="nav nav-tabs links" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">All</button>
-                </li>
-            </ul>
+<section class="product-section">
+  <h2 class="section-title">Maison & deco pratique</h2>
+
+  <div class="product-carousel-wrapper">
+    <!-- Flèche gauche -->
+    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+
+    <!-- Conteneur scrollable des cartes -->
+    <div class="product-grid scroll-container" id="productGrid">
+      <!-- Carte produit 1 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/maison (1).jpg" alt="Floral Summer Shirt">
         </div>
-        <!--End nav-tabs-->
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
-                <div class="row product-grid-4">
-                    <!-- Product 1 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Salon moderne" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Salon moderne vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Déco</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Canapé modulable en tissu</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 92%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.7)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">HomeStyle</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$850.00</span>
-                                        <span class="old-price">$900.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-
-                    <!-- Product 2 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Cuisine design" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=400&q=80" alt="Cuisine design vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="sale">Sale</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Maison</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Plan de travail en bois massif</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 88%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.3)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">WoodCraft</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$320.00</span>
-                                        <span class="old-price">$350.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-
-                    <!-- Product 3 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".3s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?auto=format&fit=crop&w=400&q=80" alt="Décoration murale" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Décoration murale vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="new">New</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Déco</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Tableau abstrait coloré</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 90%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.6)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">ArtGallery</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$130.00</span>
-                                        <span class="old-price">$140.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-
-                    <!-- Product 4 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".4s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Lampe déco" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=400&q=80" alt="Lampe déco vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Maison</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Lampe de table en bois</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 85%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.3)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">LightHome</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$90.00</span>
-                                        <span class="old-price">$100.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-
-                    <!-- Product 5 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".5s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Etagère murale pratique" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" alt="Etagère murale pratique hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="best">-10%</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Déco</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Etagère murale minimaliste</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 90%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.5)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">DecoArt</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$150.00</span>
-                                        <span class="old-price">$165.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-                </div> <!-- /.row -->
-            </div> <!-- /.tab-pane -->
-        </div> <!-- /.tab-content -->
-    </div> <!-- /.container -->
-</section>
-
-
-<section class="product-tabs section-padding position-relative">
-    <div class="container">
-        <div class="section-title style-2 wow animate__animated animate__fadeIn">
-            <h3>Cuisine & Alimentation</h3>
-            <ul class="nav nav-tabs links" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="nav-tab-one" data-bs-toggle="tab" data-bs-target="#tab-one" type="button" role="tab" aria-controls="tab-one" aria-selected="true">Tout voir</button>
-                </li>
-            
-            </ul>
+        <div class="card-body">
+          <span class="brand">Adidas</span>
+          <h3 class="product-title">Floral Summer Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$78</span>
+            <span class="promo-label">Promo</span>
+          </div>
         </div>
-        <!--End nav-tabs-->
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="tab-one" role="tabpanel" aria-labelledby="tab-one">
-                <div class="row product-grid-4">
-                    <!-- Product 1 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Planche à découper bois" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1543779506-1a506720cb0b?auto=format&fit=crop&w=400&q=80" alt="Planche à découper vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Cuisine</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Planche à découper en bois</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 95%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.8)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">WoodWorks</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$45.00</span>
-                                        <span class="old-price">$50.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      </div>
 
-                    <!-- Product 2 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Planche à découper bois" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1543779506-1a506720cb0b?auto=format&fit=crop&w=400&q=80" alt="Planche à découper vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Cuisine</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Planche à découper en bois</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 95%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.8)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">WoodWorks</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$45.00</span>
-                                        <span class="old-price">$50.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      <!-- Carte produit 2 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/maison (2).jpg" alt="Tropical Print Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Nike</span>
+          <h3 class="product-title">Tropical Print Shirt</h3>
+          <div class="rating">★★★★☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">$65</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 3 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Planche à découper bois" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1543779506-1a506720cb0b?auto=format&fit=crop&w=400&q=80" alt="Planche à découper vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Cuisine</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Planche à découper en bois</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 95%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.8)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">WoodWorks</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$45.00</span>
-                                        <span class="old-price">$50.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      <!-- Carte produit 3 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/maison (3).jpg" alt="Abstract Pattern Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Puma</span>
+          <h3 class="product-title">Abstract Pattern Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$72</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 4 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".1s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Planche à découper bois" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1543779506-1a506720cb0b?auto=format&fit=crop&w=400&q=80" alt="Planche à découper vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="hot">Hot</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Cuisine</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Planche à découper en bois</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 95%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.8)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">WoodWorks</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$45.00</span>
-                                        <span class="old-price">$50.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
+      <!-- Carte produit 4 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/maison (4).jpg" alt="Stripe Beach Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Reebok</span>
+          <h3 class="product-title">Stripe Beach Shirt</h3>
+          <div class="rating">★★★☆☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">à partir de $59</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-                    <!-- Product 5 -->
-                    <div class="col-lg-1-5 col-md-4 col-12 col-sm-6">
-                        <div class="product-cart-wrap mb-30 wow animate__animated animate__fadeIn" data-wow-delay=".5s">
-                            <div class="product-img-action-wrap">
-                                <div class="product-img product-img-zoom">
-                                    <a href="shop-product-right.html">
-                                        <img class="default-img" src="https://images.unsplash.com/photo-1514996937319-344454492b37?auto=format&fit=crop&w=400&q=80" alt="Bouteille d'huile d'olive" />
-                                        <img class="hover-img" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Bouteille d'huile d'olive vue hover" />
-                                    </a>
-                                </div>
-                                <div class="product-action-1">
-                                    <a aria-label="Add To Wishlist" class="action-btn" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                    <a aria-label="Compare" class="action-btn" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    <a aria-label="Quick view" class="action-btn" data-bs-toggle="modal" data-bs-target="#quickViewModal"><i class="fi-rs-eye"></i></a>
-                                </div>
-                                <div class="product-badges product-badges-position product-badges-mrg">
-                                    <span class="best">-15%</span>
-                                </div>
-                            </div>
-                            <div class="product-content-wrap">
-                                <div class="product-category">
-                                    <a href="shop-grid-right.html">Alimentation</a>
-                                </div>
-                                <h2><a href="shop-product-right.html">Huile d'olive extra vierge</a></h2>
-                                <div class="product-rate-cover">
-                                    <div class="product-rate d-inline-block">
-                                        <div class="product-rating" style="width: 91%"></div>
-                                    </div>
-                                    <span class="font-small ml-5 text-muted"> (4.6)</span>
-                                </div>
-                                <div>
-                                    <span class="font-small text-muted">By <a href="vendor-details-1.html">OliveFarm</a></span>
-                                </div>
-                                <div class="product-card-bottom">
-                                    <div class="product-price">
-                                        <span>$28.00</span>
-                                        <span class="old-price">$33.00</span>
-                                    </div>
-                                    <div class="add-cart">
-                                        <a class="add" href="shop-cart.html"><i class="fi-rs-shopping-cart mr-5"></i>Add </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--end product card-->
-                </div> <!-- /.row -->
-            </div> <!-- /.tab-pane -->
-        </div> <!-- /.tab-content -->
-    </div> <!-- /.container -->
-</section>
+      <!-- Carte produit 5 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Levi’s</span>
+          <h3 class="product-title">Vintage Floral Shirt</h3>
+          <div class="rating">★★★★☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">$85</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
 
-<section class="newsletter mb-15">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="position-relative newsletter-inner">
-                            <div class="newsletter-content">
-                                <h2 class="mb-20">
-                                    Marque pour tous<br />
-                                
-                                </h2>
-                                <p class="mb-45">Start You'r Daily Shopping with <span class="text-brand">Nest Mart</span></p>
-                                <form class="form-subcriber d-flex">
-                                    <input type="email" placeholder="Your emaill address" />
-                                    <button class="btn" type="submit">Subscribe</button>
-                                </form>
-                            </div>
-                            <img src="assets/imgs/banner/banner-9.png" alt="newsletter" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- Carte produit 6 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 7 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f7.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 8 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f8.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flèche droite -->
+    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+  </div>
 </section>
 
 
 <section class="product-section">
-  <h2 class="section-title">Les offres du jour</h2>
+  <h2 class="section-title">Cuisine & Alimentation</h2>
+
+  <div class="product-carousel-wrapper">
+    <!-- Flèche gauche -->
+    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+
+    <!-- Conteneur scrollable des cartes -->
+    <div class="product-grid scroll-container" id="productGrid">
+      <!-- Carte produit 1 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/aliment (1).jpg" alt="Floral Summer Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Adidas</span>
+          <h3 class="product-title">Floral Summer Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$78</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 2 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/aliment (2).jpg" alt="Tropical Print Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Nike</span>
+          <h3 class="product-title">Tropical Print Shirt</h3>
+          <div class="rating">★★★★☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">$65</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 3 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/product-1-1.jpg" alt="Abstract Pattern Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Puma</span>
+          <h3 class="product-title">Abstract Pattern Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$72</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 4 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/product-2-1.jpg" alt="Stripe Beach Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Reebok</span>
+          <h3 class="product-title">Stripe Beach Shirt</h3>
+          <div class="rating">★★★☆☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">à partir de $59</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 5 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Levi’s</span>
+          <h3 class="product-title">Vintage Floral Shirt</h3>
+          <div class="rating">★★★★☆ (372)</div>
+          <div class="product-footer">
+            <span class="price">$85</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 6 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 7 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f7.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte produit 8 -->
+      <div class="product-card">
+        <span class="badge">Vegetable</span>
+        <span class="fav-icon" title="Ajouter aux favoris">❤️</span>
+        <div class="img-wrap">
+          <img src="assets/imgs/habit/f8.jpg" alt="Navy Blossom Shirt">
+        </div>
+        <div class="card-body">
+          <span class="brand">Uniqlo</span>
+          <h3 class="product-title">Navy Blossom Shirt</h3>
+          <div class="rating">★★★★★ (372)</div>
+          <div class="product-footer">
+            <span class="price">$92</span>
+            <span class="promo-label">Promo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flèche droite -->
+    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+  </div>
+</section>
+</br>
+<section class="promo-banner">
+  <div class="promo-content">
+    <span class="promo-tag">Découvrez les meilleures marque</span>
+    <h2 class="promo-title" style="color: white;">MARQUE POUR TOUS</h2>
+    <p class="promo-dates">Du 07 au 20 Juillet</p>
+    <h3 class="promo-subtitle">Consultez Nos articles</h3>
+    <ul class="promo-details">
+      <li>Xiaomi Redmi A5 – 6.88″</li>
+      <li>4G – 8/32 Mpx – Garantie 12 Mois</li>
+      <li>Mercredi 16 Juillet à 12h30</li>
+      <li>Uniquement sur l’app</li>
+    </ul>
+  </div>
+
+  <div class="promo-visual">
+    <div class="price-badge">1 FCFA</div>
+    <div class="promo-image">
+      <img src="assets/imgs/habit/f6.jpg" alt="Produit Jumia">
+    </div>
+    <a href="#" class="promo-btn">Découvrir →</a>
+  </div>
+</section>
+
+
+
+<section class="product-section">
 
   <div class="product-carousel-wrapper">
     <!-- Flèche gauche -->
@@ -3106,13 +2825,13 @@
             <h4>Avec Oyeo etendez vos limites</h4>
             <h2>Besion d'un Professionnel competetent ?</h2>
             <span>trouvez facilement un peintre, un prestataire ou un expert pour tous vos besions</span>
-            <button class="banner-btn">Learn More</button>
+            <!-- <button class="banner-btn">Learn More</button> -->
           </div>
           <div class="big-banners-2">
-            <h4>spring/summer</h4>
+            <h4>Etes vous a l'etranger ? On s'occupe de tout</h4>
             <h2>upcomming season</h2>
             <span>The best classic dress is on sale at cara</span>
-            <button class="banner-btn">Collection</button>
+            <!-- <button class="banner-btn">Collection</button> -->
           </div>
         </div>
 </section>
@@ -3120,7 +2839,8 @@
 <!-- ====== SECTION UNIVERS ====== -->
 <!-- ====== SECTION “DÉCOUVREZ NOS UNIVERS” ====== -->
 <section class="univers-section">
-  <h2>Découvrez nos univers</h2>
+  <h2 style="font-size: 25px;">Tous les services dont vous avez besoin, réunis en un seul endroit.  
+Découvrez nos prestations disponibles à la demande, pour vous ou pour un proche</h2>
   <div class="univers-wrapper">
     <div class="univers-container">
 
