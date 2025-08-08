@@ -10688,20 +10688,36 @@ footer .hotline img {
 }
 
 /* Cœur favoris sur l’image (droite) */
-.product-card .fav-icon {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 24px;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
-  color: #e53935;
-  z-index: 2;
+.product-card {
+  position: relative;
+  /* … vos autres styles … */
 }
-.product-card .fav-icon:hover {
+
+.fav-icon {
+  position: absolute;
+  top: 8px;      /* même valeur que .badge */
+  right: 8px;    /* symétrique du left de .badge */
+  font-size: 30px;  /* agrandi pour matcher la hauteur du badge */
+  line-height: 1;
+  color: #28a745;     /* vert ou la couleur que vous voulez */
+  cursor: pointer;
+}
+
+/* On ne garde que le cœur, rien en ::after */
+.fav-icon::before {
+  content: "\2661";   /* ♡ cœur vide */
+  display: block;
+}
+
+/* On supprime complètement le ::after (pastille verte) */
+.fav-icon::after {
+  content: none !important;
+}
+
+/* .product-card .fav-icon:hover {
   transform: scale(1.2);
   color: #c62828;
-}
+} */
 
 /* Image */
 .img-wrap {
@@ -10778,6 +10794,46 @@ footer .hotline img {
   text-transform: uppercase;
 }
 
+/* Note et “by Oyeo” */
+.rating {
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+.by-text {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+.by-text .by {
+  color: #000;
+}
+.by-text .oye {
+  color: #28a745;
+}
+
+/* Prix barré et promo */
+.original-price {
+  color: #777;
+  text-decoration: line-through;
+  margin-right: 6px;
+  font-size: 0.9rem;
+}
+.price {
+  font-weight: bold;
+  font-size: 1rem;
+}
+.promo-label {
+  background: #ff5a5f;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-left: 8px;
+}
+
+/* Si besoin, ajustez espacements et tailles pour coller à votre design */
+
+
 
 
 /* une autre section sur decouvez nos univers */
@@ -10804,11 +10860,15 @@ footer .hotline img {
 
 .univers-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 220px);
   gap: 16px;
-  width: 100%;
+  width: 70%;
+
+  /* CENTRAGE */
+  margin: 0 auto;
 }
+
 
 @media (max-width: 1024px) {
   .univers-container {
@@ -11137,7 +11197,7 @@ footer .hotline img {
   left: auto !important;
   transform: none !important;
   margin: 0;
-  padding-left: 10rem;  /* décale le texte vers la gauche */
+  padding-left: 3rem;  /* décale le texte vers la gauche */
   text-align: left;
   margin-top: 5rem;
 }
@@ -11145,11 +11205,11 @@ footer .hotline img {
 /* 2) Positionnement absolu du groupe de boutons */
 .hero-slider-1 .single-hero-slider .slider-btns {
   position: absolute;
-  top: 45%;
-  left: 60%;
+  top: 60%;
+  left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   margin: 0;
 }
 
