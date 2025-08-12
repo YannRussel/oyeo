@@ -19,7 +19,6 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
@@ -2944,134 +2943,109 @@ Découvrez nos prestations disponibles à la demande, pour vous ou pour un proch
 
 </main>
 
-<!-- Footer -->
-<footer class="custom-footer">
-  <div class="footer-inner">
-    <!-- Bande supérieure -->
+<!-- head: ajouter FontAwesome (si pas déjà présent) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-wrap">
     <div class="footer-top">
-      <div class="footer-row">
-        <!-- Logo -->
-        <div class="footer-col logo-col">
-          <a href="#" class="logo-link">
-            <h1 class="footer-logo">Oyeo</h1>
-            <p class="footer-tagline">Notre plateforme du coin</p>
-          </a>
-        </div>
+      <div class="col logo-col">
+        <a class="logo" href="#">Oyeo</a>
+        <p class="desc">La Marketplace qui connecte l'Afrique et l'Europe</p>
+        <ul class="contact-list">
+          <li><i class="fas fa-map-marker-alt"></i> Brazzaville, Congo et Paris, France</li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:contact@oyeo.com">yann.russel.webwtiter@gmail.com</a></li>
+          <li><i class="fas fa-phone"></i> +242 06 521 57 58</li>
+        </ul>
 
-        <!-- Téléchargement app + QR -->
-        <div class="footer-col app-col">
-          <h4>Télécharger l'app</h4>
-          <div class="app-download">
-            <!-- QR code: remplace le lien encodé après &chl= par l'URL de ton app -->
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/app" alt="QR code">
+        <div class="social-pay-qr">
+          <div class="socials">
+            <a href="#" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
+          </div>
 
-            <div class="app-buttons">
-              <!-- Remplace les liens -->
-              <a class="store-btn" href="REMPLACE_ICI" target="_blank" rel="noopener">
+          <!-- QR + store badges -->
+          <div class="app-block">
+            <!-- QR: remplace REMPLACE_PAR_TA_URL par ton URL (non encodée) -->
+            <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://REMPLACE_PAR_TA_URL" alt="QR code lien vers l'app">
+            <div class="store-badges">
+              <a class="badge" href="REMPLACE_ICI_APPLE" target="_blank" rel="noopener">
                 <i class="fab fa-apple"></i> App Store
               </a>
-              <a class="store-btn" href="REMPLACE_ICI" target="_blank" rel="noopener">
+              <a class="badge" href="REMPLACE_ICI_GOOGLE" target="_blank" rel="noopener">
                 <i class="fab fa-google-play"></i> Google Play
               </a>
             </div>
           </div>
-          <p class="app-note">Scannez le QR pour accéder directement à l'app.</p>
         </div>
+      </div>
 
-        <!-- Réseaux sociaux -->
-        <div class="footer-col social-col">
-          <h4>Suivez-nous</h4>
-          <div class="social-icons">
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          </div>
-        </div>
+      <div class="col">
+        <h5>Catégories</h5>
+        <ul class="link-list">
+          <li><a href="#">Mode Femme</a></li>
+          <li><a href="#">Mode Homme</a></li>
+          <li><a href="#">Enfants</a></li>
+          <li><a href="#">Maison & Déco</a></li>
+          <li><a href="#">Technologie</a></li>
+          <li><a href="#">Beauté</a></li>
+          <li><a href="#">Supermarché</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5>Services</h5>
+        <ul class="link-list">
+          <li><a href="#">Livraison</a></li>
+          <li><a href="#">Retours</a></li>
+          <li><a href="#">SAV</a></li>
+          <li><a href="#">Programme Fidélité</a></li>
+          <li><a href="#">Devenir Vendeur</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h5>Soutien</h5>
+        <ul class="link-list">
+          <li><a href="#">Centre d'aide</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Carrières</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
       </div>
     </div>
 
-    <!-- Contenu principal -->
-    <div class="footer-content">
-      <div class="footer-grid">
-        <!-- Bloc 1 -->
-        <div class="footer-box">
-          <h4>Pourquoi on est aimé</h4>
-          <p>Plateforme locale dédiée aux commerces et aux gens du coin — simplicité, rapidité et proximité.</p>
-          <a href="#" class="read-more">En savoir plus</a>
-        </div>
-
-        <!-- Bloc 2 -->
-        <div class="footer-box">
-          <h4>Infos</h4>
-          <ul>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Politique de confidentialité</a></li>
-            <li><a href="#">CGV</a></li>
-            <li><a href="#">FAQ</a></li>
-          </ul>
-        </div>
-
-        <!-- Bloc 3 -->
-        <div class="footer-box">
-          <h4>Mon compte</h4>
-          <ul>
-            <li><a href="#">Mon profil</a></li>
-            <li><a href="#">Mes commandes</a></li>
-            <li><a href="#">Favoris</a></li>
-            <li><a href="#">Panier</a></li>
-          </ul>
-        </div>
-
-        <!-- Bloc 4 -->
-        <div class="footer-box">
-          <h4>Contact</h4>
-          <p>1429 Netus Rd, NY 48247</p>
-          <p>Email: <a href="mailto:Example@gmail.com">Example@gmail.com</a></p>
-          <p>Tel: +0123 4567 8910</p>
-
-          <div class="payment-section">
-            <p>Modes de paiement acceptés</p>
-            <div class="payment-icons">
-              <i class="fab fa-cc-visa" title="Visa"></i>
-              <i class="fab fa-cc-mastercard" title="Mastercard"></i>
-              <i class="fab fa-cc-amex" title="American Express"></i>
-              <i class="fab fa-cc-paypal" title="PayPal"></i>
-              <!-- Si tu as images réelles : <img src="img/visa.png" alt="Visa"> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Bas de footer -->
+    <!-- bottom / petites infos -->
     <div class="footer-bottom">
-      <div class="footer-bottom-row">
-        <p>© <span id="year"></span> Oyeo. Tous droits réservés.</p>
-        <div class="bottom-links">
-          <a href="#">Plan du site</a>
-          <a href="#">Support</a>
+      <div class="legal">
+        <a href="#">Conditions Générales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Cookies</a>
+        <a href="#">RGPD</a>
+      </div>
+
+      <div class="pay-and-copy">
+        <div class="payments">
+          <i class="fab fa-cc-visa" title="Visa"></i>
+          <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fab fa-cc-amex" title="Amex"></i>
+          <i class="fab fa-cc-paypal" title="PayPal"></i>
+          <span class="payment-label">Paiement 100% sécurisé</span>
         </div>
+        <div class="copyright">© <span id="year-footer"></span> Oyeo. Tous droits réservés.</div>
       </div>
     </div>
-
-    <button id="backToTop" title="Haut"><i class="fas fa-chevron-up"></i></button>
   </div>
 </footer>
 
-<!-- Petit script -->
+<!-- JS simple pour l'année -->
 <script>
-  // année dans le copyright
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // back to top
-  const btn = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => {
-    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
-  });
-  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+  document.getElementById('year-footer').textContent = new Date().getFullYear();
 </script>
 
     <!-- Preloader Start -->
