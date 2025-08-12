@@ -720,7 +720,7 @@ span {
   background: linear-gradient(135deg, #e2942d 0%, #4A00E0 100%);
   border-radius: 8px;
   overflow: hidden;
-  max-width: 1500px;
+  max-width: 1700px;
   margin: 20px auto;
   padding: 12px 16px;
   color: #fff;
@@ -871,8 +871,7 @@ span {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 220px);
   gap: 16px;
-  width: 70%;
-  margin: auto;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {
@@ -954,200 +953,105 @@ span {
 
 /* Une partie remplacant la section des produits sponsorisé */
 
-/* =========================
-   CSS COMPLET — Coller tel quel
-   Variables en haut à modifier
-   ========================= */
-
-/* Reset minimal */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-/* =========================
-   VARIABLES (modifie ici)
-   ========================= */
+/* ---- Variables faciles à modifier ---- */
 :root{
-  /* layout / couleurs */
-  --bg: #f5f5f6;                 /* bande full-width */
-  --card-bg: #ffffff;            /* fond carte image */
-  --text: #0b1720;
-  --muted: #6b7280;
-  --accent: #111827;
-  --radius: 12px;
-  --gap: 20px;
-
-  /* tailles */
-  --container-max-width: 800px;  /* <-- largeur "L" du contenu */
-  --image-width: 400px;          /* <-- largeur fixe souhaitée de la media-card */
-  --image-height: 300px;         /* <-- hauteur de l'image */
-
-  /* padding de la bande (réduis pour "moins épais") */
-  --section-padding-vertical: 8px;
-  --section-padding-horizontal: 16px;
-
-  /* OFFSETS — modifier pour déplacer éléments (x,y) */
-  --media-offset-x: 0px;   /* droite positive */
-  --media-offset-y: 0px;   /* bas positive */
-  --logo-offset-x: 0px;
-  --logo-offset-y: 0px;
-  --info-offset-x: 0px;
-  --info-offset-y: 0px;
+  --bg: #f2f2f2;               /* couleur de la bande */
+  --container-max: 1200px;     /* "L" largeur du bloc centré */
+  --gutter: clamp(20px, 4vw, 80px); /* espace à gauche / droite */
+  --gap: 28px;
+  --img-height: 200px;         /* hauteur image desktop */
+  --title-color: #0b1720;
+  --muted: #666;
 }
 
-/* =========================
-   SECTION / CONTENEUR
-   ========================= */
-.sponsored-section{
-  width:100%;
-  background:var(--bg);
-  padding: var(--section-padding-vertical) var(--section-padding-horizontal);
-  overflow: visible;
+/* ---- Section pleine largeur ---- */
+.sponsored{
+  width: 95%;
+  background: var(--bg);
+  padding-block: 28px;
+  margin: auto;
 }
 
-/* contenu centré et limité — position relative pour permettre translations enfants */
+/* ajoute seulement ça — garde le reste */
+.sponsored{
+  display: flex;
+  align-items: center;     /* centre verticalement le contenu */
+  padding-block: 48px;     /* augmente la hauteur si besoin */
+}
+
+
+/* ---- Conteneur centré avec gutters pour ne pas toucher les bords ---- */
 .sponsored-inner{
-  width:90%;
-  max-width:var(--container-max-width);
-  margin:0 auto;
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: var(--gutter);
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* gauche texte | droite image */
   gap: var(--gap);
   align-items: center;
-  position: relative;
-  padding: 6px;
-  overflow: visible;
+  box-sizing: border-box;
 }
 
-/* =========================
-   COLONNE TEXTE
-   ========================= */
-.sponsored-info{
-  padding: 6px 8px;
-  transform: translate(var(--info-offset-x), var(--info-offset-y));
-  transition: transform .12s ease;
+/* ---- Colonne texte ---- */
+.sponsored-left{
+  max-width: 520px;
 }
-
 .sponsored-label{
-  display:inline-block;
   font-size: 12px;
   color: var(--muted);
-  margin-bottom:8px;
-  letter-spacing:0.02em;
+  margin-bottom: 8px;
 }
-
 .sponsored-title{
-  margin: 4px 0 8px 0;
-  font-size: clamp(20px, 3vw, 30px);
-  line-height:1.05;
-  font-weight:700;
-  color:var(--accent);
+  margin: 0 0 12px 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 44px;
+  line-height: 1.02;
+  font-weight: 700;
+  color: var(--title-color);
 }
-
-.sponsored-sub{
-  margin:0 0 12px 0;
-  color:var(--muted);
-  font-size:15px;
+.sponsored-subtitle{
+  display: block;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--title-color);
+  margin-top: 6px;
 }
-
 .sponsored-cta{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  text-decoration:none;
-  font-weight:600;
-  color:var(--accent);
-  border-radius:999px;
-  transition: opacity .12s ease, transform .12s ease;
-}
-.sponsored-cta:hover{ opacity:.92; transform: translateX(2px); }
-
-/* =========================
-   COLONNE MEDIA (IMAGE + LOGO)
-   ========================= */
-.sponsored-media{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow: visible;
+  display: inline-block;
+  margin-top: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--title-color);
+  padding: 6px 0;
 }
 
-/* media-card : largeur fixe (ne suit pas forcément le parent) */
-.media-card{
-  position: relative;
-  width: var(--image-width);
-  max-width: none;
-  background: var(--card-bg);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(12,18,20,0.06);
-
-  /* déplacement contrôlable */
-  transform: translate(var(--media-offset-x), var(--media-offset-y));
-  transition: transform .12s ease;
+/* ---- Colonne image ---- */
+.sponsored-right{
+  display: flex;
+  justify-content: flex-end; /* image alignée à droite du container */
 }
-
-/* image principale */
-.media-card img.main{
-  display:block;
-  width:100%;
-  height: var(--image-height);
+.hero-img{
+  display: block;
+  width: 100%;
+  max-width: 800px;      /* limite la largeur de l'image */
+  height: var(--img-height);
   object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* petit logo : positionné et déplaçable */
-.media-logo{
-  position: absolute;
-  left: 16px;
-  bottom: 16px;
-  width: 72px;
-  height: 40px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background: rgba(255,255,255,0.92);
-  padding:6px;
-  border-radius:8px;
-  box-shadow: 0 4px 12px rgba(8,12,16,0.08);
-
-  transform: translate(var(--logo-offset-x), var(--logo-offset-y));
-  transition: transform .12s ease;
-}
-.media-logo img{ max-width:100%; max-height:100%; display:block; }
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-@media (max-width: 980px){
-  /* on réduit l'image un peu si l'écran est moyen */
-  :root{ /* rien à changer ici sauf si tu veux override vars */ }
-  .media-card img.main{ height: calc(var(--image-height) - 20px); }
-}
-
+/* ---- Responsive : empilement pour petits écrans ---- */
 @media (max-width: 880px){
-  /* empile les éléments sur mobile */
   .sponsored-inner{
     grid-template-columns: 1fr;
-    gap: 14px;
-    padding: 0;
+    gap: 18px;
+    padding-inline: calc(var(--gutter) * 0.6);
   }
-  .media-card{
-    width:100%;
-    max-width:100%;
-    transform: translate(0,0); /* annule offset pour éviter chevauchements sur petit écran */
-  }
-  .media-card img.main{ height: 260px; }
-  .media-logo{ position:static; margin-top: -56px; width:72px; height:40px; transform: none; }
-  .sponsored-info{ transform: none; }
-}
-
-@media (max-width: 420px){
-  .media-card img.main{ height:220px; }
-  .sponsored-title{ font-size:18px; }
-  :root{
-    --section-padding-vertical: 6px;
-    --section-padding-horizontal: 12px;
-  }
+  .sponsored-right{ justify-content: center; }
+  .hero-img{ width: 100%; height: 260px; max-width: none; }
+  .sponsored-title{ font-size: 28px; }
+  .sponsored-subtitle{ font-size: 20px; }
 }
 
 /* =========================
