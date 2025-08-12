@@ -1128,3 +1128,94 @@ span {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
 }
 
+/* Travail sur le footer  */
+
+/* CSS à ajouter (ou remplacer les styles existants) */
+.custom-footer {
+  background: linear-gradient(180deg,#0b0b0b 0%, #111 100%);
+  color: #d9d9d9;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  padding: 48px 18px 30px;
+  border-top: 4px solid rgba(226,175,24,0.85);
+}
+
+.footer-inner { max-width:1200px; margin:0 auto; }
+
+.footer-top { padding-bottom:22px; margin-bottom:28px; border-bottom:1px solid rgba(255,255,255,0.04); }
+
+.footer-row { display:flex; flex-wrap:wrap; gap:20px; align-items:center; justify-content:space-between; }
+
+.footer-col { flex:1 1 200px; min-width:180px; }
+
+.logo-link { text-decoration:none; color:inherit; display:inline-block; }
+.footer-logo { color:#f59e2a; margin:0; font-size:26px; letter-spacing:0.5px; }
+.footer-tagline { color:#a9a9a9; margin:4px 0 0; font-size:13px; }
+
+.newsletter h4, .app-col h4, .social-col h4 { margin:0 0 10px; font-size:16px; color:#fff; }
+
+.newsletter-form { display:flex; gap:8px; margin-top:8px; }
+.newsletter-form input[type="email"]{
+  flex:1; padding:10px 12px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.02); color:inherit;
+}
+.newsletter-form button{
+  padding:10px 14px; border-radius:6px; border:0; background:#e2af18; color:#111; cursor:pointer;
+  font-weight:600;
+}
+
+.newsletter-small { font-size:12px; color:#bdbdbd; margin-top:8px; }
+
+/* App / QR */
+.app-download { display:flex; gap:12px; align-items:center; }
+.app-qr { width:100px; height:100px; object-fit:cover; border-radius:8px; border:2px solid rgba(255,255,255,0.04); background:#fff; }
+.app-buttons { display:flex; flex-direction:column; gap:8px; }
+.store-btn{
+  display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; text-decoration:none;
+  background:rgba(255,255,255,0.03); color:#fff; border:1px solid rgba(255,255,255,0.03); font-size:14px;
+}
+.store-btn i { font-size:18px; }
+
+/* Social icons */
+.social-icons a { display:inline-block; margin-right:8px; color:#ddd; font-size:18px; padding:8px; border-radius:6px; text-decoration:none; background:rgba(255,255,255,0.02); }
+.social-icons a:hover { transform:translateY(-3px); transition:all .18s ease; }
+
+/* Grid principal */
+.footer-content { padding-top:14px; }
+.footer-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.footer-box { background:rgba(255,255,255,0.02); padding:16px; border-radius:8px; min-height:160px; }
+.footer-box h4 { margin-top:0; color:#fff; }
+.footer-box p, .footer-box ul, .footer-box a { color:#cfcfcf; font-size:14px; }
+.footer-box ul { list-style:none; padding-left:0; margin:8px 0 0; }
+.footer-box ul li { margin-bottom:8px; }
+.footer-box ul li a { text-decoration:none; color:inherit; opacity:0.9; }
+.read-more { display:inline-block; margin-top:10px; color:#e2af18; text-decoration:none; font-weight:600; }
+
+/* payment icons */
+.payment-section p { margin:10px 0 6px; font-size:14px; color:#d0c6b0; }
+.payment-icons { display:flex; gap:10px; align-items:center; font-size:28px; }
+.payment-icons i { opacity:0.95; }
+
+/* Bas de footer */
+.footer-bottom { margin-top:22px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.03); }
+.footer-bottom-row { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; color:#bdbdbd; }
+.bottom-links a { margin-left:12px; color:inherit; text-decoration:none; opacity:0.85; }
+.bottom-links a:hover { text-decoration:underline; }
+
+/* Back to top */
+#backToTop {
+  position:fixed; right:18px; bottom:18px; background:#e2af18; border:0; width:44px; height:44px; border-radius:50%;
+  display:none; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 6px 20px rgba(0,0,0,0.35);
+}
+#backToTop i { color:#111; }
+
+/* Responsive */
+@media (max-width:1000px) {
+  .footer-grid { grid-template-columns:repeat(2,1fr); }
+  .app-qr { width:92px; height:92px; }
+}
+@media (max-width:640px) {
+  .footer-row { flex-direction:column; align-items:flex-start; }
+  .footer-grid { grid-template-columns:1fr; }
+  .app-buttons { flex-direction:row; }
+  .store-btn { padding:8px; }
+}

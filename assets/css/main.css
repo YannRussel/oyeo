@@ -10948,47 +10948,6 @@ footer .hotline img {
 }
 /* fin de decouvrez nos univers */
 
-.custom-footer {
-  background-color: #111;
-  color: #ccc;
-  font-family: 'Segoe UI', sans-serif;
-  padding: 60px 20px 30px;
-}
-
-.footer-inner {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-top {
-  border-bottom: 1px solid rgba(226, 175, 24, 0.5);
-  padding-bottom: 30px;
-  margin-bottom: 40px;
-}
-
-.footer-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-col {
-  flex: 1;
-  min-width: 200px;
-}
-
-.logo-col h1 {
-  color: orange;
-  margin-bottom: 5px;
-}
-
-.footer-tagline {
-  color: #999;
-  font-size: 14px;
-}
-
 .subscribe-wrapper {
   position: relative;
   max-width: 100%;

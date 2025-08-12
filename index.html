@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
@@ -2942,29 +2943,50 @@ Découvrez nos prestations disponibles à la demande, pour vous ou pour un proch
 
 
 </main>
-    <footer class="custom-footer">
+
+<!-- Footer -->
+<footer class="custom-footer">
   <div class="footer-inner">
     <!-- Bande supérieure -->
     <div class="footer-top">
       <div class="footer-row">
         <!-- Logo -->
         <div class="footer-col logo-col">
-          <a href="#">
+          <a href="#" class="logo-link">
             <h1 class="footer-logo">Oyeo</h1>
-            <p class="footer-tagline">Notre plateforme du coins</p>
+            <p class="footer-tagline">Notre plateforme du coin</p>
           </a>
         </div>
 
-        <!-- Formulaire -->
+        <!-- Téléchargement app + QR -->
+        <div class="footer-col app-col">
+          <h4>Télécharger l'app</h4>
+          <div class="app-download">
+            <!-- QR code: remplace le lien encodé après &chl= par l'URL de ton app -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://example.com/app" alt="QR code">
 
+            <div class="app-buttons">
+              <!-- Remplace les liens -->
+              <a class="store-btn" href="REMPLACE_ICI" target="_blank" rel="noopener">
+                <i class="fab fa-apple"></i> App Store
+              </a>
+              <a class="store-btn" href="REMPLACE_ICI" target="_blank" rel="noopener">
+                <i class="fab fa-google-play"></i> Google Play
+              </a>
+            </div>
+          </div>
+          <p class="app-note">Scannez le QR pour accéder directement à l'app.</p>
+        </div>
 
         <!-- Réseaux sociaux -->
         <div class="footer-col social-col">
+          <h4>Suivez-nous</h4>
           <div class="social-icons">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
@@ -2975,50 +2997,82 @@ Découvrez nos prestations disponibles à la demande, pour vous ou pour un proch
       <div class="footer-grid">
         <!-- Bloc 1 -->
         <div class="footer-box">
-          <h4>Why People Like us!</h4>
-          <p>Typesetting, remaining essentially unchanged. It was popularised in the 1960s with Aldus PageMaker and Lorem Ipsum.</p>
-          <a href="#" class="read-more">Read More</a>
+          <h4>Pourquoi on est aimé</h4>
+          <p>Plateforme locale dédiée aux commerces et aux gens du coin — simplicité, rapidité et proximité.</p>
+          <a href="#" class="read-more">En savoir plus</a>
         </div>
 
         <!-- Bloc 2 -->
         <div class="footer-box">
-          <h4>Shop Info</h4>
+          <h4>Infos</h4>
           <ul>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Return Policy</a></li>
-            <li><a href="#">FAQs & Help</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+            <li><a href="#">CGV</a></li>
+            <li><a href="#">FAQ</a></li>
           </ul>
         </div>
 
         <!-- Bloc 3 -->
         <div class="footer-box">
-          <h4>Account</h4>
+          <h4>Mon compte</h4>
           <ul>
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">Shop Details</a></li>
-            <li><a href="#">Shopping Cart</a></li>
-            <li><a href="#">Wishlist</a></li>
-            <li><a href="#">Order History</a></li>
-            <li><a href="#">International Orders</a></li>
+            <li><a href="#">Mon profil</a></li>
+            <li><a href="#">Mes commandes</a></li>
+            <li><a href="#">Favoris</a></li>
+            <li><a href="#">Panier</a></li>
           </ul>
         </div>
 
         <!-- Bloc 4 -->
         <div class="footer-box">
           <h4>Contact</h4>
-          <p>Address: 1429 Netus Rd, NY 48247</p>
-          <p>Email: Example@gmail.com</p>
-          <p>Phone: +0123 4567 8910</p>
-          <p>Payment Accepted</p>
-          <img src="img/payment.png" alt="Payment methods" style="max-width: 100%;">
+          <p>1429 Netus Rd, NY 48247</p>
+          <p>Email: <a href="mailto:Example@gmail.com">Example@gmail.com</a></p>
+          <p>Tel: +0123 4567 8910</p>
+
+          <div class="payment-section">
+            <p>Modes de paiement acceptés</p>
+            <div class="payment-icons">
+              <i class="fab fa-cc-visa" title="Visa"></i>
+              <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+              <i class="fab fa-cc-amex" title="American Express"></i>
+              <i class="fab fa-cc-paypal" title="PayPal"></i>
+              <!-- Si tu as images réelles : <img src="img/visa.png" alt="Visa"> -->
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Bas de footer -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p>© <span id="year"></span> Oyeo. Tous droits réservés.</p>
+        <div class="bottom-links">
+          <a href="#">Plan du site</a>
+          <a href="#">Support</a>
+        </div>
+      </div>
+    </div>
+
+    <button id="backToTop" title="Haut"><i class="fas fa-chevron-up"></i></button>
   </div>
 </footer>
+
+<!-- Petit script -->
+<script>
+  // année dans le copyright
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // back to top
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    btn.style.display = (window.scrollY > 300) ? 'block' : 'none';
+  });
+  btn.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+</script>
 
     <!-- Preloader Start -->
     <!-- <div id="preloader-active">
