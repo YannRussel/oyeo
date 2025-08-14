@@ -10614,66 +10614,120 @@ footer .hotline img {
 /* Gestion des images comme sur offres du jours */
 /* ====== PRODUCT SECTION ====== */
 /* Section produits */
+/* ---------- Header (titre + voir plus) ---------- */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 0 6px;
+}
+.section-title {
+  position: relative;
+  font-size: 22px;
+  color: #2b3940;
+  margin: 0;
+  font-weight: 700;
+  left: 50px;
+}
+.see-more {
+  position: relative;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0b74da;
+  background: rgba(11,116,218,0.06);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+  white-space: nowrap;
+  right: 45px;
+}
+.see-more:hover,
+.see-more:focus {
+  transform: translateX(4px);
+  background: rgba(11,116,218,0.12);
+  box-shadow: 0 4px 12px rgba(11,116,218,0.08);
+  text-decoration: none;
+  outline: none;
+}
+.see-more.fixed {
+  position: fixed;
+  right: 18px;
+  top: 120px;
+  z-index: 9999;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  font-size: 0.95rem;
+}
+
+/* ---------- Section et wrapper ---------- */
 .product-section {
   padding: 10px;
   background: #fff;
 }
-.section-title {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 16px;
-  color: #2b3940;
-}
-
-/* Wrapper flèches + grille */
 .product-carousel-wrapper {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-/* Boutons de scroll */
+/* ---------- Boutons de scroll ---------- */
 .scroll-btn {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #e6e6e6;
   border-radius: 50%;
   width: 36px;
   height: 36px;
   font-size: 18px;
   cursor: pointer;
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 18px rgba(18,38,63,0.04);
 }
+.scroll-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(18,38,63,0.06); }
 
-/* Grille de cartes */
+/* ---------- Grille de cartes ---------- */
 .product-grid {
   display: flex;
   gap: 16px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;  /* momentum sur iOS */
+  -webkit-overflow-scrolling: touch;
   cursor: grab;
+  padding: 8px;
+  align-items: stretch;
 }
-.product-grid:active {
-  cursor: grabbing;
-}
+.product-grid:active { cursor: grabbing; }
 .product-grid::-webkit-scrollbar { display: none; }
 .product-grid { -ms-overflow-style: none; scrollbar-width: none; }
 
-/* Carte produit */
+/* ---------- Carte produit ---------- */
 .product-card {
-  position: relative;           /* nécessaire pour les badges absolus */
-  flex: 0 0 260px;              /* largeur fixe */
+  position: relative;
+  flex: 0 0 260px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
   overflow: hidden;
-  transition: transform .2s;
+  transition: transform .2s, box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  min-height: 460px;
 }
 .product-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(16,24,40,0.08);
 }
 
-/* Badge sur l’image (gauche) */
+/* Badge */
 .product-card .badge {
   position: absolute;
   top: 16px;
@@ -10682,47 +10736,47 @@ footer .hotline img {
   color: #00796b;
   font-size: 10px;
   font-weight: 600;
-  padding: 3px 6px;
+  padding: 4px 8px;
   border-radius: 10px;
   z-index: 2;
 }
 
-/* Cœur favoris sur l’image (droite) */
-.product-card {
-  position: relative;
-  /* … vos autres styles … */
-}
-
+/* Favoris (icône cœur) */
 .fav-icon {
   position: absolute;
-  top: 8px;      /* même valeur que .badge */
-  right: 8px;    /* symétrique du left de .badge */
-  font-size: 30px;  /* agrandi pour matcher la hauteur du badge */
-  line-height: 1;
-  color: #28a745;     /* vert ou la couleur que vous voulez */
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.85);
+  border: none;
   cursor: pointer;
+  transition: transform .12s ease, background .12s ease;
+  color: #28a745;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 50;
 }
-
-/* On ne garde que le cœur, rien en ::after */
 .fav-icon::before {
-  content: "\2661";   /* ♡ cœur vide */
+  content: "\2661";  /* coeur vide */
   display: block;
 }
-
-/* On supprime complètement le ::after (pastille verte) */
-.fav-icon::after {
-  content: none !important;
+.fav-icon.fav-active {
+  color: #e53935;
+  transform: scale(1.05);
 }
-
-/* .product-card .fav-icon:hover {
-  transform: scale(1.2);
-  color: #c62828;
-} */
+.fav-icon.fav-active::before {
+  content: "\2665"; /* coeur plein */
+}
 
 /* Image */
 .img-wrap {
   width: 100%;
-  height: 350px;
+  height: 320px;
   overflow: hidden;
   background: #f7f7f7;
 }
@@ -10731,45 +10785,76 @@ footer .hotline img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform .45s cubic-bezier(.2,.8,.2,1);
 }
+.product-card:hover .img-wrap img { transform: scale(1.05); }
 
 /* Contenu texte */
 .card-body {
-  padding: 8px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
+  gap: 6px;
+  flex: 1;
 }
 .brand {
-  font-size: 10px;
+  font-size: 11px;
   color: #888;
-  margin-bottom: 4px;
 }
 .product-title {
-  font-size: 14px;
-  margin: 0 0 6px;
+  font-size: 15px;
+  margin: 0;
   color: #2b3940;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 .rating {
-  font-size: 12px;
+  font-size: 13px;
   color: #f5a623;
-  margin-bottom: 8px;
 }
+.by-text {
+  display: block;
+  font-size: 12px;
+  color: #444;
+}
+.by-text .by { color: #666; margin-right: 6px; }
+.by-text .oye { color: #28a745; font-weight: 700; }
 
-/* Footer */
+/* Footer (prix + promo) */
 .product-footer {
   margin-top: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
+}
+.price-group { display: flex; align-items: baseline; gap: 8px; }
+.original-price {
+  color: #777;
+  text-decoration: line-through;
+  font-size: 0.95rem;
 }
 .price {
-  font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #111827;
 }
+
+/* Promo badge */
+.promo-label {
+  display: inline-block;
+  background: #ff5a5f;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+/* Buttons cart (optionnel) */
 .btn-cart {
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   background: #e0f7fa;
   border: none;
   border-radius: 50%;
@@ -10779,56 +10864,27 @@ footer .hotline img {
   justify-content: center;
   cursor: pointer;
 }
-.btn-cart:hover {
-  background: #b2ebf2;
-}
+.btn-cart:hover { background: #b2ebf2; }
 
-.promo-label {
-  display: inline-block;
-  background-color: #d32f2f; /* rouge vif */
-  color: #fff;              /* texte blanc */
-  font-size: 12px;
-  font-weight: 700;
-  padding: 4px 8px;         /* espace autour du texte */
-  border-radius: 4px;       /* coins légèrement arrondis */
-  text-transform: uppercase;
-}
+/* Drag style hint */
+.product-grid.dragging { cursor: grabbing; }
 
-/* Note et “by Oyeo” */
-.rating {
-  font-size: 0.9rem;
-  margin-bottom: 4px;
+/* Responsive */
+@media (max-width: 1100px) {
+  .product-card { flex: 0 0 230px; min-height: 440px; }
+  .img-wrap { height: 300px; }
 }
-.by-text {
-  display: block;
-  font-size: 0.8rem;
-  margin-bottom: 8px;
+@media (max-width: 800px) {
+  .product-card { flex: 0 0 200px; min-height: 420px; }
+  .img-wrap { height: 260px; }
+  .section-header { gap: 8px; }
 }
-.by-text .by {
-  color: #000;
-}
-.by-text .oye {
-  color: #28a745;
-}
-
-/* Prix barré et promo */
-.original-price {
-  color: #777;
-  text-decoration: line-through;
-  margin-right: 6px;
-  font-size: 0.9rem;
-}
-.price {
-  font-weight: bold;
-  font-size: 1rem;
-}
-.promo-label {
-  background: #ff5a5f;
-  color: #fff;
-  font-size: 0.75rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  margin-left: 8px;
+@media (max-width: 640px) {
+  .section-header { flex-direction: column; align-items: flex-start; }
+  .see-more.fixed { display: none; }
+  .scroll-btn { display: none; } /* cacher flèches sur mobile, on utilise le drag */
+  .product-card { flex: 0 0 72%; } /* show ~1.3 card on small screens */
+  .img-wrap { height: 220px; }
 }
 
 /* Si besoin, ajustez espacements et tailles pour coller à votre design */
@@ -11267,4 +11323,6 @@ footer .hotline img {
 
 /* modification de la partie produits sponsorisé */
 
+/* Travail sur le footer  */
 
+/* ---------- CSS du footer (colle dans ton fichier) ---------- */

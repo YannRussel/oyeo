@@ -875,19 +875,23 @@
         
 <!-- ====== SECTION PRODUITS ====== -->
 <section class="product-section">
-  <h2 class="section-title">Les offres du jour</h2>
+
+  <!-- En-tête : titre + lien "Voir plus" -->
+  <div class="section-header">
+    <h2 class="section-title">Produits populaires</h2>
+    <a href="/produits" class="see-more" title="Voir plus de produits" aria-label="Voir plus de produits">Voir plus →</a>
+  </div>
 
   <div class="product-carousel-wrapper">
     <!-- Flèche gauche -->
-    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+    <button class="scroll-btn left" aria-label="Faire défiler à gauche" onclick="scrollProducts(-1)">←</button>
 
     <!-- Conteneur scrollable des cartes -->
-    <div class="product-grid scroll-container" id="productGrid">
-
+    <div class="product-grid scroll-container" id="productGrid" role="list">
       <!-- Carte produit 1 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n7.jpg" alt="Floral Summer Shirt">
         </div>
@@ -900,17 +904,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+            <div class="price-group">
+              <span class="price">$78</span>
+              <span class="original-price">$100</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 2 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n8.jpg" alt="Tropical Print Shirt">
         </div>
@@ -923,17 +929,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+            <div class="price-group">
+              <span class="price">$65</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 3 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n5.jpg" alt="Abstract Pattern Shirt">
         </div>
@@ -946,17 +954,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+            <div class="price-group">
+              <span class="price">$72</span>
+              <span class="original-price">$90</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 4 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n6.jpg" alt="Stripe Beach Shirt">
         </div>
@@ -969,17 +979,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <div class="price-group">
+              <span class="original-price">$75</span>
+              <span class="price">$59</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 5 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
         </div>
@@ -992,17 +1004,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+            <div class="price-group">
+              <span class="price">$110</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 6 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
         </div>
@@ -1015,17 +1029,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 7 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f7.jpg" alt="Striped Floral Shirt">
         </div>
@@ -1038,17 +1054,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 8 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f8.jpg" alt="Botanical Print Shirt">
         </div>
@@ -1061,20 +1079,22 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
-
     </div>
 
     <!-- Flèche droite -->
-    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+    <button class="scroll-btn right" aria-label="Faire défiler à droite" onclick="scrollProducts(1)">→</button>
   </div>
 </section>
 
+<!-- Script JS minimal pour le scroll et drag -->
 
 </br>
     
@@ -1083,18 +1103,23 @@
         
         <!--End banners-->
 <section class="product-section">
-  <h2 class="section-title">Tendances du Moment</h2>
+
+  <!-- En-tête : titre + lien "Voir plus" -->
+  <div class="section-header">
+    <h2 class="section-title">Tendances du moment</h2>
+    <a href="/produits" class="see-more" title="Voir plus de produits" aria-label="Voir plus de produits">Voir plus →</a>
+  </div>
 
   <div class="product-carousel-wrapper">
     <!-- Flèche gauche -->
-    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+    <button class="scroll-btn left" aria-label="Faire défiler à gauche" onclick="scrollProducts(-1)">←</button>
 
     <!-- Conteneur scrollable des cartes -->
-    <div class="product-grid scroll-container" id="productGrid">
+    <div class="product-grid scroll-container" id="productGrid" role="list">
       <!-- Carte produit 1 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n7.jpg" alt="Floral Summer Shirt">
         </div>
@@ -1107,17 +1132,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+            <div class="price-group">
+              <span class="price">$78</span>
+              <span class="original-price">$100</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 2 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n8.jpg" alt="Tropical Print Shirt">
         </div>
@@ -1130,17 +1157,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+            <div class="price-group">
+              <span class="price">$65</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 3 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n5.jpg" alt="Abstract Pattern Shirt">
         </div>
@@ -1153,17 +1182,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+            <div class="price-group">
+              <span class="price">$72</span>
+              <span class="original-price">$90</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 4 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n6.jpg" alt="Stripe Beach Shirt">
         </div>
@@ -1176,17 +1207,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <div class="price-group">
+              <span class="original-price">$75</span>
+              <span class="price">$59</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 5 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
         </div>
@@ -1199,17 +1232,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+            <div class="price-group">
+              <span class="price">$110</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 6 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
         </div>
@@ -1222,17 +1257,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 7 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f7.jpg" alt="Striped Floral Shirt">
         </div>
@@ -1245,17 +1282,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 8 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f8.jpg" alt="Botanical Print Shirt">
         </div>
@@ -1268,8 +1307,10 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1277,7 +1318,7 @@
     </div>
 
     <!-- Flèche droite -->
-    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+    <button class="scroll-btn right" aria-label="Faire défiler à droite" onclick="scrollProducts(1)">→</button>
   </div>
 </section>
 <hr>
@@ -1328,8 +1369,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+<span class="price">$78</span>
+<span class="original-price">$100</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1351,8 +1392,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+<span class="price">$65</span>
+<span class="original-price">$85</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1374,8 +1415,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+<span class="price">$72</span>
+<span class="original-price">$90</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1398,7 +1439,7 @@
           </div>
           <div class="product-footer">
             <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <span class="price">$59</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1420,8 +1461,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+<span class="price">$110</span>
+<span class="original-price">$85</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1443,8 +1484,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1466,8 +1507,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1489,8 +1530,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1656,18 +1697,23 @@
 
 
 <section class="product-section">
-  <h2 class="section-title">Mode & Bien-être</h2>
+
+  <!-- En-tête : titre + lien "Voir plus" -->
+  <div class="section-header">
+    <h2 class="section-title">Mode & Bien-être</h2>
+    <a href="/produits" class="see-more" title="Voir plus de produits" aria-label="Voir plus de produits">Voir plus →</a>
+  </div>
 
   <div class="product-carousel-wrapper">
     <!-- Flèche gauche -->
-    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+    <button class="scroll-btn left" aria-label="Faire défiler à gauche" onclick="scrollProducts(-1)">←</button>
 
     <!-- Conteneur scrollable des cartes -->
-    <div class="product-grid scroll-container" id="productGrid">
+    <div class="product-grid scroll-container" id="productGrid" role="list">
       <!-- Carte produit 1 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n7.jpg" alt="Floral Summer Shirt">
         </div>
@@ -1680,17 +1726,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+            <div class="price-group">
+              <span class="price">$78</span>
+              <span class="original-price">$100</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 2 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n8.jpg" alt="Tropical Print Shirt">
         </div>
@@ -1703,17 +1751,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+            <div class="price-group">
+              <span class="price">$65</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 3 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n5.jpg" alt="Abstract Pattern Shirt">
         </div>
@@ -1726,17 +1776,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+            <div class="price-group">
+              <span class="price">$72</span>
+              <span class="original-price">$90</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 4 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n6.jpg" alt="Stripe Beach Shirt">
         </div>
@@ -1749,17 +1801,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <div class="price-group">
+              <span class="original-price">$75</span>
+              <span class="price">$59</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 5 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
         </div>
@@ -1772,17 +1826,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+            <div class="price-group">
+              <span class="price">$110</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 6 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
         </div>
@@ -1795,17 +1851,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 7 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f7.jpg" alt="Striped Floral Shirt">
         </div>
@@ -1818,17 +1876,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 8 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f8.jpg" alt="Botanical Print Shirt">
         </div>
@@ -1841,8 +1901,10 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -1850,23 +1912,28 @@
     </div>
 
     <!-- Flèche droite -->
-    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+    <button class="scroll-btn right" aria-label="Faire défiler à droite" onclick="scrollProducts(1)">→</button>
   </div>
 </section>
 
 <section class="product-section">
-  <h2 class="section-title">Maison é deco pratique</h2>
+
+  <!-- En-tête : titre + lien "Voir plus" -->
+  <div class="section-header">
+    <h2 class="section-title">Maison & déco pratique</h2>
+    <a href="/produits" class="see-more" title="Voir plus de produits" aria-label="Voir plus de produits">Voir plus →</a>
+  </div>
 
   <div class="product-carousel-wrapper">
     <!-- Flèche gauche -->
-    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+    <button class="scroll-btn left" aria-label="Faire défiler à gauche" onclick="scrollProducts(-1)">←</button>
 
     <!-- Conteneur scrollable des cartes -->
-    <div class="product-grid scroll-container" id="productGrid">
+    <div class="product-grid scroll-container" id="productGrid" role="list">
       <!-- Carte produit 1 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n7.jpg" alt="Floral Summer Shirt">
         </div>
@@ -1879,17 +1946,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+            <div class="price-group">
+              <span class="price">$78</span>
+              <span class="original-price">$100</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 2 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n8.jpg" alt="Tropical Print Shirt">
         </div>
@@ -1902,17 +1971,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+            <div class="price-group">
+              <span class="price">$65</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 3 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n5.jpg" alt="Abstract Pattern Shirt">
         </div>
@@ -1925,17 +1996,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+            <div class="price-group">
+              <span class="price">$72</span>
+              <span class="original-price">$90</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 4 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n6.jpg" alt="Stripe Beach Shirt">
         </div>
@@ -1948,17 +2021,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <div class="price-group">
+              <span class="original-price">$75</span>
+              <span class="price">$59</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 5 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
         </div>
@@ -1971,17 +2046,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+            <div class="price-group">
+              <span class="price">$110</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 6 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
         </div>
@@ -1994,17 +2071,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 7 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f7.jpg" alt="Striped Floral Shirt">
         </div>
@@ -2017,17 +2096,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 8 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f8.jpg" alt="Botanical Print Shirt">
         </div>
@@ -2040,8 +2121,10 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2049,24 +2132,28 @@
     </div>
 
     <!-- Flèche droite -->
-    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+    <button class="scroll-btn right" aria-label="Faire défiler à droite" onclick="scrollProducts(1)">→</button>
   </div>
 </section>
 
-
 <section class="product-section">
-  <h2 class="section-title">Cuisine & Alimentation</h2>
+
+  <!-- En-tête : titre + lien "Voir plus" -->
+  <div class="section-header">
+    <h2 class="section-title">Cuisine & Alimentation</h2>
+    <a href="/produits" class="see-more" title="Voir plus de produits" aria-label="Voir plus de produits">Voir plus →</a>
+  </div>
 
   <div class="product-carousel-wrapper">
     <!-- Flèche gauche -->
-    <button class="scroll-btn left" onclick="scrollProducts(-1)">←</button>
+    <button class="scroll-btn left" aria-label="Faire défiler à gauche" onclick="scrollProducts(-1)">←</button>
 
     <!-- Conteneur scrollable des cartes -->
-    <div class="product-grid scroll-container" id="productGrid">
+    <div class="product-grid scroll-container" id="productGrid" role="list">
       <!-- Carte produit 1 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n7.jpg" alt="Floral Summer Shirt">
         </div>
@@ -2079,17 +2166,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+            <div class="price-group">
+              <span class="price">$78</span>
+              <span class="original-price">$100</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 2 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n8.jpg" alt="Tropical Print Shirt">
         </div>
@@ -2102,17 +2191,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+            <div class="price-group">
+              <span class="price">$65</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 3 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n5.jpg" alt="Abstract Pattern Shirt">
         </div>
@@ -2125,17 +2216,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+            <div class="price-group">
+              <span class="price">$72</span>
+              <span class="original-price">$90</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 4 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/n6.jpg" alt="Stripe Beach Shirt">
         </div>
@@ -2148,17 +2241,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <div class="price-group">
+              <span class="original-price">$75</span>
+              <span class="price">$59</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 5 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f5.jpg" alt="Vintage Floral Shirt">
         </div>
@@ -2171,17 +2266,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+            <div class="price-group">
+              <span class="price">$110</span>
+              <span class="original-price">$85</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 6 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f6.jpg" alt="Navy Blossom Shirt">
         </div>
@@ -2194,17 +2291,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 7 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f7.jpg" alt="Striped Floral Shirt">
         </div>
@@ -2217,17 +2316,19 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
       </div>
 
       <!-- Carte produit 8 -->
-      <div class="product-card">
+      <div class="product-card" role="listitem">
         <span class="badge">Vegetable</span>
-        <span class="fav-icon" title="Ajouter aux favoris"></span>
+        <button class="fav-icon" title="Ajouter aux favoris" aria-pressed="false"></button>
         <div class="img-wrap">
           <img src="assets/imgs/habit/f8.jpg" alt="Botanical Print Shirt">
         </div>
@@ -2240,8 +2341,10 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+            <div class="price-group">
+              <span class="price">$92</span>
+              <span class="original-price">$120</span>
+            </div>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2249,7 +2352,7 @@
     </div>
 
     <!-- Flèche droite -->
-    <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
+    <button class="scroll-btn right" aria-label="Faire défiler à droite" onclick="scrollProducts(1)">→</button>
   </div>
 </section>
 
@@ -2304,8 +2407,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+<span class="price">$78</span>
+<span class="original-price">$100</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2327,8 +2430,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+<span class="price">$65</span>
+<span class="original-price">$85</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2350,8 +2453,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+<span class="price">$72</span>
+<span class="original-price">$90</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2374,7 +2477,7 @@
           </div>
           <div class="product-footer">
             <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <span class="price">$59</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2396,8 +2499,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+<span class="price">$110</span>
+<span class="original-price">$85</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2419,8 +2522,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2442,8 +2545,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2465,8 +2568,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2514,8 +2617,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$100</span>
-            <span class="price">$78</span>
+<span class="price">$78</span>
+<span class="original-price">$100</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2537,8 +2640,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$85</span>
-            <span class="price">$65</span>
+<span class="price">$65</span>
+<span class="original-price">$85</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2560,8 +2663,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$90</span>
-            <span class="price">$72</span>
+<span class="price">$72</span>
+<span class="original-price">$90</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2584,7 +2687,7 @@
           </div>
           <div class="product-footer">
             <span class="original-price">$75</span>
-            <span class="price">à partir de $59</span>
+            <span class="price">$59</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2606,8 +2709,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$110</span>
-            <span class="price">$85</span>
+<span class="price">$110</span>
+<span class="original-price">$85</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2629,8 +2732,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2652,8 +2755,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -2675,8 +2778,8 @@
             <span class="oye">Oyeo</span>
           </div>
           <div class="product-footer">
-            <span class="original-price">$120</span>
-            <span class="price">$92</span>
+<span class="price">$92</span>
+<span class="original-price">$120</span>
             <span class="promo-label">Promo</span>
           </div>
         </div>
@@ -3173,6 +3276,50 @@ document.querySelectorAll('.scroll-btn').forEach(btn => {
     });
   });
 </script>
+<script>
+  const container = document.getElementById('productGrid');
+
+  function scrollProducts(direction = 1) {
+    const card = container.querySelector('.product-card');
+    if (!card) return;
+    const scrollAmount = Math.round(card.clientWidth * 0.95 + 16); // largeur card + gap
+    container.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+  }
+
+  // Drag to scroll (pointer events)
+  let isDown = false, startX, scrollLeft;
+  container.addEventListener('pointerdown', (e) => {
+    isDown = true;
+    container.setPointerCapture(e.pointerId);
+    startX = e.clientX;
+    scrollLeft = container.scrollLeft;
+    container.classList.add('dragging');
+  });
+  container.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    const x = e.clientX;
+    const walk = (startX - x); // distance to scroll
+    container.scrollLeft = scrollLeft + walk;
+  });
+  container.addEventListener('pointerup', (e) => {
+    isDown = false;
+    container.classList.remove('dragging');
+  });
+  container.addEventListener('pointercancel', () => {
+    isDown = false;
+    container.classList.remove('dragging');
+  });
+
+  // Toggle favoris (simple visuel)
+  document.querySelectorAll('.fav-icon').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const pressed = btn.getAttribute('aria-pressed') === 'true';
+      btn.setAttribute('aria-pressed', String(!pressed));
+      btn.classList.toggle('fav-active', !pressed);
+    });
+  });
+</script>
+
 
 
 </body>
