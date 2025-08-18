@@ -2722,114 +2722,190 @@
 </section>
 
 <!-- ====== SECTION UNIVERS ====== -->
-<!-- ====== SECTION “DÉCOUVREZ NOS UNIVERS” ====== -->
-<section class="popular-services">
-  <div class="container">
-    <h2 class="title"><span>Nos services</span> populaires</h2>
-    <p class="subtitle">Chaque liste est conçue pour être claire et concise, offrant aux clients</p>
+<!-- services.html
+  Inclure dans <head> : <link rel="stylesheet" href="services.namespace.css">
+-->
+<section class="ns-services-section" aria-labelledby="ns-services-title">
+  <div class="ns-container">
+    <header class="ns-header">
+      <h2 id="ns-services-title">Services Professionnels</h2>
+      <p>Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs.</p>
+    </header>
 
-    <div class="categories">
-      <button class="cat active">Service informatique</button>
-      <button class="cat">Déménagements</button>
-      <button class="cat">Homme et fourgonnette</button>
-      <button class="cat">Assemblage de meubles</button>
-      <button class="cat">Électrique</button>
-      <button class="cat">Construction</button>
-      <button class="cat">Plomberie</button>
-      <button class="cat more">Plus de services</button>
-    </div>
+    <div class="ns-grid">
+      <!-- 8 cartes (4 colonnes x 2 lignes) -->
+      <!-- Card 1 -->
+      <article class="ns-card" aria-labelledby="ns-s1-title">
+        <div class="ns-media">
+          <div class="ns-badge">Populaire</div>
+          <img src="https://picsum.photos/seed/s1/800/600" alt="Illustration service 1">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title">
+            <h3 id="ns-s1-title">Développement Web Sur Mesure</h3>
+            <div class="ns-price-tag">À partir de 2 500€</div>
+          </div>
+          <p class="ns-desc">Création de sites web et applications performantes, sécurisées et optimisées.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> Frontend moderne</li>
+            <li><span class="ns-check">✓</span> Backend évolutif</li>
+            <li><span class="ns-check">✓</span> Hébergement</li>
+            <li><span class="ns-check">✓</span> Maintenance</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">À partir de 2 500€</div><small>Projet complet</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
+          </div>
+        </div>
+      </article>
 
-    <div class="services-carousel-wrap">
-      <button class="carousel-btn prev" aria-label="Précédent">‹</button>
+      <!-- Card 2 -->
+      <article class="ns-card" aria-labelledby="ns-s2-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s2/800/600" alt="Illustration service 2">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s2-title">Consultation E-commerce</h3></div>
+          <p class="ns-desc">Audit stratégique pour optimiser votre boutique et augmenter la conversion.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> Audit UX</li>
+            <li><span class="ns-check">✓</span> Stratégie</li>
+            <li><span class="ns-check">✓</span> Tracking</li>
+            <li><span class="ns-check">✓</span> Roadmap</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">150€/heure</div><small>Consultation</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
+          </div>
+        </div>
+      </article>
 
-      <div class="services-carousel" id="servicesCarousel">
-        <!-- Card 1 -->
-        <article class="service-card">
-          <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Sauvegarde et récupération">
-            <img class="avatar" src="https://images.unsplash.com/photo-1545996124-9f23f65c6a8a?auto=format&fit=crop&w=80&q=80" alt="avatar">
-            <button class="fav" aria-label="Favori">♡</button>
+      <!-- Card 3 -->
+      <article class="ns-card" aria-labelledby="ns-s3-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s3/800/600" alt="Illustration service 3">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s3-title">Design Graphique & Branding</h3></div>
+          <p class="ns-desc">Identité visuelle complète : logo, charte et supports imprimés/digitaux.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> Logo</li>
+            <li><span class="ns-check">✓</span> Maquettes</li>
+            <li><span class="ns-check">✓</span> Print</li>
+            <li><span class="ns-check">✓</span> Guide</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">À partir de 800€</div><small>Forfait</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
           </div>
-          <div class="card-body">
-            <h3>Sauvegarde et récupération</h3>
-            <div class="meta">
-              <span class="rating">⭐ 4.5 (525 avis)</span>
-              <span class="price">À partir de 350 $</span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Card 2 -->
-        <article class="service-card">
-          <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="Sauvegarde et récupération">
-            <img class="avatar" src="https://images.unsplash.com/photo-1545996124-9f23f65c6a8a?auto=format&fit=crop&w=80&q=80" alt="avatar">
-            <button class="fav" aria-label="Favori">♡</button>
+      <!-- Card 4 -->
+      <article class="ns-card" aria-labelledby="ns-s4-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s4/800/600" alt="Illustration service 4">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s4-title">Marketing Numérique</h3></div>
+          <p class="ns-desc">Acquisition, publicité et SEO pour faire grandir votre trafic.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> SEA</li>
+            <li><span class="ns-check">✓</span> Social Ads</li>
+            <li><span class="ns-check">✓</span> SEO</li>
+            <li><span class="ns-check">✓</span> Reporting</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">À partir de 200€/mois</div><small>Gestion</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
           </div>
-          <div class="card-body">
-            <h3>Réparations et mises à niveau</h3>
-            <div class="meta">
-              <span class="rating">⭐ 4.2 (120 avis)</span>
-              <span class="price">À partir de 150 $</span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Card 3 -->
-        <article class="service-card">
-          <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Installation et configuration">
-            <img class="avatar" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=80&q=80" alt="avatar">
-            <button class="fav" aria-label="Favori">♡</button>
+      <!-- Card 5 -->
+      <article class="ns-card" aria-labelledby="ns-s5-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s5/800/600" alt="Illustration service 5">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s5-title">Application Mobile</h3></div>
+          <p class="ns-desc">Applications Android & iOS natives ou cross-platform (React Native).</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> UX mobile</li>
+            <li><span class="ns-check">✓</span> API & sync</li>
+            <li><span class="ns-check">✓</span> Tests</li>
+            <li><span class="ns-check">✓</span> Déploiement</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">À partir de 5 000€</div><small>Application complète</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
           </div>
-          <div class="card-body">
-            <h3>Installation et configuration</h3>
-            <div class="meta">
-              <span class="rating">⭐ 4.8 (300 avis)</span>
-              <span class="price">À partir de 200 $</span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Card 4 -->
-        <article class="service-card">
-          <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="Dépannage et diagnostics">
-            <img class="avatar" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=80&q=80" alt="avatar">
-            <button class="fav" aria-label="Favori">♡</button>
+      <!-- Card 6 -->
+      <article class="ns-card" aria-labelledby="ns-s6-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s6/800/600" alt="Illustration service 6">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s6-title">Formation E-commerce</h3></div>
+          <p class="ns-desc">Sessions pratiques pour lancer et gérer votre boutique en ligne.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> Modules pratiques</li>
+            <li><span class="ns-check">✓</span> Exercices</li>
+            <li><span class="ns-check">✓</span> Support</li>
+            <li><span class="ns-check">✓</span> Certificat</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">450€</div><small>Par session</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
           </div>
-          <div class="card-body">
-            <h3>Dépannage et diagnostics</h3>
-            <div class="meta">
-              <span class="rating">⭐ 4.7 (280 avis)</span>
-              <span class="price">À partir de 250 $</span>
-            </div>
-          </div>
-        </article>
+        </div>
+      </article>
 
-        <!-- Card 5 -->
-        <article class="service-card">
-          <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1593642532973-d31b6557fa68?auto=format&fit=crop&w=800&q=80" alt="Dépannage et diagnostics">
-            <img class="avatar" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=80&q=80" alt="avatar">
-            <button class="fav" aria-label="Favori">♡</button>
+      <!-- Card 7 -->
+      <article class="ns-card" aria-labelledby="ns-s7-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s7/800/600" alt="Illustration service 7">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s7-title">Support & Maintenance</h3></div>
+          <p class="ns-desc">Contrats de support 24/7 pour vos applications critiques.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> SLA</li>
+            <li><span class="ns-check">✓</span> Monitoring</li>
+            <li><span class="ns-check">✓</span> Patchs</li>
+            <li><span class="ns-check">✓</span> Backup</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">Sur devis</div><small>Contrat</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
           </div>
-          <div class="card-body">
-            <h3>Conseil et audit informatique</h3>
-            <div class="meta">
-              <span class="rating">⭐ 4.3 (150 avis)</span>
-              <span class="price">À partir de 300 $</span>
-            </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="ns-card" aria-labelledby="ns-s8-title">
+        <div class="ns-media">
+          <img src="https://picsum.photos/seed/s8/800/600" alt="Illustration service 8">
+        </div>
+        <div class="ns-body">
+          <div class="ns-title"><h3 id="ns-s8-title">Conseil & Stratégie Digitale</h3></div>
+          <p class="ns-desc">Accompagnement stratégique pour digitaliser et accélérer vos usages.</p>
+          <ul class="ns-features">
+            <li><span class="ns-check">✓</span> Roadmap</li>
+            <li><span class="ns-check">✓</span> Product Strategy</li>
+            <li><span class="ns-check">✓</span> KPI</li>
+            <li><span class="ns-check">✓</span> Ateliers</li>
+          </ul>
+          <div class="ns-price-row">
+            <div><div class="ns-price">Sur devis</div><small>Conseil</small></div>
+            <div class="ns-cta"><button class="ns-btn">Demander un devis</button></div>
           </div>
-        </article>
-      </div>
+        </div>
+      </article>
 
-      <button class="carousel-btn next" aria-label="Suivant">›</button>
-    </div>
-
-    <!-- Bouton centré sous le carrousel (superposé) -->
-    <div class="see-plus">
-      <button class="see-all">Tout voir</button>
     </div>
   </div>
 </section>

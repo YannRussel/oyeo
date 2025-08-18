@@ -270,7 +270,7 @@ span {
   background-image: url(images/banner/b14.png);
   background-repeat: no-repeat;
   background-position: 180px;
-  background-color: #f0870f;
+  background-color: #ffa734;
   height: 160px;
   display: flex;
   align-items: center;
@@ -390,7 +390,7 @@ span {
   background-color: #9b59b6;
 }
 .food {
-  background-color: #e67e22;
+  background-color: #ffa734;
 }
 
 .verified {
@@ -541,7 +541,7 @@ span {
 }
 .categories-simple-dropdown > li > a:hover {
   background-color: #fff5eb;
-  color: #e47911;
+  color: #ffa734;
 }
 
 /* === ICÔNE POUR ITEMS AVEC SOUS-MENU === */
@@ -1364,69 +1364,242 @@ hr{
 }
 
 /* Ajout de la partie des services et autres */
-
-/* Container */
-.popular-services { padding: 50px 18px; background: #fff; font-family: "Inter", Arial, sans-serif; }
-.popular-services .container { max-width: 1200px; margin: 0 auto; position:relative; }
-
-/* titre / sous-titre */
-.popular-services .title { font-size: 28px; text-align: center; margin-bottom: 6px; }
-.popular-services .title span { color: #ff2d72; font-weight: 700; }
-.popular-services .subtitle { text-align:center; color:#6b6b6b; margin-bottom:18px; }
-
-/* categories */
-.categories { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px; }
-.categories .cat { background:#f3f4f6; border:0; padding:8px 16px; border-radius:20px; cursor:pointer; font-size:14px; }
-.categories .cat.active { background:#ff2d72; color:#fff; box-shadow:0 6px 15px rgba(255,45,114,0.15); }
-
-/* carousel wrap - relative to position the "Tout voir" button */
-.services-carousel-wrap { position:relative; display:flex; align-items:center; gap:10px; margin-bottom:32px; }
-.services-carousel { display:flex; gap:18px; overflow-x:auto; scroll-behavior:smooth; padding:10px 8px; -webkit-overflow-scrolling:touch; }
-.services-carousel::-webkit-scrollbar { display:none; }
-
-/* navigation buttons */
-.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
-  width:44px;height:44px;border-radius:50%; border:0;background:#ffffffcc; box-shadow:0 6px 18px rgba(0,0,0,0.08); cursor:pointer;
-  font-size:22px; color:#222; display:flex; align-items:center; justify-content:center;
+/* services.namespace.css
+   Préfixé (.ns-...) — grille 4x2, boutons uniformes, fond blanc */
+:root{
+  --ns-green:#ffa734;
+  --ns-muted:#6b7280;
+  --ns-card-bg:#ffffff;
+  --ns-card-border:#e6eef1;
+  --ns-radius:12px;
+  --ns-max-width:1400px;
+  --ns-gap:18px;
+  --ns-shadow: 0 8px 30px rgba(17,24,39,0.06);
+  --ns-font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-.carousel-btn.prev { left: -12px; }
-.carousel-btn.next { right: -12px; }
 
-/* card */
-.service-card { min-width: 260px; max-width: 260px; background:#fff; border-radius:12px; box-shadow:0 8px 22px rgba(18,18,18,0.06);
-  overflow:hidden; transition:transform .25s ease; display:flex; flex-direction:column; }
-.service-card:hover { transform:translateY(-6px); }
+html,body{
+  margin:0;
+  padding:0;
+  font-family:var(--ns-font);
+  background:#ffffff; /* fond blanc pour toute la page */
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-/* media area */
-.card-media { position:relative; height:160px; overflow:hidden; }
-.card-media img:first-child { width:100%; height:100%; object-fit:cover; display:block; }
-.card-media .avatar { position:absolute; left:12px; top:12px; width:36px; height:36px; border-radius:50%; border:2px solid #fff; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.12); }
-.card-media .fav { position:absolute; right:10px; top:10px; background:rgba(255,255,255,0.85); border:0; padding:6px 8px; border-radius:8px; cursor:pointer; font-size:14px; }
+/* Section wrapper (encapsulé) */
+.ns-services-section{
+  background:#ffffff; /* fond blanc */
+  padding:36px 18px;
+  box-sizing:border-box;
+}
 
-/* body */
-.card-body { padding:14px; display:flex; flex-direction:column; gap:8px; }
-.card-body h3 { margin:0; font-size:15px; color:#141414; }
-.card-body .meta { display:flex; align-items:center; justify-content:space-between; font-size:13px; color:#666; margin-top:auto; }
-.card-body .price { color:#ff2d72; font-weight:700; }
+/* container centré */
+.ns-services-section .ns-container{
+  max-width:var(--ns-max-width);
+  margin:0 auto;
+}
 
-/* Bouton Tout voir - centré et superposé comme sur l'image */
-.see-plus { position: relative; height: 0; }
-.see-plus .see-all {
-  position: relative;
-  display: inline-block;
-  margin: 0px 500px;
-  background:#0b1224; color:#fff; border:0; 
-  padding:10px 50px; 
-  border-radius:26px; 
+/* header */
+.ns-services-section .ns-header{
+  text-align:center;
+  margin-bottom:22px;
+}
+.ns-services-section .ns-header h2{
+  margin:0;
+  font-size:1.45rem;
+  letter-spacing:0.2px;
+}
+.ns-services-section .ns-header p{
+  margin:8px 0 0;
+  color:var(--ns-muted);
+  font-size:0.95rem;
+}
+
+/* grid 4 colonnes */
+.ns-services-section .ns-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:var(--ns-gap);
+  align-items:stretch;
+}
+
+/* carte */
+.ns-services-section .ns-card{
+  background:var(--ns-card-bg);
+  border-radius:var(--ns-radius);
+  border:1px solid var(--ns-card-border);
+  box-shadow:var(--ns-shadow);
+  overflow:visible;
+  display:flex;
+  flex-direction:column;
+  min-height:460px; /* hauteur suffisante pour media plus grand */
+  position:relative;
+}
+
+/* media (image) plus longue et descendante */
+.ns-services-section .ns-media{
+  height:300px; /* augmenté */
+  background:linear-gradient(135deg,#f8fcfb,#f6fbff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:visible;
+  border-top-left-radius:var(--ns-radius);
+  border-top-right-radius:var(--ns-radius);
+}
+.ns-services-section .ns-badge{
+  position:absolute;
+  left:12px;
+  top:12px;
+  background:var(--ns-green);
+  color:#fff;
+  font-size:0.78rem;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:999px;
+  box-shadow:0 6px 14px rgba(31,168,106,0.14);
+  z-index:2;
+}
+/* vrai <img> pour conserver ratio et meilleure qualité */
+.ns-services-section .ns-media img{
+  width:94%;
+  height:92%;
+  object-fit:cover;
+  border-radius:10px;
+  transform: translateY(6%); /* pousse image vers le bas pour effet "plus de longeur du bas" */
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+  display:block;
+}
+
+/* corps de la carte */
+.ns-services-section .ns-body{
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  flex:1;
+}
+.ns-services-section .ns-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+.ns-services-section .ns-title h3{
+  margin:0;
+  font-size:1rem;
+}
+.ns-services-section .ns-desc{
+  margin:6px 0 0;
+  color:var(--ns-muted);
+  font-size:0.92rem;
+  line-height:1.28;
+}
+
+/* features */
+.ns-services-section .ns-features{
+  margin:8px 0 0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px 12px;
+  font-size:0.9rem;
+  color:#334155;
+}
+.ns-services-section .ns-features li{
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+}
+.ns-services-section .ns-check{
+  min-width:18px;
+  min-height:18px;
+  display:inline-grid;
+  place-items:center;
+  background:#f0fdf8;
+  color:var(--ns-green);
+  border-radius:4px;
+  font-weight:700;
+  font-size:12px;
+}
+
+/* ligne prix + bouton */
+.ns-services-section .ns-price-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:auto;
+  gap:12px;
+}
+.ns-services-section .ns-price{
+  font-weight:700;
+  color:var(--ns-green);
+  font-size:1rem;
+}
+.ns-services-section .ns-price small{
+  display:block;
+  font-weight:500;
+  color:var(--ns-muted);
+  font-size:0.83rem;
+}
+
+/* CTA zone — empêche extension et uniforme les boutons */
+.ns-services-section .ns-cta{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  min-width:0;
+}
+.ns-services-section .ns-cta .ns-btn{
+  padding:10px 14px;
+  font-weight:700;
+  border-radius:8px;
+  min-width:150px;   /* même largeur minimale */
+  height:42px;       /* hauteur uniforme */
+  line-height:1;
+  white-space:nowrap;/* pas de wrap */
+  box-sizing:border-box;
+  flex:0 0 auto;     /* n'autorise pas le bouton à grandir */
+  background:var(--ns-green);
+  color:#fff;
+  border:0;
   cursor:pointer;
+  box-shadow:0 10px 26px rgba(31,168,106,0.12);
+}
+.ns-services-section .ns-cta .ns-btn:active{ transform:translateY(1px); }
+
+/* étiquette de prix qui descend davantage */
+.ns-services-section .ns-price-tag{
+  position:absolute;
+  right:14px;
+  bottom:-26px; /* descend bas */
+  background:#fff;
+  border-radius:10px;
+  border:1px solid var(--ns-card-border);
+  padding:8px 10px;
+  font-weight:700;
+  color:var(--ns-green);
+  box-shadow:0 12px 30px rgba(2,6,23,0.06);
+  font-size:0.95rem;
 }
 
-/* responsive tweaks */
-@media (max-width:900px) {
-  .carousel-btn.prev { left:4px; } .carousel-btn.next{ right:4px;}
+/* Responsive : garde 4 colonnes sur large, et descend progressivement */
+@media (max-width:1200px){
+  .ns-services-section .ns-grid{ grid-template-columns: repeat(3, 1fr); }
 }
-@media (max-width:640px) {
-  .service-card { min-width: 78%; max-width: 78%; }
-  .categories { gap:8px; }
-  .see-plus .see-all { transform: translateY(-10px); padding:10px 20px; }
+@media (max-width:960px){
+  .ns-services-section .ns-grid{ grid-template-columns: repeat(2, 1fr); }
+  .ns-services-section .ns-card{ min-height:480px; }
 }
+@media (max-width:640px){
+  .ns-services-section .ns-grid{ grid-template-columns: 1fr; }
+  .ns-services-section .ns-media{ height:160px; }
+  .ns-services-section .ns-price-tag{ bottom:-18px; right:12px; }
+}
+
+/* petit ajustement pour éviter texte qui force la carte à élargir */
+.ns-services-section .ns-card *{ box-sizing:border-box; }
