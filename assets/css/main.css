@@ -10741,38 +10741,6 @@ footer .hotline img {
   z-index: 2;
 }
 
-/* Favoris (icône cœur) */
-.fav-icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.85);
-  border: none;
-  cursor: pointer;
-  transition: transform .12s ease, background .12s ease;
-  color: #28a745;
-  font-size: 18px;
-  line-height: 1;
-  z-index: 50;
-}
-.fav-icon::before {
-  content: "\2661";  /* coeur vide */
-  display: block;
-}
-.fav-icon.fav-active {
-  color: #e53935;
-  transform: scale(1.05);
-}
-.fav-icon.fav-active::before {
-  content: "\2665"; /* coeur plein */
-}
-
 /* Image */
 .img-wrap {
   width: 100%;

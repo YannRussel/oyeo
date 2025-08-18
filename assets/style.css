@@ -1217,11 +1217,12 @@ span {
 /* fav icon — ajoute z-index pour éviter le recouvrement par l'image */
 .fav-icon {
   position:absolute; top:8px; right:8px;
-  width:36px; height:36px; border-radius:50%;
+  /* width:36px; height:36px; border-radius:50%; */
   display:inline-flex; align-items:center; justify-content:center;
-  background: rgba(255,255,255,0.85); border:none; cursor:pointer;
+  /* background: rgba(255,255,255,0.85); border:none;  */
+  cursor:pointer;
   transition: transform .12s ease, background .12s ease;
-  color:#28a745; font-size:18px; line-height:1;
+  color:#ce6006; font-size:40px; line-height:1;
   z-index:70; /* <-- très important pour rester au-dessus de l'image transformée */
 }
 .fav-icon::before { content: "\2661"; }
@@ -1360,4 +1361,72 @@ hr{
   background:#ddd;     /* couleur */
   border: none;
   margin: 24px auto;   /* centre horizontalement */
+}
+
+/* Ajout de la partie des services et autres */
+
+/* Container */
+.popular-services { padding: 50px 18px; background: #fff; font-family: "Inter", Arial, sans-serif; }
+.popular-services .container { max-width: 1200px; margin: 0 auto; position:relative; }
+
+/* titre / sous-titre */
+.popular-services .title { font-size: 28px; text-align: center; margin-bottom: 6px; }
+.popular-services .title span { color: #ff2d72; font-weight: 700; }
+.popular-services .subtitle { text-align:center; color:#6b6b6b; margin-bottom:18px; }
+
+/* categories */
+.categories { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:20px; }
+.categories .cat { background:#f3f4f6; border:0; padding:8px 16px; border-radius:20px; cursor:pointer; font-size:14px; }
+.categories .cat.active { background:#ff2d72; color:#fff; box-shadow:0 6px 15px rgba(255,45,114,0.15); }
+
+/* carousel wrap - relative to position the "Tout voir" button */
+.services-carousel-wrap { position:relative; display:flex; align-items:center; gap:10px; margin-bottom:32px; }
+.services-carousel { display:flex; gap:18px; overflow-x:auto; scroll-behavior:smooth; padding:10px 8px; -webkit-overflow-scrolling:touch; }
+.services-carousel::-webkit-scrollbar { display:none; }
+
+/* navigation buttons */
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+  width:44px;height:44px;border-radius:50%; border:0;background:#ffffffcc; box-shadow:0 6px 18px rgba(0,0,0,0.08); cursor:pointer;
+  font-size:22px; color:#222; display:flex; align-items:center; justify-content:center;
+}
+.carousel-btn.prev { left: -12px; }
+.carousel-btn.next { right: -12px; }
+
+/* card */
+.service-card { min-width: 260px; max-width: 260px; background:#fff; border-radius:12px; box-shadow:0 8px 22px rgba(18,18,18,0.06);
+  overflow:hidden; transition:transform .25s ease; display:flex; flex-direction:column; }
+.service-card:hover { transform:translateY(-6px); }
+
+/* media area */
+.card-media { position:relative; height:160px; overflow:hidden; }
+.card-media img:first-child { width:100%; height:100%; object-fit:cover; display:block; }
+.card-media .avatar { position:absolute; left:12px; top:12px; width:36px; height:36px; border-radius:50%; border:2px solid #fff; object-fit:cover; box-shadow:0 4px 10px rgba(0,0,0,0.12); }
+.card-media .fav { position:absolute; right:10px; top:10px; background:rgba(255,255,255,0.85); border:0; padding:6px 8px; border-radius:8px; cursor:pointer; font-size:14px; }
+
+/* body */
+.card-body { padding:14px; display:flex; flex-direction:column; gap:8px; }
+.card-body h3 { margin:0; font-size:15px; color:#141414; }
+.card-body .meta { display:flex; align-items:center; justify-content:space-between; font-size:13px; color:#666; margin-top:auto; }
+.card-body .price { color:#ff2d72; font-weight:700; }
+
+/* Bouton Tout voir - centré et superposé comme sur l'image */
+.see-plus { position: relative; height: 0; }
+.see-plus .see-all {
+  position: relative;
+  display: inline-block;
+  margin: 0px 500px;
+  background:#0b1224; color:#fff; border:0; 
+  padding:10px 50px; 
+  border-radius:26px; 
+  cursor:pointer;
+}
+
+/* responsive tweaks */
+@media (max-width:900px) {
+  .carousel-btn.prev { left:4px; } .carousel-btn.next{ right:4px;}
+}
+@media (max-width:640px) {
+  .service-card { min-width: 78%; max-width: 78%; }
+  .categories { gap:8px; }
+  .see-plus .see-all { transform: translateY(-10px); padding:10px 20px; }
 }
