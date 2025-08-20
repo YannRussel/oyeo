@@ -1603,3 +1603,183 @@ html,body{
 
 /* petit ajustement pour éviter texte qui force la carte à élargir */
 .ns-services-section .ns-card *{ box-sizing:border-box; }
+
+
+/* La derniere partie, les trois dernieres sections */
+
+/* nyota-sections.css — container max-width = 1500px
+   Préfixe : nyota-
+*/
+
+/* reset local */
+.nyota-wrap * { box-sizing: border-box; }
+
+/* container général — AGRANDI à 1500px */
+.nyota-wrap {
+  max-width: 1500px;           /* <-- valeur demandée */
+  margin: 0 auto;
+  padding: 0 24px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Helvetica Neue";
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== CTA ===== */
+.nyota-cta-row {
+  display: flex;
+  justify-content: center;
+  margin: 36px 0;
+}
+.nyota-cta-btn {
+  background: linear-gradient(180deg,#00c58e,#06a06f);
+  color: #002318;
+  font-weight: 700;
+  padding: 12px 32px;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(0,197,142,0.16);
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  display: inline-block;
+}
+
+/* ================= SERVICES (carousel) - plus large ================= */
+.nyota-services {
+  margin-bottom: 48px;
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
+.nyota-services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.nyota-services-title { font-size: 20px; font-weight: 800; margin: 0; }
+.nyota-services-sub { color: #6b7280; font-size: 14px; }
+
+/* carousel container */
+.nyota-carousel-wrap { position: relative; }
+.nyota-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.nyota-carousel::-webkit-scrollbar { height: 11px; }
+.nyota-carousel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.10); border-radius: 12px; }
+
+/* card (plus large) */
+.nyota-card {
+  flex: 0 0 320px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 26px rgba(16,24,40,0.09);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 380px;
+}
+.nyota-card-thumb { height: 200px; background: #efefef; overflow: hidden; }
+.nyota-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.nyota-card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.nyota-card-kicker { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.6px; }
+.nyota-card-title { font-size: 16px; margin: 0; line-height: 1.25; color: #0f172a; font-weight:700; }
+.nyota-card-meta { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.nyota-card-author { display: flex; align-items: center; gap: 10px; color: #6b7280; font-size: 14px; }
+.nyota-card-author img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; display: block; }
+.nyota-card-price { font-weight: 800; font-size: 15px; color: #111; }
+
+/* carousel controls (boutons) */
+.nyota-carousel-controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+}
+.nyota-carousel-btn {
+  pointer-events: all;
+  background: rgba(255,255,255,0.96);
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 22px rgba(3,10,18,0.07);
+  border: 1px solid rgba(15,23,42,0.04);
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 16px;
+}
+
+/* bullets optionnels */
+.nyota-carousel-bullets { display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
+.nyota-carousel-dot { width: 8px; height: 8px; background: rgba(15,23,42,0.08); border-radius: 50%; }
+
+/* ================= TESTIMONIALS (gradient) - plus large ================= */
+.nyota-testimonials {
+  border-radius: 18px;
+  padding: 44px 28px;
+  background: linear-gradient(90deg,#fff0f3 0%, #eafff3 100%);
+  box-shadow: 0 10px 44px rgba(8,10,20,0.06);
+  margin-bottom: 36px;
+  position: relative;
+}
+.nyota-testimonials-title { text-align: center; font-weight: 900; font-size: 20px; margin: 0 0 28px 0; }
+.nyota-test-cards { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.nyota-test-card {
+  flex: 0 0 360px;
+  background: rgba(255,255,255,0.86);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 12px 34px rgba(16,24,40,0.07);
+  border: 1px solid rgba(255,255,255,0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.nyota-test-rate { display: flex; gap: 8px; align-items: center; color: #f5a623; font-weight: 800; }
+.nyota-test-text { margin: 0; color: #233244; font-size: 15px; line-height: 1.5; }
+.nyota-test-footer { display: flex; justify-content: space-between; align-items: center; color: #6b7280; font-size: 14px; }
+.nyota-test-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; }
+.nyota-test-avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ================= LOGOS ================= */
+.nyota-logos {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 22px 0;
+  opacity: 0.95;
+}
+.nyota-logos img { height: 48px; width: auto; filter: grayscale(1) contrast(0.9) opacity(0.9); object-fit: contain; }
+
+/* ===== responsive ===== */
+@media (max-width: 1200px) {
+  .nyota-wrap { max-width: 1000px; padding: 0 20px; }
+  .nyota-card { flex: 0 0 300px; min-height: 360px; }
+  .nyota-card-thumb { height: 180px; }
+  .nyota-test-card { flex: 0 0 320px; }
+}
+@media (max-width: 900px) {
+  .nyota-card { flex: 0 0 260px; }
+  .nyota-card-thumb { height: 160px; }
+  .nyota-test-card { flex: 0 0 100%; max-width: 520px; }
+  .nyota-logos img { height: 44px; }
+}
+@media (max-width: 520px) {
+  .nyota-card { flex: 0 0 90%; }
+  .nyota-carousel-controls { top: auto; bottom: 8px; transform: none; }
+  .nyota-wrap { padding: 0 12px; }
+  .nyota-cta-row { margin: 20px 0; }
+}
