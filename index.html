@@ -3380,45 +3380,6 @@ document.querySelectorAll('.scroll-btn').forEach(btn => {
   })();
 </script>
 
-<script>
-/* nyota-carousel.js — version gap 24 (placer avant </body>) */
-(function(){
-  const carousel = document.getElementById('nyota-carousel');
-  const prev = document.getElementById('nyota-prev');
-  const next = document.getElementById('nyota-next');
-
-  if(!carousel || !prev || !next) return;
-
-  function cardWidth(){
-    const card = carousel.querySelector('.nyota-card');
-    if(!card) return 320;
-    const gap = 24;
-    return Math.round(card.getBoundingClientRect().width + gap);
-  }
-
-  prev.addEventListener('click', ()=> {
-    carousel.scrollBy({ left: -cardWidth(), behavior:'smooth' });
-  });
-  next.addEventListener('click', ()=> {
-    carousel.scrollBy({ left: cardWidth(), behavior:'smooth' });
-  });
-
-  function updateControls(){
-    const ctrl = document.querySelector('.nyota-carousel-controls');
-    if(!ctrl) return;
-    const totalScrollWidth = carousel.scrollWidth;
-    if(totalScrollWidth <= carousel.clientWidth + 10){
-      ctrl.style.display = 'none';
-    } else {
-      ctrl.style.display = 'flex';
-    }
-  }
-  window.addEventListener('load', updateControls);
-  window.addEventListener('resize', updateControls);
-
-})();
-</script>
-
 
 </body>
 
