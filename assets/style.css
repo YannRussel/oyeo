@@ -1039,7 +1039,7 @@ span {
   --container-max: 1200px;
   --gutter: clamp(20px, 4vw, 80px);
   --gap: 28px;
-  --img-height: 200px;
+  --img-height: 100px;
 
   /* typographie / couleurs "globales" neutres */
   --title-color: #0b1720;
@@ -1053,18 +1053,30 @@ span {
 /* --------------------------------
    Section sponsored (variables nommées)
    -------------------------------- */
+:root{
+  /* Valeurs par défaut (ajuste si tu as déjà des variables globales) */
+  --container-max: 1200px;
+  --gutter: 28px;
+  --gap: 24px;
+  --title-color: #0f1724;
+  --muted: #6b7280;
+  --img-height: 360px;
+  --sponsored-bg: #f2f2f2;
+}
+
+/* ================= Section Sponsorisée ================= */
 .sponsored {
-  --sponsored-bg: #f2f2f2; /* couleur de la bande (locale) */
   background: var(--sponsored-bg);
   width: 92%;
   padding-block: 48px;
-  margin: auto;
-
+  margin: 0 auto;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
+  height: 300px;
 }
 
-/* Conteneur centré */
+/* Conteneur interne en grid */
 .sponsored-inner {
   max-width: var(--container-max);
   width: 100%;
@@ -1074,13 +1086,27 @@ span {
   grid-template-columns: 1fr 1fr;
   gap: var(--gap);
   align-items: center;
+  position: relative;
   box-sizing: border-box;
 }
 
-/* Colonne texte */
-.sponsored-left { max-width: 520px; }
-.sponsored-label { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-.sponsored-title{
+/* ---------------- Colonne texte ---------------- */
+.sponsored-left {
+  max-width: 640px;
+  transform: translateX(-6%); /* pousse le texte vers la gauche (ajuste si besoin) */
+  padding-left: 6px; /* petit espace pour ne pas coller le bord trop fort */
+  z-index: 2;
+}
+
+.sponsored-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+
+.sponsored-title {
   margin: 0 0 12px 0;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 44px;
@@ -1088,50 +1114,127 @@ span {
   font-weight: 700;
   color: var(--title-color);
 }
-.sponsored-subtitle{
-  display:block;
-  font-size:34px;
-  font-weight:400;
-  color:var(--title-color);
-  margin-top:6px;
-}
-.sponsored-cta{
-  display:inline-block;
-  margin-top:18px;
-  font-weight:600;
-  text-decoration:none;
-  color:var(--title-color);
-  padding:6px 0;
+
+.sponsored-subtitle {
+  display: block;
+  font-size: 34px;
+  font-weight: 400;
+  color: var(--title-color);
+  margin-top: 6px;
 }
 
-/* Colonne image */
-.sponsored-right { display:flex; justify-content:flex-end; }
-.hero-img{
-  display:block;
-  width:100%;
-  max-width:800px;
-  height:var(--img-height);
-  object-fit:cover;
-  border-radius:4px;
+/* ---------------- CTA asymétrique (arrondi d'un côté) ---------------- */
+.sponsored-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--title-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: transform .15s ease, box-shadow .15s ease, opacity .12s ease;
+  cursor: pointer;
+}
+
+/* Variante stylée : arrondi TOTAL à droite (bord gauche net) */
+.sponsored-cta.cta-asym {
+  padding: 12px 22px;
+  color: #ffffff;
+  background: linear-gradient(90deg, #0b74da 0%, #2563eb 100%);
+  box-shadow: 0 10px 30px rgba(11,116,218,0.18);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 0 999px 999px 0; /* <-- arrondi total à droite */
+}
+
+/* Hover / focus accessible */
+.sponsored-cta.cta-asym:hover {
+  transform: translateX(4px);
+  box-shadow: 0 14px 36px rgba(11,116,218,0.22);
+  opacity: 0.98;
+}
+.sponsored-cta.cta-asym:focus {
+  outline: 3px solid rgba(11,116,218,0.18);
+  outline-offset: 3px;
+  border-radius: 0 999px 999px 0;
+}
+
+/* ---------------- Colonne image ---------------- */
+.sponsored-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-img {
+  display: block;
+  width: 80%;
+  max-width: 800px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
 
-/* Responsive sponsored */
+/* ================= Responsive ================= */
+@media (max-width: 1200px) {
+  .sponsored-left { transform: translateX(-4%); }
+  .sponsored-title { font-size: 40px; }
+  .sponsored-subtitle { font-size: 30px; }
+  .hero-img { height: 320px; }
+}
+
 @media (max-width: 880px) {
   .sponsored-inner {
     grid-template-columns: 1fr;
     gap: 18px;
     padding-inline: calc(var(--gutter) * 0.6);
   }
+
+  /* annule l'outdent sur petits écrans pour éviter débordement */
+  .sponsored-left { transform: none; padding-left: 0; max-width: 100%; }
+
   .sponsored-right { justify-content: center; }
-  .hero-img { width:100%; height:260px; max-width:none; }
-  .sponsored-title { font-size:28px; }
-  .sponsored-subtitle { font-size:20px; }
+  .hero-img { width: 100%; height: 260px; max-width: none; border-radius: 6px; }
+
+  .sponsored-title { font-size: 28px; }
+  .sponsored-subtitle { font-size: 20px; }
+
+  /* sur mobile, bouton devient pill complet pour meilleur rendu */
+  .sponsored-cta.cta-asym { border-radius: 999px; padding: 10px 16px; }
 }
 
+/* Ajustements supplémentaires pour très petits écrans */
+@media (max-width: 420px) {
+  .sponsored-title { font-size: 22px; }
+  .sponsored-subtitle { font-size: 16px; }
+  .hero-img { height: 180px; }
+  .sponsored-left { padding-inline: 8px; }
+}
+
+/* NOTES :
+ - Pour inverser l'arrondi (arrondi à gauche au lieu de droite) : remplacer
+   `border-radius: 0 999px 999px 0;` par `border-radius: 999px 0 0 999px;`.
+ - Pour coller encore plus le texte au bord, augmente la valeur de translateX
+   dans .sponsored-left (ex : -8% ou -10%) mais vérifie le rendu sur tablette/mobile.
+*/
+
 /* --------------------------------
-   Product carousel (ton code précédent)
-   -------------------------------- */
+   Product carousel (ton code précédent) les offres de jours et tout
+:root{
+  --primary: #2563eb;
+  --accent: #0b74da;
+  --round: 12px;
+  --card-shadow: 0 6px 18px rgba(18,38,63,0.04);
+}
+
+/* ---------- Section produit ---------- */
 .product-section { padding: 10px; background: #fff; }
 
 /* header produit (titre + voir plus) */
@@ -1182,13 +1285,19 @@ span {
   width:36px; height:36px; font-size:18px; cursor:pointer; flex-shrink:0;
   display:inline-flex; align-items:center; justify-content:center;
   transition: transform .12s ease, box-shadow .12s ease;
-  box-shadow: 0 6px 18px rgba(18,38,63,0.04);
+  box-shadow: var(--card-shadow);
 }
 .scroll-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(18,38,63,0.06); }
 
 .product-grid {
-  display:flex; gap:16px; overflow-x:auto; scroll-behavior:smooth;
-  -webkit-overflow-scrolling: touch; cursor: grab; padding:8px; align-items:stretch;
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  padding:8px;
+  align-items:stretch;
 }
 .product-grid:active { cursor: grabbing; }
 .product-grid::-webkit-scrollbar { display: none; }
@@ -1203,7 +1312,9 @@ span {
   box-shadow: var(--card-shadow);
   overflow:hidden;
   transition: transform .2s, box-shadow .2s;
-  display:flex; flex-direction:column; min-height:460px;
+  display:flex;
+  flex-direction:column;
+  min-height:460px;
 }
 .product-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(16,24,40,0.08); }
 
@@ -1214,16 +1325,14 @@ span {
   font-size:10px; font-weight:600; padding:4px 8px; border-radius:10px; z-index:60;
 }
 
-/* fav icon — ajoute z-index pour éviter le recouvrement par l'image */
+/* fav icon */
 .fav-icon {
   position:absolute; top:8px; right:8px;
-  /* width:36px; height:36px; border-radius:50%; */
   display:inline-flex; align-items:center; justify-content:center;
-  /* background: rgba(255,255,255,0.85); border:none;  */
   cursor:pointer;
   transition: transform .12s ease, background .12s ease;
   color:#ce6006; font-size:40px; line-height:1;
-  z-index:70; /* <-- très important pour rester au-dessus de l'image transformée */
+  z-index:70;
 }
 .fav-icon::before { content: "\2661"; }
 .fav-icon.fav-active { color:#e53935; transform:scale(1.05); }
@@ -1247,11 +1356,50 @@ span {
 .by-text .oye { color:#28a745; font-weight:700; }
 
 /* footer card (prix/promo) */
-.product-footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:8px; }
-.price-group { display:flex; align-items:baseline; gap:8px; }
-.original-price { color:#777; text-decoration:line-through; font-size:0.95rem; }
-.price { font-weight:800; font-size:1.05rem; color:#111827; }
-.promo-label { display:inline-block; background:#ff5a5f; color:#fff; font-size:0.75rem; font-weight:700; padding:6px 10px; border-radius:20px; text-transform:uppercase; }
+.product-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between; /* prix group à gauche, promo à droite */
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap; /* empêche le passage à la ligne */
+  min-width: 0;
+}
+
+/* Groupe des prix (garantit même ligne) */
+.price-group {
+  display: flex;
+  align-items: baseline; /* aligne par baseline pour un rendu pro */
+  gap: 8px;
+  white-space: nowrap;  /* interdit le retour à la ligne */
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Styles pour chaque élément (conserver cohérence) */
+.original-price {
+  color:#777;
+  text-decoration:line-through;
+  font-size:0.95rem;
+  flex: 0 0 auto;
+}
+.price {
+  font-weight:800;
+  font-size:1.05rem;
+  color:#111827;
+  flex: 0 0 auto;
+}
+.promo-label {
+  display:inline-block;
+  flex: 0 0 auto;
+  background:#ff5a5f;
+  color:#fff;
+  font-size:0.75rem;
+  font-weight:700;
+  padding:6px 10px;
+  border-radius:20px;
+  text-transform:uppercase;
+}
 
 /* responsive carousel */
 @media (max-width:1100px) {
@@ -1269,6 +1417,15 @@ span {
   .scroll-btn { display:none; }
   .product-card { flex: 0 0 72%; }
   .img-wrap { height:220px; }
+}
+
+/* Ajustements pour très petits écrans : réduire taille texte si besoin */
+@media (max-width:420px) {
+  .product-footer { gap: 8px; }
+  .price { font-size: 1rem; }
+  .original-price { font-size: 0.9rem; }
+  .section-title { font-size: 18px; }
+  .img-wrap { height:200px; }
 }
 
 /* --------------------------------
@@ -1644,86 +1801,268 @@ html,body{
 }
 
 /* ================= SERVICES (carousel) - plus large ================= */
+:root{
+  --container-max: 1500px; /* largeur max demandée */
+  --gutter: 28px;
+  --gap: 24px;
+  --title-color: #0f1724;
+  --muted: #6b7280;
+  --card-shadow: 0 8px 26px rgba(16,24,40,0.09);
+  --cta-green-1: #00c27a;
+  --cta-green-2: #00a86b;
+  --control-size: 48px;
+}
+
+/* ================== SECTION GLOBALE ================== */
 .nyota-services {
-  margin-bottom: 48px;
+  margin: 40px auto 64px;
   padding-top: 6px;
   padding-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: var(--container-max); /* <= 1500px */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
-.nyota-services-header {
+
+/* CTA bouton centré en haut (grand pill vert) */
+.nyota-cta-row {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
+  justify-content: center;
   margin-bottom: 18px;
 }
-.nyota-services-title { font-size: 20px; font-weight: 800; margin: 0; }
-.nyota-services-sub { color: #6b7280; font-size: 14px; }
+.nyota-cta-btn {
+  display: inline-block;
+  background: linear-gradient(180deg,var(--cta-green-1),var(--cta-green-2));
+  color: #012;
+  font-weight: 800;
+  padding: 10px 28px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,162,107,0.18);
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-size: 18px;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.nyota-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,162,107,0.20); }
 
-/* carousel container */
-.nyota-carousel-wrap { position: relative; }
-.nyota-carousel {
+/* ========== HEADER : titre (gauche) ========== */
+.nyota-services-header {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 18px;
+  margin: 18px 0 0;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+}
+
+/* titre */
+.nyota-services-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  color: var(--title-color);
+}
+
+/* ======= Onglets centrés SOUS le titre ======= */
+.nyota-tabs-row {
+  display: flex;
+  justify-content: center;   /* centre horizontalement les boutons */
+  width: 100%;
+  padding: 10px 0 18px;
+  box-sizing: border-box;
+}
+
+/* Conteneur des boutons */
+.nyota-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: transparent;
+  z-index: 10;
+}
+
+/* style des boutons */
+.nyota-tab {
+  background: #fff;
+  border: 1px solid rgba(15,23,42,0.06);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: #4b5563;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.02);
+}
+.nyota-tab.active {
+  background: #fff;
+  color: #0b74da;
+  border-color: rgba(11,116,218,0.14);
+  box-shadow: 0 10px 28px rgba(11,116,218,0.06);
+}
+
+/* ========== CAROUSEL ========== */
+.nyota-carousel-wrap {
+  position: relative;
+  padding: 8px var(--gutter) 28px;
+  box-sizing: border-box;
+}
+
+/* zone scrollable */
+.nyota-carousel {
+  display:flex;
+  gap: 20px;
   overflow-x: auto;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  align-items: stretch;
+  scroll-snap-type: x mandatory; /* aide le snapping */
 }
-.nyota-carousel::-webkit-scrollbar { height: 11px; }
-.nyota-carousel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.10); border-radius: 12px; }
+.nyota-carousel::-webkit-scrollbar { height: 10px; }
+.nyota-carousel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 12px; }
 
-/* card (plus large) */
+/* carte */
 .nyota-card {
-  flex: 0 0 320px;
+  flex: 0 0 320px; /* largeur par défaut, responsive plus bas */
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 8px 26px rgba(16,24,40,0.09);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  min-height: 380px;
+  box-shadow: var(--card-shadow);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  min-height: 420px;
+  transition: transform .18s ease, box-shadow .18s ease;
+  scroll-snap-align: start; /* alignement pour scroll-snap */
 }
-.nyota-card-thumb { height: 200px; background: #efefef; overflow: hidden; }
-.nyota-card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.nyota-card-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.nyota-card-kicker { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.6px; }
-.nyota-card-title { font-size: 16px; margin: 0; line-height: 1.25; color: #0f172a; font-weight:700; }
-.nyota-card-meta { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-.nyota-card-author { display: flex; align-items: center; gap: 10px; color: #6b7280; font-size: 14px; }
-.nyota-card-author img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; display: block; }
-.nyota-card-price { font-weight: 800; font-size: 15px; color: #111; }
+.nyota-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(16,24,40,0.12); }
 
-/* carousel controls (boutons) */
+.nyota-card-thumb { height: 200px; background: #efefef; overflow:hidden; }
+.nyota-card-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.nyota-card-body { padding: 18px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.nyota-card-kicker { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.6px; }
+.nyota-card-title { font-size:16px; margin:0; line-height:1.25; color:#0f172a; font-weight:700; }
+.nyota-card-meta { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.nyota-card-author { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:14px; }
+.nyota-card-author img { width:34px; height:34px; border-radius:50%; object-fit:cover; display:block; }
+.nyota-card-price { font-weight:800; font-size:15px; color:#111; }
+
+/* ========== CONTROLES (FLÈCHES) centrées verticalement ========== */
 .nyota-carousel-controls {
   position: absolute;
+  top: 50%;
   left: 0;
   right: 0;
+  transform: translateY(-50%);
+  pointer-events: none;        /* parent non cliquable, seuls les boutons le seront */
+  box-sizing: border-box;
+  padding: 0 var(--gutter);
+  z-index: 40;
+}
+
+/* boutons placés absolument pour se trouver sur les bords gauche/droit */
+.nyota-carousel-controls .nyota-carousel-btn {
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0 10px;
-  pointer-events: none;
-}
-.nyota-carousel-btn {
   pointer-events: all;
-  background: rgba(255,255,255,0.96);
-  border-radius: 999px;
-  width: 42px;
-  height: 42px;
+  width: var(--control-size);
+  height: var(--control-size);
   display: grid;
   place-items: center;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.98);
   box-shadow: 0 8px 22px rgba(3,10,18,0.07);
   border: 1px solid rgba(15,23,42,0.04);
   cursor: pointer;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 18px;
+  z-index: 50;
 }
 
-/* bullets optionnels */
-.nyota-carousel-bullets { display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
-.nyota-carousel-dot { width: 8px; height: 8px; background: rgba(15,23,42,0.08); border-radius: 50%; }
+/* position exacte à gauche / droite */
+#nyota-prev { left: calc(var(--gutter) / 2); }
+#nyota-next { right: calc(var(--gutter) / 2); }
 
+/* état disabled */
+.nyota-carousel-btn[disabled] {
+  opacity: 0.45;
+  cursor: default;
+  transform: translateY(-50%) scale(0.98);
+  box-shadow: none;
+}
+
+/* ========== BULLETS ========= */
+.nyota-carousel-bullets {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:12px;
+}
+.nyota-carousel-dot {
+  width:8px;
+  height:8px;
+  background: rgba(15,23,42,0.08);
+  border-radius:50%;
+  transition: transform .15s ease, background .15s ease;
+  border: none;
+  cursor: pointer;
+}
+.nyota-carousel-dot.active { background: rgba(15,23,42,0.9); transform: scale(1.15); }
+
+/* ========== RESPONSIVE ========= */
+@media (max-width: 1400px) {
+  .nyota-card { flex: 0 0 340px; min-height:420px; } /* profite de l'espace */
+  .nyota-card-thumb { height: 200px; }
+  .nyota-services-title { font-size:24px; }
+}
+
+@media (max-width: 1200px) {
+  .nyota-card { flex: 0 0 300px; min-height:400px; }
+  .nyota-card-thumb { height: 190px; }
+  .nyota-services-title { font-size:22px; }
+}
+
+@media (max-width: 900px) {
+  .nyota-services-header { padding: 0 18px; }
+  .nyota-card { flex: 0 0 280px; min-height:380px; }
+  .nyota-card-thumb { height: 180px; }
+  .nyota-cta-btn { font-size:16px; padding: 8px 20px; }
+  /* sur tablettes/phones, on laisse les onglets défiler horizontalement si besoin */
+  .nyota-tabs { gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+  /* rapprocher légèrement les contrôles */
+  #nyota-prev { left: 12px; }
+  #nyota-next { right: 12px; }
+}
+
+@media (max-width: 560px) {
+  .nyota-card { flex: 0 0 72%; min-height:340px; }
+  .nyota-card-thumb { height: 160px; }
+  .nyota-services-title { font-size:18px; }
+  .nyota-tabs { justify-content: flex-start; }
+  .nyota-carousel-controls { top: 50%; } /* garde centre vertical */
+  /* bouton plus petit si besoin */
+  .nyota-carousel-controls .nyota-carousel-btn { width: 40px; height: 40px; font-size:16px; }
+  #nyota-prev { left: 8px; }
+  #nyota-next { right: 8px; }
+}
+
+/* petit ajustement pour très petits écrans (lisibilité) */
+@media (max-width: 420px) {
+  .nyota-services { padding-left: 12px; padding-right: 12px; }
+  .nyota-card { min-height: 300px; }
+  .nyota-card-thumb { height: 140px; }
+  .nyota-cta-btn { font-size:14px; padding: 8px 16px; }
+}
+
+/* ===== NOTES UTILES =====
+ - Si tu veux un décalage + extérieur pour les flèches (hors container), ajuste left/right:
+     #nyota-prev { left: -12px; }  ou  #nyota-next { right: -12px; }
+ - Le CSS contient scroll-snap; pour un comportement parfait, colle aussi le JS fourni précédemment.
+*/
 /* ================= TESTIMONIALS (gradient) - plus large ================= */
 .nyota-testimonials {
   border-radius: 18px;
@@ -1783,3 +2122,76 @@ html,body{
   .nyota-wrap { padding: 0 12px; }
   .nyota-cta-row { margin: 20px 0; }
 }
+
+/* Partie des partenaire */
+
+ #nyota-logos-section-uniq.nyota-uniq__wrap {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px 0;
+    /* border-top: 2px solid #0a84d1;
+    border-bottom: 2px solid #0a84d1; */
+    background: #fff;
+  }
+
+  #nyota-logos-section-uniq .nyota-uniq__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 8px 12px;
+  }
+
+  #nyota-logos-section-uniq .nyota-uniq__viewport {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  /* piste scoped */
+  #nyota-logos-section-uniq .nyota-uniq__track {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    white-space: nowrap;
+    animation: nyota-uniq-scroll-left var(--nyota-uniq-scroll-duration, 20s) linear infinite;
+    animation-play-state: paused; /* paused par défaut */
+    will-change: transform;
+    transform: translateX(var(--nyota-uniq-start-offset, 0px));
+  }
+
+  /* logos */
+  #nyota-logos-section-uniq .nyota-uniq__track img {
+    display: block;
+    height: 70px;       /* taille agrandie */
+    width: auto;
+    object-fit: contain;
+    user-select: none;
+    pointer-events: none;
+    padding: 8px;
+    background: rgba(0,0,0,0.03);
+    border-radius: 6px;
+  }
+
+  /* démarrer l'animation seulement quand on survole le bloc entier (scopé) */
+  #nyota-logos-section-uniq:hover .nyota-uniq__track {
+    animation-play-state: running;
+  }
+
+  /* animation scoping name unique */
+  @keyframes nyota-uniq-scroll-left {
+    0%   { transform: translateX(var(--nyota-uniq-start-offset)); }
+    100% { transform: translateX(calc(var(--nyota-uniq-start-offset) - 50%)); }
+  }
+
+  /* reduced motion respecté */
+  @media (prefers-reduced-motion: reduce) {
+    #nyota-logos-section-uniq .nyota-uniq__track {
+      animation: none !important;
+      transform: translateX(0) !important;
+    }
+  }
+
+  /* responsive (toujours scoped) */
+  @media (max-width: 600px) {
+    #nyota-logos-section-uniq .nyota-uniq__track { gap: 12px; }
+    #nyota-logos-section-uniq .nyota-uniq__track img { height: 32px; padding: 6px; }
+    #nyota-logos-section-uniq .nyota-uniq__inner { padding: 6px; }
+  }
