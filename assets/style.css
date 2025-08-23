@@ -1092,8 +1092,8 @@ span {
 
 /* ---------------- Colonne texte ---------------- */
 .sponsored-left {
-  max-width: 640px;
-  transform: translateX(-6%); /* pousse le texte vers la gauche (ajuste si besoin) */
+  max-width: 660px;
+  transform: translateX(-20); /* pousse le texte vers la gauche (ajuste si besoin) */
   padding-left: 6px; /* petit espace pour ne pas coller le bord trop fort */
   z-index: 2;
 }
