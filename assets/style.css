@@ -2223,7 +2223,7 @@ html,body{
 
 /* colonne gauche */
 #categoriesContainer .rlg-left-list {
-  width: 240px;
+  width: 260px;
   max-height: 520px;
   overflow-y: auto;
   background: #fff;
@@ -2263,7 +2263,7 @@ html,body{
 /* colonne droite */
 #categoriesContainer .rlg-right-mega {
   flex: 1;
-  min-width: 540px;
+  width: 540px;
   background: #fff;
   border-radius: 0 6px 6px 0;
   border: 1px solid #e6e6e6;

@@ -92,6 +92,33 @@
   -webkit-text-fill-color: #333 !important;
 }
 
+/* Position relative pour contenir l’icône */
+.search-style form {
+  position: relative;
+  width: 100%;
+}
+
+/* Bouton loupe */
+.search-style form .search-btn {
+  position: absolute;
+  right: 40px;           /* espace à droite */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #757575;
+  font-size: 18px;       /* taille de l’icône */
+  line-height: 1;
+  padding: 0;
+}
+
+/* Effet hover */
+.search-style form .search-btn:hover {
+  color: #4285f4;
+}
+
+
             
     </style>
 
@@ -252,13 +279,15 @@
                         <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo" /></a>
                     </div>
                     <div class="header-right">
-                        <div class="search-style">
-                            <form action="#">
-                                <input type="text" placeholder="Cherchez vos articles..." />
-                                
+                    <div class="search-style">
+                      <form action="#">
+                        <input type="text" placeholder="Cherchez vos articles..." />
+                        <button type="submit" class="search-btn">
+                          <i class="fi-rs-search"></i>
+                        </button>
+                      </form>
+                    </div>
 
-                            </form>
-                        </div>
                         <div class="header-action-right">
                             <div class="header-action-2">
                         
@@ -1023,12 +1052,7 @@
 
 <!-- Script JS minimal pour le scroll et drag -->
 
-</br>
-    
-    <hr>    
-        <!--End category slider-->
-        
-        <!--End banners-->
+
 <section class="product-section">
   <div class="section-header">
     <h2 class="section-title">Tendances du moment</h2>
@@ -1246,10 +1270,7 @@
     <button class="scroll-btn right" onclick="scrollProducts(1)">→</button>
   </div>
 </section>
-
-<hr>
-
-        <!--Products Tabs-->
+</br>
 <section class="sponsored">
   <div class="sponsored-inner">
     <!-- Colonne texte -->
@@ -3681,84 +3702,36 @@ document.addEventListener('DOMContentLoaded', function () {
     if (rightMega) rightMega.style.display = 'block';
   }
 
-  // ouverture / fermeture via le bouton
-  toggle.addEventListener('click', function (e) {
-    e.preventDefault();
-    const nowOpen = wrap.classList.toggle('rlg-open');
-    dropdownWrap.setAttribute('aria-hidden', nowOpen ? 'false' : 'true');
+  // ➤ Survol du bouton → ouverture
+  toggle.addEventListener('mouseenter', () => {
+    wrap.classList.add('rlg-open');
+    dropdownWrap.setAttribute('aria-hidden', 'false');
+  });
+
+  // ➤ Sortie du container complet → fermeture
+  wrap.addEventListener('mouseleave', () => {
+    wrap.classList.remove('rlg-open');
+    dropdownWrap.setAttribute('aria-hidden', 'true');
     hideAllPanels();
   });
 
-  // hover / focus sur la colonne gauche
+  // Hover sur les éléments de gauche
   leftItems.forEach(item => {
     const targetId = item.dataset.target;
-
     item.addEventListener('mouseenter', () => {
       if (targetId && document.getElementById(targetId)) {
-        if (!wrap.classList.contains('rlg-open')) {
-          wrap.classList.add('rlg-open');
-          dropdownWrap.setAttribute('aria-hidden', 'false');
-        }
         showPanelById(targetId);
       } else {
         hideAllPanels();
       }
     });
-
-    item.addEventListener('focus', () => {
-      if (targetId && document.getElementById(targetId)) {
-        if (!wrap.classList.contains('rlg-open')) {
-          wrap.classList.add('rlg-open');
-          dropdownWrap.setAttribute('aria-hidden', 'false');
-        }
-        showPanelById(targetId);
-      } else {
-        hideAllPanels();
-      }
-    });
-
-    // mobile : toggle au clic
-    item.addEventListener('click', (ev) => {
-      const t = item.dataset.target;
-      if (window.innerWidth <= 991 && t && document.getElementById(t)) {
-        ev.preventDefault();
-        const panel = document.getElementById(t);
-        const isVisible = panel && panel.getAttribute('aria-hidden') === 'false';
-        if (isVisible) {
-          panel.setAttribute('aria-hidden', 'true');
-          if (rightMega) rightMega.style.display = 'none';
-        } else {
-          showPanelById(t);
-        }
-      }
-    });
-  });
-
-  // sortie du bloc => panels cachés
-  wrap.addEventListener('mouseleave', hideAllPanels);
-
-  // clic hors bloc => fermeture
-  document.addEventListener('click', function (e) {
-    if (!wrap.contains(e.target) && wrap.classList.contains('rlg-open')) {
-      wrap.classList.remove('rlg-open');
-      dropdownWrap.setAttribute('aria-hidden', 'true');
-      hideAllPanels();
-    }
-  });
-
-  // touche escape => fermeture
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      wrap.classList.remove('rlg-open');
-      dropdownWrap.setAttribute('aria-hidden', 'true');
-      hideAllPanels();
-    }
   });
 
   hideAllPanels();
   dropdownWrap.setAttribute('aria-hidden', 'true');
 });
 </script>
+
 
 
 </body>
