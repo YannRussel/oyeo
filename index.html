@@ -18,22 +18,11 @@
     <link rel="stylesheet" href="assets/css/main.css?v=6.1" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/theme.css">
 
     <style>
-        body {
-            margin: 0;
-            padding: 2px; /* espace intérieur de 20px autour de tout le contenu */
-            box-sizing: border-box;
-            }
-/* 
-            html, body {
-            overflow-x: hidden;
-      } */
-
-            /* ===================================
-   Search bar “pill” totalement ronde
-   =================================== */
 
 /* 1) Layout du header : on active le flex */
 .header-right {
@@ -70,9 +59,6 @@
   background-color: #fff;
 
   /* icône loupe (adapte le chemin si besoin) */
-  background-image: url('assets/imgs/icons/search.svg');
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
 
   /* suppression des styles natifs */
   -webkit-appearance: none;
@@ -269,6 +255,8 @@
                         <div class="search-style">
                             <form action="#">
                                 <input type="text" placeholder="Cherchez vos articles..." />
+                                
+
                             </form>
                         </div>
                         <div class="header-action-right">
@@ -813,104 +801,6 @@
   </div>
 </div>
 
-        <!--End hero slider-->
-        <!-- <section class="popular-categories section-padding">
-            <div class="container wow animate__animated animate__fadeIn">
-                <div class="section-title">
-                    <div class="title">
-                        <h3>Featured Categories</h3>
-                        <ul class="list-inline nav nav-tabs links">
-                            <li class="list-inline-item nav-item"><a class="nav-link" href="shop-grid-right.html">Cake & Milk</a></li>
-                            <li class="list-inline-item nav-item"><a class="nav-link" href="shop-grid-right.html">Coffes & Teas</a></li>
-                            <li class="list-inline-item nav-item"><a class="nav-link active" href="shop-grid-right.html">Pet Foods</a></li>
-                            <li class="list-inline-item nav-item"><a class="nav-link" href="shop-grid-right.html">Vegetables</a></li>
-                        </ul>
-                    </div>
-                    <div class="slider-arrow slider-arrow-2 flex-right carausel-10-columns-arrow" id="carausel-10-columns-arrows"></div>
-                </div>
-                <div class="carausel-10-columns-cover position-relative">
-                    <div class="carausel-10-columns" id="carausel-10-columns">
-                        <div class="card-2 bg-9 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-13.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Cake & Milk</a></h6>
-                            <span>26 items</span>
-                        </div>
-                        <div class="card-2 bg-10 wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-12.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Oganic Kiwi</a></h6>
-                            <span>28 items</span>
-                        </div>
-                        <div class="card-2 bg-11 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-11.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Peach</a></h6>
-                            <span>14 items</span>
-                        </div>
-                        <div class="card-2 bg-12 wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-9.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Red Apple</a></h6>
-                            <span>54 items</span>
-                        </div>
-                        <div class="card-2 bg-13 wow animate__animated animate__fadeInUp" data-wow-delay=".5s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-3.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Snack</a></h6>
-                            <span>56 items</span>
-                        </div>
-                        <div class="card-2 bg-14 wow animate__animated animate__fadeInUp" data-wow-delay=".6s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-1.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Vegetables</a></h6>
-                            <span>72 items</span>
-                        </div>
-                        <div class="card-2 bg-15 wow animate__animated animate__fadeInUp" data-wow-delay=".7s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-2.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Strawberry</a></h6>
-                            <span>36 items</span>
-                        </div>
-                        <div class="card-2 bg-12 wow animate__animated animate__fadeInUp" data-wow-delay=".8s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-4.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Black plum</a></h6>
-                            <span>123 items</span>
-                        </div>
-                        <div class="card-2 bg-10 wow animate__animated animate__fadeInUp" data-wow-delay=".9s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-5.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Custard apple</a></h6>
-                            <span>34 items</span>
-                        </div>
-                        <div class="card-2 bg-12 wow animate__animated animate__fadeInUp" data-wow-delay="1s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-14.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Coffe & Tea</a></h6>
-                            <span>89 items</span>
-                        </div>
-                        <div class="card-2 bg-11 wow animate__animated animate__fadeInUp" data-wow-delay="0s">
-                            <figure class="img-hover-scale overflow-hidden">
-                                <a href="shop-grid-right.html"><img src="assets/imgs/shop/cat-15.png" alt="" /></a>
-                            </figure>
-                            <h6><a href="shop-grid-right.html">Headphone</a></h6>
-                            <span>87 items</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
      
 <!-- ====== SECTION PRODUITS ====== -->
 <section class="product-section">
@@ -1601,36 +1491,36 @@
 <section class="banners mb-25">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow animate__animated animate__fadeInUp" data-wow-delay="0">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="banner-img wow" data-wow-delay="0">
                             <img src="assets/imgs/banner/banner-1.png" alt="" />
                             <div class="banner-text">
-                                <h4>
+                                <h4 style = "color : black;">
                                     Everyday Fresh & <br />Clean with Our<br />
                                     Products
                                 </h4>
-                                <a href="shop-grid-right.html" class="btn btn-xs">Je decouvre <i class="fi-rs-arrow-small-right"></i></a>
+                                <a href="shop-grid-right.html" class="btn btn-xs" style = "background-color:#e16628;">Je decouvre <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
+                        <div class="banner-img wow " data-wow-delay=".2s">
                             <img src="assets/imgs/banner/banner-2.png" alt="" />
                             <div class="banner-text">
-                                <h4>
+                                <h4 style = "color : black;">
                                     Make your Breakfast<br />
                                     Healthy and Easy
                                 </h4>
-                                <a href="shop-grid-right.html" class="btn btn-xs">Commencer la journée <i class="fi-rs-arrow-small-right"></i></a>
+                                <a href="shop-grid-right.html" class="btn btn-xs" style = "background-color:#e16628;">Commencer la journée <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 d-md-none d-lg-flex">
-                        <div class="banner-img mb-sm-0 wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
+                        <div class="banner-img mb-sm-0 wow" data-wow-delay=".4s">
                             <img src="assets/imgs/banner/banner-3.png" alt="" />
                             <div class="banner-text">
-                                <h4>The best Organic <br />Products Online</h4>
-                                <a href="shop-grid-right.html" class="btn btn-xs">Je m'équipe <i class="fi-rs-arrow-small-right"></i></a>
+                                <h4 style = "color : black;">The best Organic <br />Products Online</h4>
+                                <a href="shop-grid-right.html" class="btn btn-xs" style = "background-color:#e16628;">Je m'équipe <i class="fi-rs-arrow-small-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -2874,7 +2764,7 @@
 <hr>
 <section id="banners" class="section-p1">
       <header class="ns-header" style="text-align: center;">
-      <h2 id="ns-services-title" style="color: #e74c3c;">Services Professionnels</h2>
+      <h2 id="ns-services-title" style="color: #e16628;">Services Professionnels</h2>
       <p>Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs.</p>
     </header>
         <div class="big-banners">
@@ -2901,8 +2791,8 @@
   <div class="ns-container">
     <header class="ns-header">
       <!-- <h2 id="ns-services-title">Services Professionnels</h2> -->
-      <p>Découvrez nos prestations disponibles à la demande, pour vous ou pour un proche.
-Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs. </p>
+      <p style = "font-size : 15px; margin-top : 0px;">Découvrez nos prestations disponibles à la demande, pour vous ou pour un proche.
+      </br>Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs. </p>
     </header>
 
     <div class="ns-grid">
@@ -3164,6 +3054,39 @@ Des solutions sur mesure pour développer votre entreprise et atteindre vos obje
 
       <!-- Card 4 -->
       <article class="nyota-card" role="listitem">
+        <div class="nyota-card-thumb">
+          <img src="https://placehold.co/640x400/png?text=Service+4" alt="Service 4">
+        </div>
+        <div class="nyota-card-body">
+          <div class="nyota-card-kicker">Mobile & App</div>
+          <h3 class="nyota-card-title">I will do mobile app development for ios and android</h3>
+          <div class="nyota-card-meta">
+            <div class="nyota-card-author">
+              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=JR" alt="avatar Jerome">
+              <span>Jerome Bai</span>
+            </div>
+            <div class="nyota-card-price">Starting at $983</div>
+          </div>
+        </div>
+      </article>
+            <article class="nyota-card" role="listitem">
+        <div class="nyota-card-thumb">
+          <img src="https://placehold.co/640x400/png?text=Service+4" alt="Service 4">
+        </div>
+        <div class="nyota-card-body">
+          <div class="nyota-card-kicker">Mobile & App</div>
+          <h3 class="nyota-card-title">I will do mobile app development for ios and android</h3>
+          <div class="nyota-card-meta">
+            <div class="nyota-card-author">
+              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=JR" alt="avatar Jerome">
+              <span>Jerome Bai</span>
+            </div>
+            <div class="nyota-card-price">Starting at $983</div>
+          </div>
+        </div>
+      </article>
+
+            <article class="nyota-card" role="listitem">
         <div class="nyota-card-thumb">
           <img src="https://placehold.co/640x400/png?text=Service+4" alt="Service 4">
         </div>

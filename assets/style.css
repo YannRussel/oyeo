@@ -33,10 +33,10 @@ p {
   margin: 15px 0 20px 0;
 }
 .section-p1 {
-  padding: 40px 0;
+  padding: 10px 0;
 }
 .section-m1 {
-  margin: 40px 0;
+  margin: 20px 0;
   
 }
 
@@ -270,7 +270,7 @@ span {
   background-image: url(images/banner/b14.png);
   background-repeat: no-repeat;
   background-position: 180px;
-  background-color: #ffa734;
+  background-color: #ea7a26;
   height: 160px;
   display: flex;
   align-items: center;
@@ -718,7 +718,7 @@ Travaille sur toutes nos categories
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  background: linear-gradient(135deg, #880699 0%, #85048a 100%);
+  background: linear-gradient(135deg, #e66f0e 0%, #510153 100%);
   border-radius: 8px;
   overflow: hidden;
   max-width: 1460px;
@@ -734,7 +734,7 @@ Travaille sur toutes nos categories
 }
 .promo-tag {
   display: inline-block;
-  background: #FFEA00;
+  background: #e16628;
   color: #333;
   font-size: 0.75rem;
   padding: 3px 6px;
@@ -777,7 +777,7 @@ Travaille sur toutes nos categories
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #FFB300;
+  background: #e16628;
   color: #fff;
   font-size: 0.85rem;
   font-weight: bold;
@@ -806,7 +806,7 @@ Travaille sur toutes nos categories
 
 .promo-btn {
   position: relative;
-  background: #FFD700;
+  background: #e16628;
   color: #333;
   text-decoration: none;
   font-weight: bold;
@@ -816,7 +816,7 @@ Travaille sur toutes nos categories
   bottom: -10px;
 }
 .promo-btn:hover {
-  background: #ffcd00;
+  background: #e16628;
 }
 
 @media (max-width: 768px) {
@@ -1061,7 +1061,7 @@ Travaille sur toutes nos categories
   --title-color: #0f1724;
   --muted: #6b7280;
   --img-height: 360px;
-  --sponsored-bg: #f2f2f2;
+  --sponsored-bg: #f2f2f26c;
 }
 
 /* ================= Section Sponsorisée ================= */
@@ -1108,7 +1108,7 @@ Travaille sur toutes nos categories
 
 .sponsored-title {
   margin: 0 0 12px 0;
-  font-family: Georgia, "Times New Roman", serif;
+  /* font-family: Georgia, "Times New Roman", serif; */
   font-size: 44px;
   line-height: 1.02;
   font-weight: 700;
@@ -1142,7 +1142,7 @@ Travaille sur toutes nos categories
 .sponsored-cta.cta-asym {
   padding: 12px 22px;
   color: #ffffff;
-  background: linear-gradient(90deg, #0b74da 0%, #2563eb 100%);
+  background: linear-gradient(90deg, #ea7a26 0%, #ea7a26 100%);
   box-shadow: 0 10px 30px rgba(11,116,218,0.18);
   border: none;
   display: inline-flex;
@@ -1246,7 +1246,7 @@ Travaille sur toutes nos categories
   margin-bottom: 14px;
   padding: 0 6px;
 }
-.section-title { font-size: 22px; color: #2b3940; margin:0; font-weight:700; }
+.section-title { font-size: 22px; color: #1C2B39; margin:0; font-weight:700; }
 .see-more {
   text-decoration:none;
   display:inline-flex;
@@ -1257,7 +1257,7 @@ Travaille sur toutes nos categories
   border:1px solid transparent;
   font-weight:600;
   font-size:0.95rem;
-  color:#0b74da;
+  color:#e86429;
   background:rgba(11,116,218,0.06);
   transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
   white-space:nowrap;
@@ -1331,11 +1331,11 @@ Travaille sur toutes nos categories
   display:inline-flex; align-items:center; justify-content:center;
   cursor:pointer;
   transition: transform .12s ease, background .12s ease;
-  color:#ce6006; font-size:40px; line-height:1;
+  color:#e86429; font-size:40px; line-height:1;
   z-index:70;
 }
 .fav-icon::before { content: "\2661"; }
-.fav-icon.fav-active { color:#e53935; transform:scale(1.05); }
+.fav-icon.fav-active { color:#e86429; transform:scale(1.05); }
 .fav-icon.fav-active::before { content: "\2665"; }
 
 /* image */
@@ -1392,7 +1392,7 @@ Travaille sur toutes nos categories
 .promo-label {
   display:inline-block;
   flex: 0 0 auto;
-  background:#ff5a5f;
+  background:#e86429;
   color:#fff;
   font-size:0.75rem;
   font-weight:700;
@@ -1524,7 +1524,7 @@ hr{
 /* services.namespace.css
    Préfixé (.ns-...) — grille 4x2, boutons uniformes, fond blanc */
 :root{
-  --ns-green:#ffa734;
+  --ns-green:#e16628;
   --ns-muted:#6b7280;
   --ns-card-bg:#ffffff;
   --ns-card-border:#e6eef1;
