@@ -366,7 +366,7 @@
                         <a href="index.html"><img src="assets/imgs/theme/logo.svg" alt="logo" /></a>
                     </div>
                     <div class="header-nav d-none d-lg-flex">
-  <div class="main-categori-wrap d-none d-lg-block" id="categoriesContainer">
+ <div class="main-categori-wrap d-none d-lg-block" id="categoriesContainer">
 
     <!-- Bouton principal -->
     <a class="categories-button-active" href="#" id="categoriesToggle">
@@ -374,43 +374,82 @@
       <span class="et">Toutes</span> nos catégories
       <i class="fi-rs-angle-down"></i>
     </a>
-
-    <!-- Dropdown -->
-    <ul class="categories-simple-dropdown">
-      <li class="has-children">
-        <a href="#">
-          Mode Homme
-          <i class="fi-rs-angle-right sub-icon"></i>
-        </a>
-        <ul class="subcategories">
-          <li><strong>Vêtements</strong></li>
-          <li><a href="#">T-shirts et polos</a></li>
-          <li><a href="#">Chemises</a></li>
-          <li><a href="#">Pantalons et chinos</a></li>
-          <li><a href="#">Jeans</a></li>
-          <li><a href="#">Shorts</a></li>
-          <li><a href="#">Pulls et gilets</a></li>
-          <li><a href="#">Manteaux et vestes</a></li>
-
-          <li><strong>Chaussures</strong></li>
-          <li><a href="#">Paniers</a></li>
-          <li><a href="#">Chaussures de ville</a></li>
-          <li><a href="#">Mocassins</a></li>
-          <li><a href="#">Bottes</a></li>
-          <li><a href="#">Sandales</a></li>
-        </ul>
-      </li>
-      <li><a href="#">Mode Femme</a></li>
-      <li><a href="#">Enfants et bébés</a></li>
-      <li><a href="#">Maison & Déco</a></li>
-      <li><a href="#">Cuisine & Électroménager</a></li>
-      <li><a href="#">Hygiène & Beauté</a></li>
-      <li><a href="#">Alimentation & Supermarché</a></li>
-      <li><a href="#">Bricolage et Jardin</a></li>
-      <li><a href="#">Informatique et Téléphonie</a></li>
+  <!-- wrapper qui contient LES DEUX colonnes (gauche = liste, droite = mega) -->
+  <div class="rlg-dropdown-wrap" aria-hidden="true">
+    <!-- colonne gauche : la liste (avec scrollbar) -->
+    <ul class="rlg-left-list" role="menu" aria-label="Catégories principales">
+      <li class="rlg-left-item" data-target="mega-mode-homme" tabindex="0">Mode Homme <i class="fi-rs-angle-right rlg-sub-icon"></i></li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Mode Femme</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Enfants et bébés</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Maison & Déco</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Cuisine & Électroménager</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Hygiène & Beauté</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Alimentation & Supermarché</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Bricolage et Jardin</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Informatique et Téléphonie</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Informatique et Téléphonie</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Informatique et Téléphonie</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Informatique et Téléphonie</li>
+      <li class="rlg-left-item" data-target="none" tabindex="0">Informatique et Téléphonie</li>
     </ul>
 
+    <!-- colonne droite : méga-panels (un par catégorie qui en a besoin) -->
+    <div class="rlg-right-mega" role="region" aria-label="Mega menu">
+      <!-- panel Mode Homme -->
+      <div id="mega-mode-homme" class="rlg-mega-panel" aria-hidden="true">
+        <div class="rlg-mega-grid">
+          <div class="rlg-mega-col">
+            <h4>Vêtements</h4>
+            <ul>
+              <li><a href="#">T-shirts et polos</a></li>
+              <li><a href="#">Chemises</a></li>
+              <li><a href="#">Pantalons et chinos</a></li>
+              <li><a href="#">Jeans</a></li>
+              <li><a href="#">Shorts</a></li>
+              <li><a href="#">Pulls et gilets</a></li>
+              <li><a href="#">Manteaux et vestes</a></li>
+            </ul>
+          </div>
+
+          <div class="rlg-mega-col">
+            <h4>Chaussures</h4>
+            <ul>
+              <li><a href="#">Paniers</a></li>
+              <li><a href="#">Chaussures de ville</a></li>
+              <li><a href="#">Mocassins</a></li>
+              <li><a href="#">Bottes</a></li>
+              <li><a href="#">Sandales</a></li>
+            </ul>
+          </div>
+
+          <div class="rlg-mega-col">
+            <h4>Collections</h4>
+            <ul>
+              <li><a href="#">Nouveautés</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Sélections</a></li>
+            </ul>
+          </div>
+
+          <div class="rlg-mega-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="#">Guide des tailles</a></li>
+              <li><a href="#">Retours</a></li>
+              <li><a href="#">Avis clients</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- panel vide par défaut (affiché si data-target vaut none) -->
+      <div id="mega-empty" class="rlg-mega-panel rlg-hidden" aria-hidden="true">
+        <!-- tu peux mettre ici un contenu générique si besoin -->
+      </div>
+    </div>
   </div>
+</div>
+
 </div>
 
                         <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block font-heading">
@@ -3691,6 +3730,114 @@ document.querySelectorAll('.scroll-btn').forEach(btn => {
   });
 })();
 </script>
+
+<!-- script pour le menu nos categories -->
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const wrap = document.getElementById('categoriesContainer');
+  const toggle = document.getElementById('categoriesToggle');
+  const dropdownWrap = wrap.querySelector('.rlg-dropdown-wrap');
+  const leftItems = wrap.querySelectorAll('.rlg-left-item');
+  const panels = Array.from(wrap.querySelectorAll('.rlg-mega-panel'));
+  const rightMega = wrap.querySelector('.rlg-right-mega');
+
+  function hideAllPanels() {
+    panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
+    if (rightMega) rightMega.style.display = 'none';
+  }
+
+  function showPanelById(id) {
+    const panel = id ? document.getElementById(id) : null;
+    if (!panel) {
+      hideAllPanels();
+      return;
+    }
+    panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
+    panel.setAttribute('aria-hidden', 'false');
+    if (rightMega) rightMega.style.display = 'block';
+  }
+
+  // ouverture / fermeture via le bouton
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+    const nowOpen = wrap.classList.toggle('rlg-open');
+    dropdownWrap.setAttribute('aria-hidden', nowOpen ? 'false' : 'true');
+    hideAllPanels();
+  });
+
+  // hover / focus sur la colonne gauche
+  leftItems.forEach(item => {
+    const targetId = item.dataset.target;
+
+    item.addEventListener('mouseenter', () => {
+      if (targetId && document.getElementById(targetId)) {
+        if (!wrap.classList.contains('rlg-open')) {
+          wrap.classList.add('rlg-open');
+          dropdownWrap.setAttribute('aria-hidden', 'false');
+        }
+        showPanelById(targetId);
+      } else {
+        hideAllPanels();
+      }
+    });
+
+    item.addEventListener('focus', () => {
+      if (targetId && document.getElementById(targetId)) {
+        if (!wrap.classList.contains('rlg-open')) {
+          wrap.classList.add('rlg-open');
+          dropdownWrap.setAttribute('aria-hidden', 'false');
+        }
+        showPanelById(targetId);
+      } else {
+        hideAllPanels();
+      }
+    });
+
+    // mobile : toggle au clic
+    item.addEventListener('click', (ev) => {
+      const t = item.dataset.target;
+      if (window.innerWidth <= 991 && t && document.getElementById(t)) {
+        ev.preventDefault();
+        const panel = document.getElementById(t);
+        const isVisible = panel && panel.getAttribute('aria-hidden') === 'false';
+        if (isVisible) {
+          panel.setAttribute('aria-hidden', 'true');
+          if (rightMega) rightMega.style.display = 'none';
+        } else {
+          showPanelById(t);
+        }
+      }
+    });
+  });
+
+  // sortie du bloc => panels cachés
+  wrap.addEventListener('mouseleave', hideAllPanels);
+
+  // clic hors bloc => fermeture
+  document.addEventListener('click', function (e) {
+    if (!wrap.contains(e.target) && wrap.classList.contains('rlg-open')) {
+      wrap.classList.remove('rlg-open');
+      dropdownWrap.setAttribute('aria-hidden', 'true');
+      hideAllPanels();
+    }
+  });
+
+  // touche escape => fermeture
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      wrap.classList.remove('rlg-open');
+      dropdownWrap.setAttribute('aria-hidden', 'true');
+      hideAllPanels();
+    }
+  });
+
+  hideAllPanels();
+  dropdownWrap.setAttribute('aria-hidden', 'true');
+});
+</script>
+
+
 </body>
     
 
