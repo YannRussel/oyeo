@@ -22,106 +22,6 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="assets/theme.css">
 
-    <style>
-
-/* 1) Layout du header : on active le flex */
-.header-right {
-  display: flex;
-  align-items: center;
-}
-
-/* 2) Le container du champ prend tout l’espace libre */
-.header-right .search-style {
-  flex: 1 1 auto;
-  margin-right: 1rem;  /* ajuste l’espacement avec les autres icônes */
-}
-
-/* 3) Le form occupe 100% du container */
-.header-right .search-style form {
-  width: 95%;
-  display: block;
-}
-
-/* 4) Style de l’input : forme pill, icône, overrides */
-.header-right .search-style form input[type="text"] {
-  /* taille et agencement */
-  width: 100%;
-  height: 48px;                      /* hauteur fixe pour un pill parfait */
-  padding: 0.75rem 3rem 0.75rem 1rem;/* espace à droite pour l’icône */
-
-  /* typo */
-  font-size: 1rem;
-  line-height: 1.2;
-
-  /* bordure & fond */
-  border: 1px solid #dfe1e5;
-  border-radius: 999px;             /* arrondi maximal */
-  background-color: #fff;
-
-  /* icône loupe (adapte le chemin si besoin) */
-
-  /* suppression des styles natifs */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  outline: none;
-  box-shadow: none;
-
-  /* transition pour le focus */
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
-  box-sizing: border-box;
-}
-
-/* 5) Placeholder plus discret */
-.header-right .search-style form input[type="text"]::placeholder {
-  color: #757575;
-  opacity: 1;  /* certains resets baissent l’opacité par défaut */
-}
-
-/* 6) Effet focus “Google-like” */
-.header-right .search-style form input[type="text"]:focus {
-  border-color: #4285f4;
-  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
-}
-
-/* 7) Neutraliser l’autofill Chrome (fond vert/jaune) */
-.header-right .search-style form input[type="text"]:-webkit-autofill,
-.header-right .search-style form input[type="text"]:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
-  box-shadow: 0 0 0 1000px #fff inset !important;
-  -webkit-text-fill-color: #333 !important;
-}
-
-/* Position relative pour contenir l’icône */
-.search-style form {
-  position: relative;
-  width: 100%;
-}
-
-/* Bouton loupe */
-.search-style form .search-btn {
-  position: absolute;
-  right: 40px;           /* espace à droite */
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  color: #757575;
-  font-size: 18px;       /* taille de l’icône */
-  line-height: 1;
-  padding: 0;
-}
-
-/* Effet hover */
-.search-style form .search-btn:hover {
-  color: #4285f4;
-}
-
-
-            
-    </style>
-
     
 </head>
 
@@ -3105,8 +3005,8 @@
 <hr>
 <section id="banners" class="section-p1">
       <header class="ns-header" style="text-align: center;">
-      <h2 id="ns-services-title" style="color: #e16628;">Services Professionnels</h2>
-      <p>Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs.</p>
+      <h2 id="ns-services-title" style="color: #e16628; font-size: 50px;">Services Professionnels</h2>
+      <p style="font-size: 20px;">Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs.</p>
     </header>
         <div class="big-banners">
           <div class="big-banners-1">
@@ -3128,11 +3028,11 @@
 <!-- services.html
   Inclure dans <head> : <link rel="stylesheet" href="services.namespace.css">
 -->
-<section class="ns-services-section" aria-labelledby="ns-services-title">
+<section class="ns-services-section" aria-labelledby="ns-services-title" style="margin: auto;">
   <div class="ns-container">
     <header class="ns-header">
       <!-- <h2 id="ns-services-title">Services Professionnels</h2> -->
-      <p style = "font-size : 15px; margin-top : 0px;">Découvrez nos prestations disponibles à la demande, pour vous ou pour un proche.
+      <p style = "font-size : 20px; margin-top : 0px;">Découvrez nos prestations disponibles à la demande, pour vous ou pour un proche.
       </br>Des solutions sur mesure pour développer votre entreprise et atteindre vos objectifs. </p>
     </header>
 
@@ -3147,7 +3047,7 @@
         <div class="ns-body">
           <div class="ns-title">
             <h3 id="ns-s1-title">Développement Web Sur Mesure</h3>
-            <div class="ns-price-tag">À partir de 2 500€</div>
+            <!-- <div class="ns-price-tag">À partir de 2 500€</div> -->
           </div>
           <p class="ns-desc">Création de sites web et applications performantes, sécurisées et optimisées.</p>
           <ul class="ns-features">
@@ -3157,7 +3057,7 @@
             <li><span class="ns-check">✓</span> Maintenance</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">À partir de 2 500€</div><small>Projet complet</small></div>
+            <!-- <div><div class="ns-price">À partir de 2 500€</div><small>Projet complet</small></div> -->
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3178,7 +3078,7 @@
             <li><span class="ns-check">✓</span> Roadmap</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">150€/heure</div><small>Consultation</small></div>
+            <!-- <div><div class="ns-price">150€/heure</div><small>Consultation</small></div> -->
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3199,7 +3099,7 @@
             <li><span class="ns-check">✓</span> Guide</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">À partir de 800€</div><small>Forfait</small></div>
+            <!-- <div><div class="ns-price">À partir de 800€</div><small>Forfait</small></div> -->
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3220,7 +3120,6 @@
             <li><span class="ns-check">✓</span> Reporting</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">À partir de 200€/mois</div><small>Gestion</small></div>
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3241,7 +3140,7 @@
             <li><span class="ns-check">✓</span> Déploiement</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">À partir de 5 000€</div><small>Application complète</small></div>
+        
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3262,7 +3161,7 @@
             <li><span class="ns-check">✓</span> Certificat</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">450€</div><small>Par session</small></div>
+  
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3283,7 +3182,7 @@
             <li><span class="ns-check">✓</span> Backup</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">Sur devis</div><small>Contrat</small></div>
+            <!-- <div><div class="ns-price">Sur devis</div><small>Contrat</small></div> -->
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3304,7 +3203,7 @@
             <li><span class="ns-check">✓</span> Ateliers</li>
           </ul>
           <div class="ns-price-row">
-            <div><div class="ns-price">Sur devis</div><small>Conseil</small></div>
+            
             <div class="ns-cta"><button class="ns-btn">Contactez-nous</button></div>
           </div>
         </div>
@@ -3316,31 +3215,30 @@
 
 <!-- ===== NYOTA: Services carousel ===== -->
 <!-- ===== NYOTA: Services carousel ===== -->
-<section id="nyota-services-section" class="nyota-wrap nyota-services" aria-labelledby="nyota-services-title">
+<section class="nyota-services" aria-labelledby="nyota-services-title" style="margin: auto;">
   <div class="nyota-cta-row">
-    <a class="nyota-cta-btn" href="#" id="nyota-cta-all">VOIR TOUT NOS SERVICES</a>
+    <a class="nyota-cta-btn" href="#">VOIR TOUS NOS SERVICES</a>
   </div>
 
-<div class="nyota-services-header">
-  <h2 id="nyota-services-title" class="nyota-services-title">Nos services populaires</h2>
-</div>
+  <div class="nyota-services-header">
+    <h2 id="nyota-services-title" class="nyota-services-title">Nos services populaires</h2>
+  </div>
 
-<!-- <-- Les boutons CENTRÉS sous le titre -->
-<div class="nyota-tabs-row">
-  <nav class="nyota-tabs" aria-label="Catégories">
-    <button class="nyota-tab active" type="button">Development & IT</button>
-    <button class="nyota-tab" type="button">Design & Creative</button>
-    <button class="nyota-tab" type="button">Digital Marketing</button>
-    <button class="nyota-tab" type="button">Music & Audio</button>
-    <button class="nyota-tab" type="button">Video & Animation</button>
-  </nav>
-</div>
-
+  <div class="nyota-tabs-row">
+    <nav class="nyota-tabs" aria-label="Catégories">
+      <button class="nyota-tab active" type="button" data-filter="all">Tout</button>
+      <button class="nyota-tab" type="button" data-filter="dev">Development & IT</button>
+      <button class="nyota-tab" type="button" data-filter="design">Design & Creative</button>
+      <button class="nyota-tab" type="button" data-filter="marketing">Digital Marketing</button>
+      <button class="nyota-tab" type="button" data-filter="audio">Music & Audio</button>
+      <button class="nyota-tab" type="button" data-filter="video">Video & Animation</button>
+    </nav>
+  </div>
 
   <div class="nyota-carousel-wrap">
-    <div class="nyota-carousel" id="nyota-carousel" role="list">
-      <!-- Card 1 -->
-      <article class="nyota-card" role="listitem">
+    <div class="nyota-carousel" role="list">
+      <!-- exemple de carte avec data-category -->
+      <article class="nyota-card" role="listitem" data-category="design">
         <div class="nyota-card-thumb">
           <img src="https://placehold.co/640x400/png?text=Service+1" alt="Service 1">
         </div>
@@ -3357,106 +3255,55 @@
         </div>
       </article>
 
-      <!-- Card 2 -->
-      <article class="nyota-card" role="listitem">
-        <div class="nyota-card-thumb">
-          <img src="https://placehold.co/640x400/png?text=Service+2" alt="Service 2">
-        </div>
+      <!-- duplique/ajoute d'autres cartes en gardant data-category -->
+      <article class="nyota-card" role="listitem" data-category="design">
+        <div class="nyota-card-thumb"><img src="https://placehold.co/640x400/png?text=Service+2" alt=""></div>
         <div class="nyota-card-body">
           <div class="nyota-card-kicker">Illustration & Art</div>
           <h3 class="nyota-card-title">I will create modern flat design illustration</h3>
           <div class="nyota-card-meta">
-            <div class="nyota-card-author">
-              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=AT" alt="avatar Ali">
-              <span>Ali Tatum</span>
-            </div>
+            <div class="nyota-card-author"><img src="https://placehold.co/34x34/8a8a8a/fff?text=AT"><span>Ali Tatum</span></div>
             <div class="nyota-card-price">Starting at $640</div>
           </div>
         </div>
       </article>
 
-      <!-- Card 3 -->
-      <article class="nyota-card" role="listitem">
-        <div class="nyota-card-thumb">
-          <img src="https://placehold.co/640x400/png?text=Service+3" alt="Service 3">
-        </div>
+      <article class="nyota-card" role="listitem" data-category="dev">
+        <div class="nyota-card-thumb"><img src="https://placehold.co/640x400/png?text=Service+3" alt=""></div>
         <div class="nyota-card-body">
           <div class="nyota-card-kicker">Design & Creative</div>
           <h3 class="nyota-card-title">I will build a fully responsive design in HTML/CSS</h3>
           <div class="nyota-card-meta">
-            <div class="nyota-card-author">
-              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=EP" alt="avatar Eleonor">
-              <span>Eleonor Pena</span>
-            </div>
+            <div class="nyota-card-author"><img src="https://placehold.co/34x34/8a8a8a/fff?text=EP"><span>Eleonor Pena</span></div>
             <div class="nyota-card-price">Starting at $820</div>
           </div>
         </div>
       </article>
 
-      <!-- Card 4 -->
-      <article class="nyota-card" role="listitem">
-        <div class="nyota-card-thumb">
-          <img src="https://placehold.co/640x400/png?text=Service+4" alt="Service 4">
-        </div>
+      <article class="nyota-card" role="listitem" data-category="dev">
+        <div class="nyota-card-thumb"><img src="https://placehold.co/640x400/png?text=Service+4" alt=""></div>
         <div class="nyota-card-body">
           <div class="nyota-card-kicker">Mobile & App</div>
           <h3 class="nyota-card-title">I will do mobile app development for ios and android</h3>
           <div class="nyota-card-meta">
-            <div class="nyota-card-author">
-              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=JR" alt="avatar Jerome">
-              <span>Jerome Bai</span>
-            </div>
-            <div class="nyota-card-price">Starting at $983</div>
-          </div>
-        </div>
-      </article>
-            <article class="nyota-card" role="listitem">
-        <div class="nyota-card-thumb">
-          <img src="https://placehold.co/640x400/png?text=Service+4" alt="Service 4">
-        </div>
-        <div class="nyota-card-body">
-          <div class="nyota-card-kicker">Mobile & App</div>
-          <h3 class="nyota-card-title">I will do mobile app development for ios and android</h3>
-          <div class="nyota-card-meta">
-            <div class="nyota-card-author">
-              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=JR" alt="avatar Jerome">
-              <span>Jerome Bai</span>
-            </div>
+            <div class="nyota-card-author"><img src="https://placehold.co/34x34/8a8a8a/fff?text=JR"><span>Jerome Bai</span></div>
             <div class="nyota-card-price">Starting at $983</div>
           </div>
         </div>
       </article>
 
-            <article class="nyota-card" role="listitem">
-        <div class="nyota-card-thumb">
-          <img src="https://placehold.co/640x400/png?text=Service+4" alt="Service 4">
-        </div>
-        <div class="nyota-card-body">
-          <div class="nyota-card-kicker">Mobile & App</div>
-          <h3 class="nyota-card-title">I will do mobile app development for ios and android</h3>
-          <div class="nyota-card-meta">
-            <div class="nyota-card-author">
-              <img src="https://placehold.co/34x34/8a8a8a/ffffff?text=JR" alt="avatar Jerome">
-              <span>Jerome Bai</span>
-            </div>
-            <div class="nyota-card-price">Starting at $983</div>
-          </div>
-        </div>
-      </article>
-
-      <!-- tu peux ajouter d'autres cartes ici -->
+      <!-- autres cartes... -->
     </div>
 
-    <!-- controls: flèches superposées -->
     <div class="nyota-carousel-controls" aria-hidden="false">
-      <button class="nyota-carousel-btn" id="nyota-prev" aria-label="Précédent">&larr;</button>
-      <button class="nyota-carousel-btn" id="nyota-next" aria-label="Suivant">&rarr;</button>
+      <button class="nyota-carousel-btn prev" aria-label="Précédent">&larr;</button>
+      <button class="nyota-carousel-btn next" aria-label="Suivant">&rarr;</button>
     </div>
 
-    <!-- bullets (générés par JS) -->
-    <div class="nyota-carousel-bullets" id="nyota-bullets" aria-hidden="false"></div>
+    <div class="nyota-carousel-bullets" aria-hidden="false"></div>
   </div>
 </section>
+
 
 <!-- ===== end services ===== -->
 <!-- ===== NYOTA: Testimonials ===== -->
@@ -3858,93 +3705,190 @@
 </script>
 
 <script>
-(function(){
-  const carousel = document.getElementById('nyota-carousel');
-  const prevBtn = document.getElementById('nyota-prev');
-  const nextBtn = document.getElementById('nyota-next');
-  const bulletsWrap = document.getElementById('nyota-bullets');
+document.querySelectorAll('.nyota-services').forEach(section => {
+  const wrapper = section.querySelector('.nyota-carousel-wrap');
+  const slider = wrapper.querySelector('.nyota-carousel');
+  const prevBtn = wrapper.querySelector('.nyota-carousel-btn.prev');
+  const nextBtn = wrapper.querySelector('.nyota-carousel-btn.next');
+  const bulletsWrap = wrapper.querySelector('.nyota-carousel-bullets');
+  const tabs = section.querySelectorAll('.nyota-tab');
+  const cards = Array.from(slider.querySelectorAll('.nyota-card'));
 
-  if(!carousel || !prevBtn || !nextBtn || !bulletsWrap) return;
+  const gap = parseInt(getComputedStyle(slider).gap || 20, 10) || 20;
 
-  let currentPage = 0;
-  let pages = 1;
-
-  function computeLayout(){
-    const visibleW = carousel.clientWidth || 1;         // largeur visible du scroller
-    const totalScrollW = carousel.scrollWidth || 0;     // largeur totale scrollable
-    pages = Math.max(1, Math.ceil(totalScrollW / visibleW));
-    if(currentPage >= pages) currentPage = pages - 1;
-    renderBullets();
-    updateControls();
+  // Génère bullets (1 par carte)
+  function buildBullets() {
+    bulletsWrap.innerHTML = '';
+    cards.forEach((c, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'nyota-carousel-dot' + (i === 0 ? ' active' : '');
+      btn.setAttribute('aria-label', 'Aller à la carte ' + (i+1));
+      btn.addEventListener('click', () => scrollToIndex(i));
+      bulletsWrap.appendChild(btn);
+    });
   }
 
-  function renderBullets(){
-    bulletsWrap.innerHTML = '';
-    for(let i=0;i<pages;i++){
-      const dot = document.createElement('button');
-      dot.className = 'nyota-carousel-dot' + (i===currentPage ? ' active' : '');
-      dot.setAttribute('aria-label', 'Aller à la page ' + (i+1));
-      dot.addEventListener('click', ()=> { goTo(i); });
-      bulletsWrap.appendChild(dot);
+  function getCardWidth() {
+    const card = slider.querySelector('.nyota-card');
+    if (!card) return slider.clientWidth;
+    return card.offsetWidth + gap;
+  }
+
+  // scroll vers l'index de la carte
+  function scrollToIndex(index, behavior = 'smooth') {
+    const w = getCardWidth();
+    slider.scrollTo({ left: Math.round(index * w), behavior });
+  }
+
+  // met à jour le dot actif
+  function updateActiveDot() {
+    const w = getCardWidth();
+    const idx = Math.round(slider.scrollLeft / w);
+    const dots = bulletsWrap.querySelectorAll('.nyota-carousel-dot');
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    // disable/enable flèches si début/fin
+    if (prevBtn) prevBtn.disabled = slider.scrollLeft <= 5;
+    if (nextBtn) nextBtn.disabled = slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth - 5);
+  }
+
+  // Buttons
+  if (prevBtn) prevBtn.addEventListener('click', () => {
+    cancelMomentum();
+    const step = -1;
+    slider.scrollBy({ left: step * getCardWidth(), behavior: 'smooth' });
+  });
+  if (nextBtn) nextBtn.addEventListener('click', () => {
+    cancelMomentum();
+    const step = 1;
+    slider.scrollBy({ left: step * getCardWidth(), behavior: 'smooth' });
+  });
+
+  // Drag / pointer support (avec inertie)
+  let isDown = false, startX = 0, scrollStart = 0, velocity = 0, rafId = null;
+  slider.addEventListener('pointerdown', (e) => {
+    isDown = true;
+    slider.setPointerCapture(e.pointerId);
+    startX = e.pageX;
+    scrollStart = slider.scrollLeft;
+    velocity = 0;
+    cancelMomentum();
+  });
+  slider.addEventListener('pointermove', (e) => {
+    if (!isDown) return;
+    const dx = e.pageX - startX;
+    const prev = slider.scrollLeft;
+    slider.scrollLeft = scrollStart - dx;
+    velocity = slider.scrollLeft - prev;
+    updateActiveDot();
+  });
+  slider.addEventListener('pointerup', (e) => finishDrag());
+  slider.addEventListener('pointercancel', (e) => finishDrag());
+  slider.addEventListener('pointerleave', (e) => { if(isDown) finishDrag(); });
+
+  function finishDrag() {
+    if (!isDown) return;
+    isDown = false;
+    beginMomentum();
+  }
+
+  function beginMomentum() {
+    cancelMomentum();
+    rafId = requestAnimationFrame(momentumLoop);
+  }
+  function cancelMomentum() {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = null;
+  }
+  function momentumLoop() {
+    slider.scrollLeft += velocity;
+    velocity *= 0.92;
+    updateActiveDot();
+    if (Math.abs(velocity) > 0.5) rafId = requestAnimationFrame(momentumLoop);
+    else {
+      // snap to closest card after inertia
+      const w = getCardWidth();
+      const idx = Math.round(slider.scrollLeft / w);
+      scrollToIndex(idx, 'smooth');
     }
   }
 
-  function goTo(page){
-    currentPage = Math.max(0, Math.min(page, pages - 1));
-    const left = Math.round(currentPage * carousel.clientWidth);
-    carousel.scrollTo({ left, behavior: 'smooth' });
-    updateBullets();
-    updateControls();
-  }
+  // wheel horizontal support (shift + wheel fallback)
+  slider.addEventListener('wheel', (e) => {
+    if (Math.abs(e.deltaY) === 0) return;
+    if (!e.shiftKey && Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      // vertical wheel -> horizontal scroll for carousel (improve usability)
+      e.preventDefault();
+      slider.scrollLeft += e.deltaY;
+    }
+  }, { passive: false });
 
-  function updateBullets(){
-    const dots = bulletsWrap.querySelectorAll('.nyota-carousel-dot');
-    dots.forEach((d,i)=> d.classList.toggle('active', i===currentPage));
-  }
-
-  function updateControls(){
-    const prevDisabled = (currentPage <= 0);
-    const nextDisabled = (currentPage >= pages - 1);
-    prevBtn.disabled = prevDisabled;
-    nextBtn.disabled = nextDisabled;
-    prevBtn.setAttribute('aria-disabled', prevDisabled);
-    nextBtn.setAttribute('aria-disabled', nextDisabled);
-  }
-
-  prevBtn.addEventListener('click', ()=> goTo(currentPage - 1));
-  nextBtn.addEventListener('click', ()=> goTo(currentPage + 1));
-
-  // sync page quand utilisateur scroll manuellement
-  let scrollTimeout;
-  carousel.addEventListener('scroll', ()=>{
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(()=>{
-      const page = Math.round(carousel.scrollLeft / (carousel.clientWidth || 1));
-      if(page !== currentPage){
-        currentPage = Math.max(0, Math.min(page, pages - 1));
-        updateBullets();
-        updateControls();
-      }
-    }, 80);
+  // Tabs filtering
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const filter = tab.dataset.filter || 'all';
+      cards.forEach(card => {
+        const cat = card.dataset.category || '';
+        card.style.display = (filter === 'all' || cat === filter) ? '' : 'none';
+      });
+      // rebuild visible card list and bullets
+      rebuildCardArray();
+      // small delay to allow layout update
+      setTimeout(() => {
+        scrollToIndex(0, 'smooth');
+        updateActiveDot();
+      }, 50);
+    });
   });
 
-  // recalculer au resize (et au chargement complet des images)
-  window.addEventListener('resize', computeLayout);
-  window.addEventListener('load', computeLayout);
-
-  // initial
-  computeLayout();
-
-  // support clavier (flèches) quand section focusable
-  const section = document.getElementById('nyota-services-section');
-  if(section){
-    section.tabIndex = section.tabIndex || -1;
-    section.addEventListener('keydown', (e)=>{
-      if(e.key === 'ArrowRight') goTo(currentPage + 1);
-      if(e.key === 'ArrowLeft') goTo(currentPage - 1);
+  function rebuildCardArray() {
+    // rebuild cards reference after filtering
+    const visible = Array.from(slider.querySelectorAll('.nyota-card')).filter(c => c.style.display !== 'none');
+    // If you want bullets per visible card only:
+    // remove all bullets and create again based on visible.length
+    // For simplicity here we'll still create 1 bullet per card currently visible
+    bulletsWrap.innerHTML = '';
+    visible.forEach((c, i) => {
+      const b = document.createElement('button');
+      b.className = 'nyota-carousel-dot' + (i === 0 ? ' active' : '');
+      b.addEventListener('click', () => {
+        // find index among visible
+        const allVisible = Array.from(slider.querySelectorAll('.nyota-card')).filter(x => x.style.display !== 'none');
+        const idx = allVisible.indexOf(c);
+        scrollToIndex(idx);
+      });
+      bulletsWrap.appendChild(b);
     });
   }
-})();
+
+  // mise en place initiale
+  buildBullets();
+  updateActiveDot();
+
+  // mise à jour pendant scroll
+  slider.addEventListener('scroll', throttle(updateActiveDot, 60));
+
+  // recalcul quand fenêtre change
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      buildBullets();
+      updateActiveDot();
+    }, 120);
+  });
+
+  // helper : simple throttle
+  function throttle(fn, wait){
+    let last = 0;
+    return function(...args){
+      const now = Date.now();
+      if(now - last >= wait){ last = now; fn.apply(this, args); }
+    };
+  }
+});
+
 </script>
 
 <!-- script pour l'animation des images partener -->

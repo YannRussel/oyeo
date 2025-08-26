@@ -1817,260 +1817,83 @@ html,body{
 
 /* ================= SERVICES (carousel) - plus large ================= */
 :root{
-  --container-max: 1500px; /* largeur max demandée */
-  --gutter: 28px;
-  --gap: 24px;
+  --container-max: 1500px;
+  --gutter: 24px;
+  --gap: 20px;
   --title-color: #0f1724;
   --muted: #6b7280;
-  --card-shadow: 0 8px 26px rgba(16,24,40,0.09);
-  --cta-green-1: #00c27a;
-  --cta-green-2: #00a86b;
+  --card-shadow: 0 10px 30px rgba(16,24,40,0.08);
+  --cta-1: #00c27a;
+  --cta-2: #00a86b;
   --control-size: 48px;
+  --radius: 12px;
+  --accent: #0b74da;
+  --bg: #f8fafc;
+  --text: #081126;
 }
 
-/* ================== SECTION GLOBALE ================== */
-.nyota-services {
-  margin: 40px auto 64px;
-  padding-top: 6px;
-  padding-bottom: 8px;
-  width: 100%;
-  box-sizing: border-box;
-  max-width: var(--container-max); /* <= 1500px */
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+.nyota-services{ max-width:var(--container-max); margin:48px auto; padding:18px; font-family:Inter,system-ui,Arial; }
+
+.nyota-cta-row{ display:flex; justify-content:center; margin-bottom:18px; }
+.nyota-cta-btn{ background:linear-gradient(180deg,var(--cta-1),var(--cta-2)); color:#012; font-weight:700; padding:10px 22px; border-radius:999px; text-decoration:none; font-size:15px; box-shadow:0 12px 30px rgba(0,162,107,0.12); }
+
+.nyota-services-header{ padding:0 var(--gutter); margin-bottom:8px; }
+.nyota-services-title{ margin:0; font-size:28px; font-weight:800; color:var(--title-color); }
+
+.nyota-tabs-row{ display:flex; justify-content:center; padding:12px 0; }
+.nyota-tabs{ display:flex; gap:10px; flex-wrap:wrap; }
+.nyota-tab{ background:#fff; border:1px solid rgba(15,23,42,0.06); padding:8px 14px; border-radius:999px; font-size:13px; color:var(--muted); cursor:pointer; }
+.nyota-tab.active{ color:var(--accent); box-shadow:0 8px 22px rgba(11,116,218,0.06); border-color:rgba(11,116,218,0.12); }
+
+.nyota-carousel-wrap{ position:relative; padding:8px var(--gutter) 28px; background-color: #fff; }
+.nyota-carousel{ display:flex; gap:var(--gap); overflow-x:auto; padding-bottom:12px; scroll-behavior:smooth; -webkit-overflow-scrolling:touch; align-items:stretch; scroll-snap-type:x mandatory; }
+.nyota-carousel::-webkit-scrollbar{ height:10px; }
+.nyota-carousel::-webkit-scrollbar-thumb{ background:rgba(0,0,0,0.06); border-radius:12px; }
+
+.nyota-card{ flex:0 0 320px; background:#fff; border-radius:var(--radius); box-shadow:var(--card-shadow); display:flex; flex-direction:column; overflow:hidden; min-height:380px; transition:transform .18s ease, box-shadow .18s ease; scroll-snap-align:start; }
+.nyota-card:hover{ transform:translateY(-6px); box-shadow:0 20px 44px rgba(16,24,40,0.12); }
+.nyota-card-thumb{ height:200px; background:#efefef; overflow:hidden; }
+.nyota-card-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+.nyota-card-body{ padding:16px; display:flex; flex-direction:column; gap:10px; flex:1; }
+.nyota-card-kicker{ font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.6px; }
+.nyota-card-title{ font-size:16px; margin:0; line-height:1.3; color:var(--text); font-weight:700; }
+.nyota-card-meta{ margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.nyota-card-author{ display:flex; align-items:center; gap:10px; color:var(--muted); font-size:14px; }
+.nyota-card-author img{ width:34px; height:34px; border-radius:50%; object-fit:cover; }
+.nyota-card-price{ font-weight:800; font-size:15px; color:#111; }
+
+.nyota-carousel-controls{ position:absolute; top:50%; left:0; right:0; transform:translateY(-50%); padding:0 var(--gutter); pointer-events:none; z-index:30; }
+.nyota-carousel-btn{ pointer-events:all; position:absolute; top:50%; transform:translateY(-50%); width:var(--control-size); height:var(--control-size); display:grid; place-items:center; border-radius:999px; background:#fff; box-shadow:0 8px 22px rgba(3,10,18,0.06); border:1px solid rgba(15,23,42,0.04); cursor:pointer; font-weight:700; }
+.nyota-carousel-btn.prev{ left:calc(var(--gutter)/2); }
+.nyota-carousel-btn.next{ right:calc(var(--gutter)/2); }
+.nyota-carousel-btn[disabled]{ opacity:.45; cursor:default; transform:translateY(-50%) scale(.98); box-shadow:none; }
+
+.nyota-carousel-bullets{ display:flex; justify-content:center; gap:8px; margin-top:14px; }
+.nyota-carousel-dot{ width:9px; height:9px; background:rgba(15,23,42,0.08); border-radius:50%; cursor:pointer; transition:transform .15s ease, background .15s ease; }
+.nyota-carousel-dot.active{ background:var(--accent); transform:scale(1.15); }
+
+/* responsive */
+@media(max-width:1200px){ .nyota-card{ flex:0 0 300px; } }
+@media(max-width:900px){
+  .nyota-card{ flex:0 0 260px; min-height:340px; }
+  .nyota-tabs{ overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:6px; }
+  .nyota-carousel-btn.prev{ left:12px; } .nyota-carousel-btn.next{ right:12px; }
+}
+@media(max-width:560px){
+  .nyota-card{ flex:0 0 72%; }
+  .nyota-carousel-btn{ width:40px; height:40px; font-size:16px; }
+  .nyota-cta-btn{ padding:8px 18px; font-size:14px; }
 }
 
-/* CTA bouton centré en haut (grand pill vert) */
-.nyota-cta-row {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-.nyota-cta-btn {
-  display: inline-block;
-  background: linear-gradient(180deg,var(--cta-green-1),var(--cta-green-2));
-  color: #012;
-  font-weight: 800;
-  padding: 10px 28px;
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0,162,107,0.18);
-  text-decoration: none;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  font-size: 18px;
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-.nyota-cta-btn:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(0,162,107,0.20); }
-
-/* ========== HEADER : titre (gauche) ========== */
-.nyota-services-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 18px;
-  margin: 18px 0 0;
-  padding: 0 var(--gutter);
-  box-sizing: border-box;
-}
-
-/* titre */
-.nyota-services-title {
-  font-size: 26px;
-  font-weight: 800;
-  margin: 0;
-  color: var(--title-color);
-}
-
-/* ======= Onglets centrés SOUS le titre ======= */
-.nyota-tabs-row {
-  display: flex;
-  justify-content: center;   /* centre horizontalement les boutons */
-  width: 100%;
-  padding: 10px 0 18px;
-  box-sizing: border-box;
-}
-
-/* Conteneur des boutons */
-.nyota-tabs {
-  display: flex;
-  gap: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  background: transparent;
-  z-index: 10;
-}
-
-/* style des boutons */
-.nyota-tab {
-  background: #fff;
-  border: 1px solid rgba(15,23,42,0.06);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  color: #4b5563;
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.02);
-}
-.nyota-tab.active {
-  background: #fff;
-  color: #0b74da;
-  border-color: rgba(11,116,218,0.14);
-  box-shadow: 0 10px 28px rgba(11,116,218,0.06);
-}
-
-/* ========== CAROUSEL ========== */
-.nyota-carousel-wrap {
-  position: relative;
-  padding: 8px var(--gutter) 28px;
-  box-sizing: border-box;
-}
-
-/* zone scrollable */
+/* Pour cacher les scrollbars mais garder le scroll fonctionnel */
 .nyota-carousel {
-  display:flex;
-  gap: 20px;
   overflow-x: auto;
-  padding-bottom: 8px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  align-items: stretch;
-  scroll-snap-type: x mandatory; /* aide le snapping */
-}
-.nyota-carousel::-webkit-scrollbar { height: 10px; }
-.nyota-carousel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.08); border-radius: 12px; }
-
-/* carte */
-.nyota-card {
-  flex: 0 0 320px; /* largeur par défaut, responsive plus bas */
-  background: #fff;
-  border-radius: 14px;
-  box-shadow: var(--card-shadow);
-  display:flex;
-  flex-direction:column;
-  overflow:hidden;
-  min-height: 420px;
-  transition: transform .18s ease, box-shadow .18s ease;
-  scroll-snap-align: start; /* alignement pour scroll-snap */
-}
-.nyota-card:hover { transform: translateY(-6px); box-shadow: 0 20px 44px rgba(16,24,40,0.12); }
-
-.nyota-card-thumb { height: 200px; background: #efefef; overflow:hidden; }
-.nyota-card-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
-
-.nyota-card-body { padding: 18px; display:flex; flex-direction:column; gap:10px; flex:1; }
-.nyota-card-kicker { font-size:12px; color:var(--muted); text-transform:uppercase; letter-spacing:0.6px; }
-.nyota-card-title { font-size:16px; margin:0; line-height:1.25; color:#0f172a; font-weight:700; }
-.nyota-card-meta { margin-top:auto; display:flex; justify-content:space-between; align-items:center; gap:12px; }
-.nyota-card-author { display:flex; align-items:center; gap:10px; color:var(--muted); font-size:14px; }
-.nyota-card-author img { width:34px; height:34px; border-radius:50%; object-fit:cover; display:block; }
-.nyota-card-price { font-weight:800; font-size:15px; color:#111; }
-
-/* ========== CONTROLES (FLÈCHES) centrées verticalement ========== */
-.nyota-carousel-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  transform: translateY(-50%);
-  pointer-events: none;        /* parent non cliquable, seuls les boutons le seront */
-  box-sizing: border-box;
-  padding: 0 var(--gutter);
-  z-index: 40;
+  -ms-overflow-style: none;  /* IE et Edge */
+  scrollbar-width: none;     /* Firefox */
 }
 
-/* boutons placés absolument pour se trouver sur les bords gauche/droit */
-.nyota-carousel-controls .nyota-carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: all;
-  width: var(--control-size);
-  height: var(--control-size);
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.98);
-  box-shadow: 0 8px 22px rgba(3,10,18,0.07);
-  border: 1px solid rgba(15,23,42,0.04);
-  cursor: pointer;
-  font-weight: 800;
-  font-size: 18px;
-  z-index: 50;
-}
-
-/* position exacte à gauche / droite */
-#nyota-prev { left: calc(var(--gutter) / 2); }
-#nyota-next { right: calc(var(--gutter) / 2); }
-
-/* état disabled */
-.nyota-carousel-btn[disabled] {
-  opacity: 0.45;
-  cursor: default;
-  transform: translateY(-50%) scale(0.98);
-  box-shadow: none;
-}
-
-/* ========== BULLETS ========= */
-.nyota-carousel-bullets {
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  margin-top:12px;
-}
-.nyota-carousel-dot {
-  width:8px;
-  height:8px;
-  background: rgba(15,23,42,0.08);
-  border-radius:50%;
-  transition: transform .15s ease, background .15s ease;
-  border: none;
-  cursor: pointer;
-}
-.nyota-carousel-dot.active { background: rgba(15,23,42,0.9); transform: scale(1.15); }
-
-/* ========== RESPONSIVE ========= */
-@media (max-width: 1400px) {
-  .nyota-card { flex: 0 0 340px; min-height:420px; } /* profite de l'espace */
-  .nyota-card-thumb { height: 200px; }
-  .nyota-services-title { font-size:24px; }
-}
-
-@media (max-width: 1200px) {
-  .nyota-card { flex: 0 0 300px; min-height:400px; }
-  .nyota-card-thumb { height: 190px; }
-  .nyota-services-title { font-size:22px; }
-}
-
-@media (max-width: 900px) {
-  .nyota-services-header { padding: 0 18px; }
-  .nyota-card { flex: 0 0 280px; min-height:380px; }
-  .nyota-card-thumb { height: 180px; }
-  .nyota-cta-btn { font-size:16px; padding: 8px 20px; }
-  /* sur tablettes/phones, on laisse les onglets défiler horizontalement si besoin */
-  .nyota-tabs { gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
-  /* rapprocher légèrement les contrôles */
-  #nyota-prev { left: 12px; }
-  #nyota-next { right: 12px; }
-}
-
-@media (max-width: 560px) {
-  .nyota-card { flex: 0 0 72%; min-height:340px; }
-  .nyota-card-thumb { height: 160px; }
-  .nyota-services-title { font-size:18px; }
-  .nyota-tabs { justify-content: flex-start; }
-  .nyota-carousel-controls { top: 50%; } /* garde centre vertical */
-  /* bouton plus petit si besoin */
-  .nyota-carousel-controls .nyota-carousel-btn { width: 40px; height: 40px; font-size:16px; }
-  #nyota-prev { left: 8px; }
-  #nyota-next { right: 8px; }
-}
-
-/* petit ajustement pour très petits écrans (lisibilité) */
-@media (max-width: 420px) {
-  .nyota-services { padding-left: 12px; padding-right: 12px; }
-  .nyota-card { min-height: 300px; }
-  .nyota-card-thumb { height: 140px; }
-  .nyota-cta-btn { font-size:14px; padding: 8px 16px; }
+.nyota-carousel::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
 }
 
 /* ===== NOTES UTILES =====
@@ -2378,3 +2201,99 @@ html,body{
 .news-flash li:nth-child(3) {
   animation-delay: 4s; /* Le troisième élément attend 4s, et ainsi de suite */
 }
+
+
+/* proprieté qui gere la barre de recharche et tout */
+
+
+/* 1) Layout du header : on active le flex */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* 2) Le container du champ prend tout l’espace libre */
+.header-right .search-style {
+  flex: 1 1 auto;
+  margin-right: 1rem;  /* ajuste l’espacement avec les autres icônes */
+}
+
+/* 3) Le form occupe 100% du container */
+.header-right .search-style form {
+  width: 95%;
+  display: block;
+}
+
+/* 4) Style de l’input : forme pill, icône, overrides */
+.header-right .search-style form input[type="text"] {
+  /* taille et agencement */
+  width: 100%;
+  height: 48px;                      /* hauteur fixe pour un pill parfait */
+  padding: 0.75rem 3rem 0.75rem 1rem;/* espace à droite pour l’icône */
+
+  /* typo */
+  font-size: 1rem;
+  line-height: 1.2;
+
+  /* bordure & fond */
+  border: 1px solid #dfe1e5;
+  border-radius: 999px;             /* arrondi maximal */
+  background-color: #fff;
+
+  /* icône loupe (adapte le chemin si besoin) */
+
+  /* suppression des styles natifs */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+
+  /* transition pour le focus */
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* 5) Placeholder plus discret */
+.header-right .search-style form input[type="text"]::placeholder {
+  color: #757575;
+  opacity: 1;  /* certains resets baissent l’opacité par défaut */
+}
+
+/* 6) Effet focus “Google-like” */
+.header-right .search-style form input[type="text"]:focus {
+  border-color: #4285f4;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+/* 7) Neutraliser l’autofill Chrome (fond vert/jaune) */
+.header-right .search-style form input[type="text"]:-webkit-autofill,
+.header-right .search-style form input[type="text"]:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #333 !important;
+}
+
+/* Position relative pour contenir l’icône */
+.search-style form {
+  position: relative;
+  width: 100%;
+}
+
+/* Bouton loupe */
+.search-style form .search-btn {
+  position: absolute;
+  right: 40px;           /* espace à droite */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #757575;
+  font-size: 18px;       /* taille de l’icône */
+  line-height: 1;
+  padding: 0;
+}
+
+
+
