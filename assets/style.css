@@ -1804,12 +1804,12 @@ html,body{
   margin: 36px 0;
 }
 .nyota-cta-btn {
-  background: linear-gradient(180deg,#00c58e,#06a06f);
-  color: #002318;
+  background: #e16628;
+  color: #e16628;
   font-weight: 700;
   padding: 12px 32px;
   border-radius: 10px;
-  box-shadow: 0 8px 22px rgba(0,197,142,0.16);
+  box-shadow: 0 8px 22px #e16628;
   text-decoration: none;
   letter-spacing: 0.6px;
   display: inline-block;
