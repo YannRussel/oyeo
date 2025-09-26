@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catalogue - Style Zalando (reproduction pédagogique)</title>
+  <style>
+    :root {
+      --accent: #e96429;
+      --muted: #f3f3f3;
+      --card: #ffffff;
+      --text: #111;
+      --muted-text: #666;
+      --border: #e6e6e6;
+      --container: 1100px;
+      font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      height: 100%
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #fff;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .topbar {
+      background: var(--accent);
+      color: #fff;
+      font-size: 15px;
+      padding: 6px 0;
+      text-align: center
+    }
+
+    .header {
+      border-bottom: 1px solid var(--border);
+      background: #fff
+    }
+
+    .header-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 18px 16px
+    }
+
+    .logo {
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--accent);
+      font-size: 20px
+    }
+
+    .search {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+    }
+
+    .search input {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      min-width: 320px;
+
+    }
+
+    .nav-genre {
+      max-width: var(--container);
+      margin: 8px auto;
+      display: flex;
+      gap: 12px;
+      padding: 0 16px;
+      align-items: center
+    }
+
+    .nav-genre a {
+      padding: 8px 12px;
+      text-decoration: none;
+      color: var(--muted-text);
+      border-radius: 4px;
+      color: #000;
+    }
+
+    .nav-genre a.active {
+      background: #111;
+      color: #fff
+    }
+
+    .main {
+      max-width: var(--container);
+      margin: 20px auto;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 28px;
+      padding: 0 16px 60px
+    }
+
+    .sidebar {
+      font-size: 18px;
+      color: var(--muted-text);
+
+    }
+
+    .sidebar h3 {
+      font-size: 13px;
+      color: #000;
+      margin-bottom: 10px
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0
+    }
+
+    .sidebar li {
+      padding: 8px 0
+    }
+
+    .sidebar a {
+      color: inherit;
+      text-decoration: none;
+      
+    }
+      .sidebar a:hover {
+      border: 7px #e96429 solid;
+      background-color: #e96429;
+      color: #FFF;
+      text-decoration: none;
+      border-radius: 50px;
+      
+    }
+
+    .content-header {
+      margin-bottom: 16px
+    }
+
+    .page-title {
+      font-size: 28px;
+      margin: 0 0 12px 0
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 13px;
+      border-color: #e96429;
+
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px 18px;
+      margin-top: 18px
+    }
+
+    .product-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 360px
+    }
+
+    .product-media {
+      background: var(--muted);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .badge {
+      position: absolute;
+      left: 10px;
+      bottom: 10px;
+      background: var(--accent);
+      color: #fff;
+      padding: 6px 8px;
+      font-size: 12px;
+      border-radius: 3px
+    }
+
+    .heart {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      cursor: pointer
+    }
+
+    .product-info {
+      padding: 12px
+    }
+
+    .product-brand {
+      font-size: 12px;
+      color: var(--muted-text)
+    }
+
+    .product-title {
+      font-size: 14px;
+      margin: 6px 0 8px;
+      color: #111
+    }
+
+    .product-price {
+      font-weight: 700;
+      color: var(--accent)
+    }
+
+    .product-meta {
+      font-size: 12px;
+      color: var(--muted-text);
+      margin-top: 6px
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 20px 0;
+      margin-top: 40px
+    }
+
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 16px
+    }
+
+    .img-failed-note {
+      color: #b33;
+      margin-top: 8px;
+      font-size: 13px;
+      display: none
+    }
+
+    .nav-liens a{
+      text-decoration: none;
+      color: #000;
+      font-size: 1.5em;
+    }
+
+    @media (max-width:1000px) {
+      .main {
+        grid-template-columns: 1fr
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .search input {
+        min-width: 200px
+      }
+    }
+
+    @media (max-width:640px) {
+      .product-grid {
+        grid-template-columns: 1fr
+      }
+
+      .nav-genre {
+        overflow: auto
+      }
+
+      .search input {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">Jusqu'à -40% · Promo pédagogique d'exemple</div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">OYEO</div>
+
+      <nav style="display:flex;gap:10px;align-items:center; margin-left: 50px;" class="nav-liens">
+        <a href="#">FR</a>
+        <a href="#">♡</a>
+        <a href="#">🛒</a>
+      </nav>
+
+      <div class="search" role="search">
+        <input placeholder="Rechercher" aria-label="Rechercher" />
+        <button class="filter-btn">Rechercher</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-genre">
+    <a href="#">Femme</a>
+    <a href="#" class="active">Homme</a>
+    <a href="#">Enfant</a>
+  </div>
+
+  <main class="main">
+
+    <aside class="sidebar" aria-label="Catégories">
+      <h3>Chaussures</h3>
+      <ul>
+        <li><a href="#">Sneakers</a></li>
+        <li><a href="#">Baskets basses</a></li>
+        <li><a href="#">Baskets montantes</a></li>
+        <li><a href="#">Skate Shoes</a></li>
+        <li><a href="#">Bottes</a></li>
+        <li><a href="#">Sandales</a></li>
+        <li><a href="#">Promos</a></li>
+        <li><a href="#">Sneakers</a></li>
+        <li><a href="#">Baskets basses</a></li>
+        <li><a href="#">Baskets montantes</a></li>
+        <li><a href="#">Skate Shoes</a></li>
+        <li><a href="#">Bottes</a></li>
+        <li><a href="#">Sandales</a></li>
+        <li><a href="#">Promos</a></li>
+      </ul>
+    </aside>
+
+    <section class="content">
+      <div class="content-header">
+        <h1 class="page-title">Sneakers pour homme</h1>
+        <div class="filters" role="toolbar" aria-label="Filtres">
+          <button class="filter-btn">Trier ▾</button>
+          <button class="filter-btn">Marque ▾</button>
+          <button class="filter-btn">Taille ▾</button>
+          <button class="filter-btn">Couleur ▾</button>
+          <button class="filter-btn">Prix ▾</button>
+          <button class="filter-btn">Tous les filtres</button>
+        </div>
+      </div>
+
+      <div style="color:var(--muted-text); font-size:13px; margin-bottom:8px">11 075 articles</div>
+
+      <div class="product-grid" id="productGrid">
+
+        <!-- Exemple de carte produit avec image externe + fallback JS -->
+        <article class="product-card">
+          <div class="product-media">
+            <img src="./images/card-item10.jpg" alt="Sneakers" loading="lazy" decoding="async"
+              data-keyword="sneakers" onerror="handleImageError(this)">
+            <div class="badge">Promo</div>
+            <div class="heart" role="button" aria-label="Ajouter aux favoris">♡</div>
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Jordan</div>
+            <div class="product-title">AIR JORDAN 1 MID - Baskets montantes</div>
+            <div class="product-price">97,95 €</div>
+            <div class="product-meta">Prix de référence <s>139,95 €</s> · -30%</div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="./images/card-item2.jpg" alt="Baskets montantes" loading="lazy"
+              decoding="async" data-keyword="basketball shoes" onerror="handleImageError(this)">
+            <div class="badge">Hot</div>
+            <div class="heart" role="button" aria-label="Ajouter aux favoris">♡</div>
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Jordan</div>
+            <div class="product-title">AIR JORDAN 1 MID SE</div>
+            <div class="product-price">à partir de 119,95 €</div>
+            <div class="product-meta">Prix de référence <s>149,95 €</s></div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="./images/card-item4.jpg" alt="Running shoes" loading="lazy"
+              decoding="async" data-keyword="running shoes" onerror="handleImageError(this)">
+            <div class="badge">Promo</div>
+            <div class="heart" role="button" aria-label="Ajouter aux favoris">♡</div>
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Jordan</div>
+            <div class="product-title">AIR JORDAN 1 - Baskets basses</div>
+            <div class="product-price">90,95 €</div>
+            <div class="product-meta">Prix de référence <s>129,95 €</s> · -30%</div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="./images/card-item9.jpg" alt="Skate shoes" loading="lazy"
+              decoding="async" data-keyword="skate shoes" onerror="handleImageError(this)">
+            <div class="heart" role="button" aria-label="Ajouter aux favoris">♡</div>
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Nike</div>
+            <div class="product-title">NIKE SB - Chaussures de skate</div>
+            <div class="product-price">79,95 €</div>
+            <div class="product-meta">Livraison incluse</div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="./images/card-item8.jpg" alt="Adidas shoes" loading="lazy"
+              decoding="async" data-keyword="adidas shoes" onerror="handleImageError(this)">
+            <div class="heart" role="button" aria-label="Ajouter aux favoris">♡</div>
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Adidas</div>
+            <div class="product-title">ADIDAS - Baskets basses</div>
+            <div class="product-price">65,00 €</div>
+            <div class="product-meta">Promo spéciale</div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-media">
+            <img src="./images/card-item2.jpg" alt="Puma sneakers" loading="lazy"
+              decoding="async" data-keyword="puma sneakers" onerror="handleImageError(this)">
+            <div class="heart" role="button" aria-label="Ajouter aux favoris">♡</div>
+          </div>
+          <div class="product-info">
+            <div class="product-brand">Puma</div>
+            <div class="product-title">PUMA - Sneakers confort</div>
+            <div class="product-price">59,00 €</div>
+            <div class="product-meta">Nouveauté</div>
+          </div>
+        </article>
+
+      </div> <!-- /product-grid -->
+
+      <div class="img-failed-note" id="imgFailedNote">
+        Certaines images n'ont pas pu charger — vérifie ta connexion, les extensions (adblock) ou teste en lançant un
+        serveur local.
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>© Oyeo - une application d'E-commerce.</small>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle coeur favori
+    function attachHearts(root = document) {
+      root.querySelectorAll('.heart').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          this.textContent = this.textContent.trim() === '♡' ? '♥' : '♡';
+        });
+      });
+    }
+    attachHearts();
+
+    // Crée un placeholder SVG DOM node (utilisé en cas d'erreur d'image)
+    function createSVGPlaceholder(width = 600, height = 400, label = 'Image') {
+      const svgNS = "http://www.w3.org/2000/svg";
+      const svg = document.createElementNS(svgNS, "svg");
+      svg.setAttribute("width", "100%");
+      svg.setAttribute("height", "100%");
+      svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+      svg.setAttribute("preserveAspectRatio", "xMidYMid slice");
+      // fond
+      const rect = document.createElementNS(svgNS, "rect");
+      rect.setAttribute("width", "100%");
+      rect.setAttribute("height", "100%");
+      rect.setAttribute("fill", "#e9e9e9");
+      svg.appendChild(rect);
+      // icône simplifiée (rectangle)
+      const inner = document.createElementNS(svgNS, "rect");
+      inner.setAttribute("x", width * 0.05);
+      inner.setAttribute("y", height * 0.2);
+      inner.setAttribute("width", width * 0.9);
+      inner.setAttribute("height", height * 0.6);
+      inner.setAttribute("rx", 12);
+      inner.setAttribute("fill", "#d7d7d7");
+      svg.appendChild(inner);
+      // texte
+      const text = document.createElementNS(svgNS, "text");
+      text.setAttribute("x", "50%");
+      text.setAttribute("y", "50%");
+      text.setAttribute("dominant-baseline", "middle");
+      text.setAttribute("text-anchor", "middle");
+      text.setAttribute("fill", "#9a9a9a");
+      text.setAttribute("font-family", "Arial, Helvetica, sans-serif");
+      text.setAttribute("font-size", "20");
+      text.textContent = label;
+      svg.appendChild(text);
+      return svg;
+    }
+
+    // Handler d'erreur pour les images : on remplace l'img par un SVG placeholder
+    let failedImageCount = 0;
+    function handleImageError(imgEl) {
+      try {
+        failedImageCount++;
+        // éviter boucle infinie
+        imgEl.onerror = null;
+        // créer placeholder SVG
+        const keyword = imgEl.getAttribute('data-keyword') || 'image';
+        const placeholder = createSVGPlaceholder(600, 400, 'Image: ' + keyword);
+        // retirer l'image et insérer le svg
+        const parent = imgEl.parentNode;
+        if (parent) {
+          // position des badges / coeur : on garde les éléments absolus, donc on met le SVG en premier enfant
+          imgEl.style.display = 'none';
+          // si le parent avait un img, insérer le SVG avant la badge
+          parent.insertBefore(placeholder, parent.firstChild);
+          attachHearts(placeholder.parentNode); // ré-attacher si nécessaire
+        }
+        // afficher message si plusieurs images échouent
+        if (failedImageCount >= 1) {
+          const note = document.getElementById('imgFailedNote');
+          if (note) note.style.display = 'block';
+        }
+      } catch (e) {
+        console.warn("Erreur lors du fallback image:", e);
+      }
+    }
+
+    // Démo : cloner quelques cartes (les images clonées conservent le comportement onerror)
+    function cloneFirstCard(times) {
+      const grid = document.getElementById('productGrid');
+      const first = grid.querySelector('.product-card');
+      for (let i = 0; i < times; i++) {
+        const clone = first.cloneNode(true);
+        // ré-attacher handler onerror pour l'image clonée (selon navigateur cloneNode conserve les handlers natifs?)
+        const img = clone.querySelector('img');
+        if (img) {
+          img.onerror = function () { handleImageError(this) };
+        }
+        grid.appendChild(clone);
+      }
+      attachHearts(grid);
+    }
+    // ajoute 6 cartes en plus pour la démo
+    cloneFirstCard(6);
+
+    // Astuce pour debug:
+    // Si tu ouvres le fichier directement (file://) et que les images externes ne chargent pas,
+    // lance un serveur local depuis le dossier du projet :
+    // Python 3:  ->  python -m http.server 8000
+    // puis ouvre http://localhost:8000/ton-fichier.html
+    //
+    // Ou vérifie si une extension (adblock) bloque "source.unsplash.com".
+  </script>
+</body>
+
+</html>
